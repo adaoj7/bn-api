@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "name": "Command Center",
+        "description": "Central building that serves as the headquarters for your base.",
+        "imageUrl": "/images/buildings/command_center.png",
+        "category": "Core",
+        "unlockLevel": 1,
+        "type": "special",
+        "footprint": { "width": 4, "height": 4 },
+        "constructionTime": 0,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 0
+            }
+        ],
+        "populationBonus": 10
+    },
+    {
+        "id": 2,
+        "name": "Barracks",
+        "description": "Military building for training infantry units.",
+        "imageUrl": "/images/buildings/barracks.png",
+        "category": "Military",
+        "unlockLevel": 1,
+        "type": "military",
+        "footprint": { "width": 3, "height": 4 },
+        "constructionTime": 180,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 300
+            }
+        ],
+        "populationBonus": 5
+    },
+    {
+        "id": 3,
+        "name": "Gold Mine",
+        "description": "Produces gold, the main currency in the game.",
+        "imageUrl": "/images/buildings/gold_mine.png",
+        "category": "Resource",
+        "unlockLevel": 1,
+        "type": "resource",
+        "footprint": { "width": 3, "height": 3 },
+        "constructionTime": 60,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 200
+            }
+        ],
+        "production": [
+            {
+                "resourceType": "gold",
+                "amountPerHour": 100
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Iron Mine",
+        "description": "Produces iron, used for advanced units and buildings.",
+        "imageUrl": "/images/buildings/iron_mine.png",
+        "category": "Resource",
+        "unlockLevel": 5,
+        "type": "resource",
+        "footprint": { "width": 3, "height": 3 },
+        "constructionTime": 120,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 400
+            }
+        ],
+        "production": [
+            {
+                "resourceType": "iron",
+                "amountPerHour": 50
+            }
+        ],
+        "buildingRequirements": [2]
+    },
+    {
+        "id": 5,
+        "name": "Vehicle Factory",
+        "description": "Military building for producing vehicles.",
+        "imageUrl": "/images/buildings/vehicle_factory.png",
+        "category": "Military",
+        "unlockLevel": 10,
+        "type": "military",
+        "footprint": { "width": 4, "height": 5 },
+        "constructionTime": 300,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 800
+            },
+            {
+                "type": "iron",
+                "amount": 200
+            }
+        ],
+        "buildingRequirements": [3, 4]
+    }
+]

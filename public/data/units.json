@@ -1,0 +1,253 @@
+[
+    {
+        "id": 1,
+        "name": "Trooper",
+        "description": "The basic infantry unit of the Empire. Troopers compose the bulk of the Imperial Army's front-line forces. Operating under the motto of \"First in, Rarely Return,\" what these fresh recruits lack in experience and survivability, they make up for with complete devotion to the Emperor. Armed with the venerable M-11 Battle Rifle, known for its rugged reliability and long-range accuracy.",
+        "imageUrl": "/images/units/Trooper_icon.webp",
+        "category": "Soldier",
+        "unlockLevel": 1,
+        "type": "infantry",
+        "productionTime": 30,
+        "motto": "First In, Rarely Return",
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 250
+            },
+            {
+                "type": "iron",
+                "amount": 5
+            }
+        ],
+        "stats": {
+            "health": {
+                "base": 55,
+                "maxRank": 85
+            },
+            "attack": {
+                "base": 22,
+                "maxRank": 39
+            },
+            "defense": {
+                "base": 50,
+                "maxRank": 75
+            },
+            "dodge": {
+                "base": 20,
+                "maxRank": 45
+            },
+            "bravery": {
+                "base": 15,
+                "maxRank": 31
+            },
+            "range": 2
+        },
+        "actions": [
+            {
+                "name": "Battle Rifle",
+                "description": "Standard attack with the M-11 Battle Rifle",
+                "damage": {
+                    "base": "22-26",
+                    "maxRank": "33-39"
+                },
+                "accuracy": {
+                    "base": 46,
+                    "maxRank": 71
+                },
+                "criticalChance": 5,
+                "ammo": 3,
+                "reloadTime": 3,
+                "cooldown": 1,
+                "range": "1-2"
+            },
+            {
+                "name": "Double Shot",
+                "description": "Fire two shots in quick succession with reduced accuracy",
+                "unlockRank": 4,
+                "damage": {
+                    "base": "28-33",
+                    "maxRank": "33-39",
+                    "hits": 2
+                },
+                "accuracy": {
+                    "base": 49,
+                    "maxRank": 59
+                },
+                "criticalChance": 5,
+                "ammo": 2,
+                "cooldown": 1,
+                "range": "1-2"
+            }
+        ],
+        "specialAbilities": [
+            "Quick to train",
+            "Cheap to produce",
+            "Effective in large numbers",
+            "Semi-automatic fire more accurate at long range",
+            "Excellent for raiding resource nodes"
+        ],
+        "ranks": {
+            "total": 6,
+            "promotionCosts": [
+                null,
+                {
+                    "gold": 112,
+                    "time": "4h",
+                    "sp": 120
+                },
+                {
+                    "gold": 432,
+                    "time": "12h",
+                    "sp": 240
+                },
+                {
+                    "gold": 1648,
+                    "iron": 600,
+                    "bars": 2,
+                    "time": "1d",
+                    "sp": 650
+                },
+                {
+                    "gold": 4832,
+                    "iron": 1175,
+                    "bars": 6,
+                    "time": "2d",
+                    "sp": 1275
+                },
+                {
+                    "gold": 41860,
+                    "iron": 5100,
+                    "laurels": 2,
+                    "time": "2d",
+                    "sp": 15000
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "name": "Gunner",
+        "description": "Heavy infantry unit equipped with a machine gun. Gunners excel at laying down suppressing fire to keep enemy forces at bay.",
+        "imageUrl": "/images/units/gunner.png",
+        "category": "Soldier",
+        "unlockLevel": 5,
+        "type": "infantry",
+        "productionTime": 60,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 250
+            },
+            {
+                "type": "iron",
+                "amount": 50
+            }
+        ],
+        "stats": {
+            "health": 150,
+            "attack": 25,
+            "defense": 10,
+            "range": 3
+        },
+        "actions": [
+            {
+                "name": "Machine Gun",
+                "description": "Rapid fire attack that hits multiple times",
+                "damage": 8
+            },
+            {
+                "name": "Suppressing Fire",
+                "description": "Area attack that reduces enemy movement",
+                "damage": 15,
+                "cooldown": 3,
+                "areaEffect": true
+            }
+        ],
+        "specialAbilities": ["Increased damage against vehicles"]
+    },
+    {
+        "id": 3,
+        "name": "Light Tank",
+        "description": "Fast-moving armored vehicle with medium firepower. The backbone of the Imperial Army's mechanized forces.",
+        "imageUrl": "/images/units/light_tank.png",
+        "category": "Vehicles",
+        "unlockLevel": 10,
+        "type": "vehicle",
+        "productionTime": 120,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 500
+            },
+            {
+                "type": "iron",
+                "amount": 200
+            },
+            {
+                "type": "oil",
+                "amount": 100
+            }
+        ],
+        "stats": {
+            "health": 300,
+            "attack": 40,
+            "defense": 30,
+            "range": 4,
+            "movementSpeed": 3
+        },
+        "actions": [
+            {
+                "name": "Cannon Shot",
+                "description": "Powerful cannon attack",
+                "damage": 40
+            },
+            {
+                "name": "Machine Gun Burst",
+                "description": "Attack that's effective against infantry",
+                "damage": 25,
+                "cooldown": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Sniper",
+        "description": "Specialized marksman with extreme range and precision. Snipers excel at taking out high-value targets from a distance.",
+        "imageUrl": "/images/units/sniper.png",
+        "category": "Soldier",
+        "unlockLevel": 15,
+        "type": "infantry",
+        "productionTime": 90,
+        "cost": [
+            {
+                "type": "gold",
+                "amount": 300
+            },
+            {
+                "type": "iron",
+                "amount": 100
+            }
+        ],
+        "stats": {
+            "health": 75,
+            "attack": 65,
+            "defense": 5,
+            "range": 5
+        },
+        "actions": [
+            {
+                "name": "Precision Shot",
+                "description": "High-damage shot with excellent accuracy",
+                "damage": 65,
+                "cooldown": 1
+            },
+            {
+                "name": "Headshot",
+                "description": "Critical hit with chance of instant defeat",
+                "damage": 100,
+                "cooldown": 3
+            }
+        ],
+        "specialAbilities": ["Ignores partial cover", "Critical hit chance"]
+    }
+]

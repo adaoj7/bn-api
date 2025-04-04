@@ -1,0 +1,221 @@
+[
+    {
+        "id": 1,
+        "name": "Welcome to Battle Nations",
+        "description": "Begin your journey by building your first military structure.",
+        "imageUrl": "/images/missions/tutorial.png",
+        "category": "Tutorial",
+        "unlockLevel": 1,
+        "type": "tutorial",
+        "requirementsToUnlock": [
+            {
+                "type": "level",
+                "level": 1
+            }
+        ],
+        "objectives": [
+            {
+                "description": "Build a Barracks",
+                "type": "building",
+                "targetId": 2,
+                "count": 1
+            }
+        ],
+        "rewards": [
+            {
+                "type": "gold",
+                "amount": 500
+            },
+            {
+                "type": "experience",
+                "amount": 100
+            }
+        ],
+        "estimatedTime": 5,
+        "nextMissionId": 2
+    },
+    {
+        "id": 2,
+        "name": "First Line of Defense",
+        "description": "Train some basic infantry to protect your base.",
+        "imageUrl": "/images/missions/first_contact.png",
+        "category": "Tutorial",
+        "unlockLevel": 1,
+        "type": "tutorial",
+        "prerequisites": [1],
+        "requirementsToUnlock": [
+            {
+                "type": "mission",
+                "id": 1
+            },
+            {
+                "type": "unit",
+                "id": 1,
+                "amount": 3
+            }
+        ],
+        "objectives": [
+            {
+                "description": "Train 3 Troopers",
+                "type": "unit",
+                "targetId": 1,
+                "count": 3
+            }
+        ],
+        "rewards": [
+            {
+                "type": "gold",
+                "amount": 600
+            },
+            {
+                "type": "experience",
+                "amount": 150
+            }
+        ],
+        "estimatedTime": 10,
+        "previousMission": 1,
+        "nextMissionId": 3
+    },
+    {
+        "id": 3,
+        "name": "Resource Management",
+        "description": "Expand your resource production to grow your army and base.",
+        "imageUrl": "/images/missions/resource_rush.png",
+        "category": "Tutorial",
+        "unlockLevel": 2,
+        "type": "tutorial",
+        "prerequisites": [2],
+        "requirementsToUnlock": [
+            {
+                "type": "mission",
+                "id": 2
+            },
+            {
+                "type": "building",
+                "id": 2,
+                "amount": 1
+            }
+        ],
+        "objectives": [
+            {
+                "description": "Build 2 Gold Mines",
+                "type": "building",
+                "targetId": 3,
+                "count": 2
+            }
+        ],
+        "rewards": [
+            {
+                "type": "gold",
+                "amount": 800
+            },
+            {
+                "type": "experience",
+                "amount": 200
+            },
+            {
+                "type": "unlock",
+                "buildingId": 4
+            }
+        ],
+        "estimatedTime": 15,
+        "previousMission": 2,
+        "nextMissionId": 4
+    },
+    {
+        "id": 4,
+        "name": "Advanced Resources",
+        "description": "Obtain iron to produce advanced units and buildings.",
+        "imageUrl": "/images/missions/patrol.png",
+        "category": "Main",
+        "unlockLevel": 5,
+        "type": "main",
+        "prerequisites": [3],
+        "requirementsToUnlock": [
+            {
+                "type": "level",
+                "level": 5
+            },
+            {
+                "type": "unit",
+                "id": 2,
+                "amount": 2
+            }
+        ],
+        "objectives": [
+            {
+                "description": "Build an Iron Mine",
+                "type": "building",
+                "targetId": 4,
+                "count": 1
+            }
+        ],
+        "rewards": [
+            {
+                "type": "gold",
+                "amount": 1000
+            },
+            {
+                "type": "experience",
+                "amount": 300
+            },
+            {
+                "type": "unlock",
+                "buildingId": 5
+            }
+        ],
+        "estimatedTime": 20,
+        "previousMission": 3,
+        "nextMissionId": 5
+    },
+    {
+        "id": 5,
+        "name": "Armored Division",
+        "description": "Establish your vehicle production facilities to strengthen your army.",
+        "imageUrl": "/images/missions/patrol.png",
+        "category": "Main",
+        "unlockLevel": 10,
+        "type": "main",
+        "prerequisites": [4],
+        "requirementsToUnlock": [
+            {
+                "type": "level",
+                "level": 10
+            },
+            {
+                "type": "unit",
+                "id": 3,
+                "amount": 1
+            }
+        ],
+        "objectives": [
+            {
+                "description": "Build a Vehicle Factory",
+                "type": "building",
+                "targetId": 5,
+                "count": 1
+            },
+            {
+                "description": "Train a Light Tank",
+                "type": "unit",
+                "targetId": 3,
+                "count": 1
+            }
+        ],
+        "rewards": [
+            {
+                "type": "gold",
+                "amount": 2000
+            },
+            {
+                "type": "iron",
+                "amount": 500
+            },
+            {
+                "type": "experience",
+                "amount": 500
+            }
+        ],
+        "estimatedTime": 25
+    }
+]

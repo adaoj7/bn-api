@@ -1,35 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+    RouterProvider,
+    Navigate,
+    Outlet,
+    ScrollRestoration,
+} from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
+import UnitsPage from "./components/UnitsPage";
+import BuildingsPage from "./components/BuildingsPage";
+import MissionsPage from "./components/MissionsPage";
+import UnitDetail from "./components/UnitDetail";
+import BuildingDetail from "./components/BuildingDetail";
+import MissionDetail from "./components/MissionDetail";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
-function App() {
-  const [count, setCount] = useState(0)
+/**
+ * Root layout component that includes the navigation bar and main content area
+ */
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                staleTime: 60 * 1000, // 1 minute
+                refetchOnWindowFocus: false,
+            },
+        },
+    });
+
+    const router = createBrowserRouter(
+        createRoutesFromElements(
+            <Route element={<RootLayout />}>
+                <Route index element={<HomePage />} />
+                <Route path="units">
+                    <Route index element={<UnitsPage />} />
+                    <Route path=":id" element={<UnitDetail />} />
+                </Route>
+                <Route path="buildings">
+                    <Route index element={<BuildingsPage />} />
+                    <Route path=":id" element={<BuildingDetail />} />
+                </Route>
+                <Route path="missions">
+                    <Route index element={<MissionsPage />} />
+                    <Route path=":id" element={<MissionDetail />} />
+                </Route>
+                <Route path="*" element={<Navigate to="/" />} />
+            </Route>
+        )
+    );
+
+    return (
+        <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+        </QueryClientProvider>
+    );
 }
-
-export default App
+function RootLayout() {
+    return (
+        <ErrorBoundary>
+            <div className="flex flex-col min-h-screen">
+                <Navbar />
+                <main className="flex-grow container mx-auto p-4">
+                    <Outlet />
+                    <ScrollRestoration />
+                </main>
+                <footer className="bg-gray-800 text-white text-center py-4 mt-8">
+                    <div className="container mx-auto">
+                        <p>
+                            Battle Nations Database © {new Date().getFullYear()}
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </ErrorBoundary>
+    );
+}
