@@ -16,7 +16,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="bg-red-800 text-white shadow-md">
+        <nav className="bg-secondary text-white shadow-md">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-3">
                     <div className="flex items-center">
@@ -33,9 +33,7 @@ const Navbar = () => {
                                 to={link.path}
                                 className={({ isActive }) =>
                                     `py-2 px-3 rounded hover:bg-gray-700 transition-colors ${
-                                        isActive
-                                            ? "bg-gray-700 font-medium"
-                                            : ""
+                                        isActive ? "bg-primary font-medium" : ""
                                     }`
                                 }
                             >
@@ -86,9 +84,7 @@ const Navbar = () => {
                                 onClick={() => setIsMenuOpen(false)}
                                 className={({ isActive }) =>
                                     `block w-full text-left py-2 px-4 rounded hover:bg-gray-700 transition-colors ${
-                                        isActive
-                                            ? "bg-gray-700 font-medium"
-                                            : ""
+                                        isActive ? "bg-primary font-medium" : ""
                                     }`
                                 }
                             >

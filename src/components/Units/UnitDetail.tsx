@@ -1,24 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { useUnit } from "../hooks/useGameData";
-import { Resource, StatRange, DamageRange } from "../types/gameTypes";
-
-// Type guard function to check if a value is a StatRange
-function isStatRange(value: unknown): value is StatRange {
-    return (
-        value !== null &&
-        typeof value === "object" &&
-        "base" in (value as object)
-    );
-}
-
-// Type guard function to check if a value is a DamageRange
-function isDamageRange(value: unknown): value is DamageRange {
-    return (
-        value !== null &&
-        typeof value === "object" &&
-        "base" in (value as object)
-    );
-}
+import { useUnit } from "../../hooks/useGameData";
+import { Resource, Unit, UnitAction } from "../../types/gameTypes";
 
 /**
  * Component for displaying detailed information about a unit
@@ -30,6 +12,8 @@ const UnitDetail = () => {
 
     // Fetch unit data
     const { data: unit, isLoading, error } = useUnit(unitId);
+
+    console.log(unit);
 
     if (isLoading) {
         return (
@@ -63,16 +47,130 @@ const UnitDetail = () => {
         ));
     };
 
+    // Update the stats section to handle rank-based progression
+    const renderUnitStats = (unit: Unit) => {
+        const baseStats = unit.stats.ranks[0]; // Level 1 stats
+        return (
+            <div className="space-y-2">
+                <div className="flex">
+                    <span className="font-medium w-32">Health:</span>
+                    <span>{baseStats.health}</span>
+                </div>
+                <div className="flex">
+                    <span className="font-medium w-32">Defense:</span>
+                    <span>{baseStats.defense}</span>
+                </div>
+                <div className="flex">
+                    <span className="font-medium w-32">Dodge:</span>
+                    <span>{baseStats.dodge}</span>
+                </div>
+                <div className="flex">
+                    <span className="font-medium w-32">Bravery:</span>
+                    <span>{baseStats.bravery}</span>
+                </div>
+                <div className="flex">
+                    <span className="font-medium w-32">Range:</span>
+                    <span>{baseStats.range}</span>
+                </div>
+            </div>
+        );
+    };
+
+    // Update the actions section to handle the new structure
+    const renderAction = (action: UnitAction) => {
+        const baseRank = action.ranks[0];
+        return (
+            <div className="bg-gray-50 p-4 rounded-lg dark:bg-gray-700">
+                <div className="flex justify-between items-start">
+                    <h3 className="text-lg font-semibold mb-1">
+                        {action.name}
+                    </h3>
+                    {action.unlockRank && (
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded">
+                            Unlocks at Rank {action.unlockRank}
+                        </span>
+                    )}
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 mb-2">
+                    {action.description}
+                </p>
+                <div className="flex flex-wrap gap-4">
+                    {baseRank.damage && (
+                        <div>
+                            <span className="font-medium">Damage:</span>{" "}
+                            {baseRank.damage}
+                            {baseRank.hits && baseRank.hits > 1 && (
+                                <span className="text-gray-500">
+                                    {" "}
+                                    (x{baseRank.hits})
+                                </span>
+                            )}
+                        </div>
+                    )}
+                    {baseRank.offense && (
+                        <div>
+                            <span className="font-medium">Offense:</span>{" "}
+                            {baseRank.offense}
+                        </div>
+                    )}
+                    {baseRank.criticalChance && (
+                        <div>
+                            <span className="font-medium">Critical:</span>{" "}
+                            {baseRank.criticalChance}%
+                        </div>
+                    )}
+                    {action.ammo && (
+                        <div>
+                            <span className="font-medium">Ammo:</span>{" "}
+                            {action.ammo}/{action.ammoUsed}
+                        </div>
+                    )}
+                    {action.reloadTime && (
+                        <div>
+                            <span className="font-medium">Reload:</span>{" "}
+                            {action.reloadTime} turns
+                        </div>
+                    )}
+                    {action.cooldown && (
+                        <div>
+                            <span className="font-medium">Cooldown:</span>{" "}
+                            {action.cooldown} turns
+                        </div>
+                    )}
+                    {action.range && (
+                        <div>
+                            <span className="font-medium">Range:</span>{" "}
+                            {action.range}
+                        </div>
+                    )}
+                    {action.areaEffect && (
+                        <div>
+                            <span className="font-medium">Area Effect:</span>{" "}
+                            Yes
+                        </div>
+                    )}
+                </div>
+                {action.unlockCost && (
+                    <div className="mt-2 text-sm text-gray-500">
+                        <span className="font-medium">Unlock Cost:</span>{" "}
+                        {action.unlockCost.nanos} nanos,{" "}
+                        {action.unlockCost.time}
+                    </div>
+                )}
+            </div>
+        );
+    };
+
     return (
         <div>
             <Link
                 to="/units"
-                className="text-blue-500 hover:underline mb-4 inline-block"
+                className="text-primary hover:underline mb-4 inline-block"
             >
                 &larr; Back to Units
             </Link>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-800">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="p-6">
                     <div className="flex flex-col md:flex-row md:items-start gap-6 mb-4">
                         {/* Unit image */}
@@ -80,7 +178,7 @@ const UnitDetail = () => {
                             <img
                                 src={unit.imageUrl}
                                 alt={unit.name}
-                                className="w-32 h-32 object-contain rounded-lg bg-gray-100 dark:bg-gray-700"
+                                className="w-32 h-32 object-contain rounded-lg bg-gray-100"
                             />
                         </div>
 
@@ -89,17 +187,17 @@ const UnitDetail = () => {
                                 <h1 className="text-3xl font-bold">
                                     {unit.name}
                                 </h1>
-                                <span className="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                                <span className="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
                                     Level {unit.unlockLevel}
                                 </span>
                             </div>
 
-                            <p className="text-gray-700 dark:text-gray-300 mt-2">
+                            <p className="text-gray-700 mt-2">
                                 {unit.description}
                             </p>
 
                             {unit.motto && (
-                                <div className="mt-2 italic text-gray-600 dark:text-gray-400">
+                                <div className="mt-2 italic text-gray-600">
                                     "{unit.motto}"
                                 </div>
                             )}
@@ -108,7 +206,7 @@ const UnitDetail = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         {/* Basic information */}
-                        <div className="bg-gray-50 p-4 rounded-lg dark:bg-gray-700">
+                        <div className="bg-gray-50 p-4 rounded-lg">
                             <h2 className="text-xl font-semibold mb-3">
                                 Basic Information
                             </h2>
@@ -135,56 +233,11 @@ const UnitDetail = () => {
                         </div>
 
                         {/* Unit stats */}
-                        <div className="bg-gray-50 p-4 rounded-lg dark:bg-gray-700">
+                        <div className="bg-gray-50 p-4 rounded-lg">
                             <h2 className="text-xl font-semibold mb-3">
-                                Stats
+                                Base Stats
                             </h2>
-                            <div className="space-y-2">
-                                <div className="flex">
-                                    <span className="font-medium w-32">
-                                        Health:
-                                    </span>
-                                    <span>
-                                        {isStatRange(unit.stats.health)
-                                            ? unit.stats.health.base
-                                            : unit.stats.health}
-                                    </span>
-                                </div>
-                                <div className="flex">
-                                    <span className="font-medium w-32">
-                                        Attack:
-                                    </span>
-                                    <span>
-                                        {isStatRange(unit.stats.attack)
-                                            ? unit.stats.attack.base
-                                            : unit.stats.attack}
-                                    </span>
-                                </div>
-                                <div className="flex">
-                                    <span className="font-medium w-32">
-                                        Defense:
-                                    </span>
-                                    <span>
-                                        {isStatRange(unit.stats.defense)
-                                            ? unit.stats.defense.base
-                                            : unit.stats.defense}
-                                    </span>
-                                </div>
-                                <div className="flex">
-                                    <span className="font-medium w-32">
-                                        Range:
-                                    </span>
-                                    <span>{unit.stats.range}</span>
-                                </div>
-                                {unit.stats.movementSpeed && (
-                                    <div className="flex">
-                                        <span className="font-medium w-32">
-                                            Movement:
-                                        </span>
-                                        <span>{unit.stats.movementSpeed}</span>
-                                    </div>
-                                )}
-                            </div>
+                            {renderUnitStats(unit)}
                         </div>
                     </div>
 
@@ -205,45 +258,7 @@ const UnitDetail = () => {
                         <h2 className="text-xl font-semibold mb-3">Actions</h2>
                         <div className="space-y-4">
                             {unit.actions.map((action, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-gray-50 p-4 rounded-lg dark:bg-gray-700"
-                                >
-                                    <h3 className="text-lg font-semibold mb-1">
-                                        {action.name}
-                                    </h3>
-                                    <p className="text-gray-600 dark:text-gray-400 mb-2">
-                                        {action.description}
-                                    </p>
-                                    <div className="flex flex-wrap">
-                                        {action.damage && (
-                                            <div className="mr-4">
-                                                <span className="font-medium">
-                                                    Damage:
-                                                </span>{" "}
-                                                {isDamageRange(action.damage)
-                                                    ? action.damage.base
-                                                    : action.damage}
-                                            </div>
-                                        )}
-                                        {action.cooldown && (
-                                            <div className="mr-4">
-                                                <span className="font-medium">
-                                                    Cooldown:
-                                                </span>{" "}
-                                                {action.cooldown} turns
-                                            </div>
-                                        )}
-                                        {action.areaEffect && (
-                                            <div className="mr-4">
-                                                <span className="font-medium">
-                                                    Area Effect:
-                                                </span>{" "}
-                                                Yes
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
+                                <div key={index}>{renderAction(action)}</div>
                             ))}
                         </div>
                     </div>

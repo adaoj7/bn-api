@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useMissionsSearch } from "../hooks/useSearch";
-import { Mission } from "../types/gameTypes";
-import SearchBar from "./SearchBar";
-import FilterPanel from "./FilterPanel";
-import ItemList from "./ItemList";
+import { useUnitsSearch } from "../../hooks/useSearch";
+import { Unit } from "../../types/gameTypes";
+import SearchBar from "../SearchBar";
+import FilterPanel from "../FilterPanel";
+import ItemList from "../ItemList";
 
 /**
- * Missions page component for displaying and filtering missions
+ * Units page component for displaying and filtering units
  */
-const MissionsPage = () => {
+const UnitsPage = () => {
     // State for search and filter options
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategory, setSelectedCategory] = useState<
@@ -21,12 +21,12 @@ const MissionsPage = () => {
         undefined
     );
 
-    // Fetch and filter missions
+    // Fetch and filter units
     const {
-        data: missions,
+        data: units,
         isLoading,
         error,
-    } = useMissionsSearch({
+    } = useUnitsSearch({
         searchTerm,
         filterByCategory: selectedCategory,
         filterByType: selectedType,
@@ -35,33 +35,30 @@ const MissionsPage = () => {
         sortDirection: "asc",
     });
 
-    // Mission categories and types for filters
+    // Unit categories and types for filters
     const categoryOptions = [
-        { value: "Story", label: "Story" },
-        { value: "Side", label: "Side Quest" },
-        { value: "Tutorial", label: "Tutorial" },
-        { value: "Special", label: "Special Event" },
+        { value: "Infantry", label: "Infantry" },
+        { value: "Vehicles", label: "Vehicles" },
+        { value: "Air", label: "Air Units" },
+        { value: "Special", label: "Special Units" },
     ];
 
     const typeOptions = [
-        { value: "story", label: "Story" },
-        { value: "side", label: "Side Quest" },
+        { value: "infantry", label: "Infantry" },
+        { value: "vehicle", label: "Vehicle" },
+        { value: "air", label: "Air" },
         { value: "special", label: "Special" },
     ];
 
-    // Render additional mission info
-    const renderMissionInfo = (mission: Mission) => (
+    // Render additional unit info
+    const renderUnitInfo = (unit: Unit) => (
         <div className="flex justify-between text-sm">
             <div>
-                <span className="font-medium">Time:</span>{" "}
-                {mission.estimatedTime} min
+                <span className="font-medium">Health:</span>{" "}
+                {unit.stats.ranks[0].health}
             </div>
             <div>
-                <span className="font-medium">Rewards:</span>{" "}
-                {mission.rewards.length}
-            </div>
-            <div>
-                <span className="font-medium">Type:</span> {mission.type}
+                <span className="font-medium">Type:</span> {unit.type}
             </div>
         </div>
     );
@@ -69,16 +66,16 @@ const MissionsPage = () => {
     return (
         <div>
             <div className="mb-8">
-                <h1 className="text-3xl font-bold mb-2">Missions</h1>
-                <p className="text-gray-600 dark:text-gray-400">
-                    Browse all available missions in Battle Nations.
+                <h1 className="text-3xl font-bold mb-2">Units</h1>
+                <p className="text-lg">
+                    Browse all available units in Battle Nations.
                 </p>
             </div>
 
             <div className="mb-6">
                 <SearchBar
                     onSearch={setSearchTerm}
-                    placeholder="Search missions by name or description..."
+                    placeholder="Search units by name or description..."
                 />
             </div>
 
@@ -94,20 +91,18 @@ const MissionsPage = () => {
             />
 
             <div className="mb-4">
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Found {missions.length} missions
-                </p>
+                <p className="text-lg">Found {units.length} units</p>
             </div>
 
-            <ItemList<Mission>
-                items={missions}
-                basePath="/missions"
+            <ItemList<Unit>
+                items={units}
+                basePath="/units"
                 isLoading={isLoading}
                 error={error}
-                renderAdditionalInfo={renderMissionInfo}
+                renderAdditionalInfo={renderUnitInfo}
             />
         </div>
     );
 };
 
-export default MissionsPage;
+export default UnitsPage;

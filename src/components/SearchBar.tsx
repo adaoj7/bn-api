@@ -49,7 +49,7 @@ const SearchBar = ({
             </div>
             <input
                 type="search"
-                className="w-full p-3 pl-10 text-md border rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                className="w-full p-3 pl-10 text-md border rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder={placeholder}
                 value={searchTerm}
                 onChange={handleSearchChange}

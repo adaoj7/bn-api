@@ -48,7 +48,7 @@ const FilterPanel = ({
     };
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+        <div className="p-4 rounded-lg mb-6 bg-gray-300">
             <h3 className="text-lg font-semibold mb-4">Filters</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -62,7 +62,7 @@ const FilterPanel = ({
                     </label>
                     <select
                         id="category-filter"
-                        className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 dark:border-gray-600"
+                        className="w-full p-2 border rounded-md"
                         value={selectedCategory || ""}
                         onChange={handleCategoryChange}
                     >
@@ -85,7 +85,7 @@ const FilterPanel = ({
                     </label>
                     <select
                         id="type-filter"
-                        className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 dark:border-gray-600"
+                        className="w-full p-2 border rounded-md"
                         value={selectedType || ""}
                         onChange={handleTypeChange}
                     >
@@ -112,7 +112,7 @@ const FilterPanel = ({
                         min="1"
                         max="20"
                         step="1"
-                        className="w-full"
+                        className="w-full bg-white"
                         value={selectedLevel || 20}
                         onChange={handleLevelChange}
                     />

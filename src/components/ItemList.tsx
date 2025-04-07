@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { BaseGameItem } from "../types/gameTypes";
+import { Unit } from "../types/gameTypes";
 
-interface ItemListProps<T extends BaseGameItem> {
+interface ItemListProps<T extends Unit> {
     items: T[];
     basePath: string;
     isLoading: boolean;
@@ -12,7 +12,7 @@ interface ItemListProps<T extends BaseGameItem> {
 /**
  * Generic list component for displaying items
  */
-const ItemList = <T extends BaseGameItem>({
+const ItemList = <T extends Unit>({
     items,
     basePath,
     isLoading,
@@ -38,7 +38,7 @@ const ItemList = <T extends BaseGameItem>({
     if (items.length === 0) {
         return (
             <div className="text-center py-8">
-                <p className="text-lg text-gray-600 dark:text-gray-400">
+                <p className="text-lg">
                     No items found matching your criteria.
                 </p>
             </div>
@@ -51,15 +51,15 @@ const ItemList = <T extends BaseGameItem>({
                 <Link
                     key={item.id}
                     to={`${basePath}/${item.id}`}
-                    className="block bg-white border rounded-lg shadow hover:shadow-md transition-shadow overflow-hidden dark:bg-gray-700 dark:border-gray-600"
+                    className="card bg-white border rounded-lg shadow hover:shadow-md transition-shadow overflow-hidden"
                 >
-                    <div className="flex">
+                    <div className="flex card-body">
                         {/* Item image */}
                         <div className="w-24 h-24 flex-shrink-0">
                             <img
                                 src={item.imageUrl}
                                 alt={item.name}
-                                className="w-full h-full object-contain bg-gray-100 p-2 dark:bg-gray-800"
+                                className="w-full h-full object-contain p-2"
                             />
                         </div>
 
@@ -68,20 +68,20 @@ const ItemList = <T extends BaseGameItem>({
                                 <h3 className="text-lg font-semibold mb-2">
                                     {item.name}
                                 </h3>
-                                <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                                <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
                                     Level {item.unlockLevel}
                                 </span>
                             </div>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">
+                            <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                                 {item.description}
                             </p>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
+                            <div className="text-sm text-gray-500">
                                 {item.category}
                             </div>
 
                             {/* Optional additional information */}
                             {renderAdditionalInfo && (
-                                <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
+                                <div className="mt-3 pt-3 border-t border-gray-200">
                                     {renderAdditionalInfo(item)}
                                 </div>
                             )}

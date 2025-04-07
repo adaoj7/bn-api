@@ -31,7 +31,7 @@ const HomePage = () => {
 
     return (
         <div className="space-y-8">
-            <div className="text-center py-12 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+            <div className="text-center py-12 bg-gray-100 rounded-lg shadow-md">
                 <h1 className="text-4xl font-bold mb-4">
                     Battle Nations Database
                 </h1>
@@ -48,7 +48,7 @@ const HomePage = () => {
                         <NavLink
                             key={category.name}
                             to={category.path}
-                            className="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow dark:bg-gray-700"
+                            className="block p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
                         >
                             <div className="flex items-center mb-2">
                                 <span className="text-3xl mr-2">
@@ -58,7 +58,7 @@ const HomePage = () => {
                                     {category.name}
                                 </h3>
                             </div>
-                            <p className="text-gray-600 dark:text-gray-300">
+                            <p className="text-gray-600">
                                 {category.description}
                             </p>
                         </NavLink>
@@ -66,7 +66,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="bg-gray-100 p-6 rounded-lg dark:bg-gray-800">
+            <section className="bg-gray-100 p-6 rounded-lg ">
                 <h2 className="text-2xl font-bold mb-4">About</h2>
                 <p className="mb-4">
                     Battle Nations Database is a fan-made project designed to

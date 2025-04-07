@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { useUnits, useBuildings, useMissions } from "./useGameData";
-import { Unit, Building, Mission } from "../types/gameTypes";
+import { useUnits } from "./useGameData";
+import { Unit } from "../types/gameTypes";
 
 // Common search filter options interface
 interface SearchFilterOptions {
@@ -20,7 +20,7 @@ interface WithType {
 /**
  * Generic search and filter function
  */
-function applySearchAndFilters<T extends Unit | Building | Mission>(
+function applySearchAndFilters<T extends Unit>(
     items: T[] | undefined,
     options: SearchFilterOptions
 ): T[] {
@@ -85,7 +85,7 @@ function applySearchAndFilters<T extends Unit | Building | Mission>(
 }
 
 // Create a generic search hook to reduce code duplication
-function useGameSearch<T extends Unit | Building | Mission>(
+function useGameSearch<T extends Unit>(
     useDataHook: () => {
         data: T[] | undefined;
         isLoading: boolean;
@@ -112,18 +112,4 @@ function useGameSearch<T extends Unit | Building | Mission>(
  */
 export function useUnitsSearch(options: SearchFilterOptions) {
     return useGameSearch<Unit>(useUnits, options);
-}
-
-/**
- * Custom hook for searching and filtering buildings
- */
-export function useBuildingsSearch(options: SearchFilterOptions) {
-    return useGameSearch<Building>(useBuildings, options);
-}
-
-/**
- * Custom hook for searching and filtering missions
- */
-export function useMissionsSearch(options: SearchFilterOptions) {
-    return useGameSearch<Mission>(useMissions, options);
 }

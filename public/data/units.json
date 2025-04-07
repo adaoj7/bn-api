@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Trooper",
         "description": "The basic infantry unit of the Empire. Troopers compose the bulk of the Imperial Army's front-line forces. Operating under the motto of \"First in, Rarely Return,\" what these fresh recruits lack in experience and survivability, they make up for with complete devotion to the Emperor. Armed with the venerable M-11 Battle Rifle, known for its rugged reliability and long-range accuracy.",
-        "imageUrl": "/images/units/Trooper_icon.webp",
+        "imageUrl": "/data/images/units/Trooper_icon.webp",
         "category": "Soldier",
         "unlockLevel": 1,
         "type": "infantry",
@@ -20,63 +20,201 @@
             }
         ],
         "stats": {
-            "health": {
-                "base": 55,
-                "maxRank": 85
-            },
-            "attack": {
-                "base": 22,
-                "maxRank": 39
-            },
-            "defense": {
-                "base": 50,
-                "maxRank": 75
-            },
-            "dodge": {
-                "base": 20,
-                "maxRank": 45
-            },
-            "bravery": {
-                "base": 15,
-                "maxRank": 31
-            },
-            "range": 2
+            "ranks": [
+                {
+                    "level": 1,
+                    "health": 55,
+                    "bravery": 15,
+                    "defense": 50,
+                    "dodge": 20,
+                    "abilitySlots": 1,
+                    "range": 2,
+                    "pvpValue": 4,
+                    "sp": 16,
+                    "gold": 80,
+                    "promotion": 0
+                },
+                {
+                    "level": 2,
+                    "health": 60,
+                    "bravery": 20,
+                    "defense": 55,
+                    "dodge": 25,
+                    "abilitySlots": 1,
+                    "range": 2,
+                    "pvpValue": 5,
+                    "sp": 20,
+                    "gold": 100,
+                    "promotion": 300
+                },
+                {
+                    "level": 3,
+                    "health": 65,
+                    "bravery": 25,
+                    "defense": 60,
+                    "dodge": 30,
+                    "abilitySlots": 1,
+                    "range": 2,
+                    "pvpValue": 7,
+                    "sp": 28,
+                    "gold": 140,
+                    "promotion": 700
+                },
+                {
+                    "level": 4,
+                    "health": 70,
+                    "bravery": 30,
+                    "defense": 65,
+                    "dodge": 35,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 9,
+                    "sp": 38,
+                    "gold": 192,
+                    "promotion": 1400
+                },
+                {
+                    "level": 5,
+                    "health": 75,
+                    "bravery": 30,
+                    "defense": 70,
+                    "dodge": 40,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 11,
+                    "sp": 46,
+                    "gold": 234,
+                    "promotion": 2200
+                },
+                {
+                    "level": 6,
+                    "health": 85,
+                    "bravery": 31,
+                    "defense": 75,
+                    "dodge": 45,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 14,
+                    "sp": 57,
+                    "gold": 286,
+                    "promotion": 3200
+                }
+            ]
         },
         "actions": [
             {
                 "name": "Battle Rifle",
                 "description": "Standard attack with the M-11 Battle Rifle",
-                "damage": {
-                    "base": "22-26",
-                    "maxRank": "33-39"
-                },
-                "accuracy": {
-                    "base": 46,
-                    "maxRank": 71
-                },
-                "criticalChance": 5,
+                "type": "Direct",
                 "ammo": 3,
+                "ammoUsed": 1,
                 "reloadTime": 3,
                 "cooldown": 1,
-                "range": "1-2"
+                "range": "1-2",
+                "suppressionMod": 0,
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 1,
+                        "damage": "22-26",
+                        "offense": 46,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 2,
+                        "damage": "24-28",
+                        "offense": 51,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 3,
+                        "damage": "26-31",
+                        "offense": 56,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 4,
+                        "damage": "28-33",
+                        "offense": 61,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "30-36",
+                        "offense": 66,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 6,
+                        "damage": "33-39",
+                        "offense": 71,
+                        "criticalChance": 5
+                    }
+                ]
             },
             {
                 "name": "Double Shot",
                 "description": "Fire two shots in quick succession with reduced accuracy",
+                "type": "Direct",
                 "unlockRank": 4,
-                "damage": {
-                    "base": "28-33",
-                    "maxRank": "33-39",
-                    "hits": 2
-                },
-                "accuracy": {
-                    "base": 49,
-                    "maxRank": 59
-                },
-                "criticalChance": 5,
                 "ammo": 2,
+                "ammoUsed": 2,
+                "reloadTime": 3,
                 "cooldown": 1,
-                "range": "1-2"
+                "range": "1-2",
+                "suppressionMod": 0,
+                "unlockCost": {
+                    "time": "1h 12m",
+                    "nanos": 10
+                },
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 4,
+                        "damage": "28-33",
+                        "hits": 2,
+                        "offense": 49,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "30-36",
+                        "hits": 2,
+                        "offense": 54,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 6,
+                        "damage": "33-39",
+                        "hits": 2,
+                        "offense": 59,
+                        "criticalChance": 5
+                    }
+                ]
             }
         ],
         "specialAbilities": [
@@ -126,102 +264,254 @@
     },
     {
         "id": 2,
-        "name": "Gunner",
-        "description": "Heavy infantry unit equipped with a machine gun. Gunners excel at laying down suppressing fire to keep enemy forces at bay.",
-        "imageUrl": "/images/units/gunner.png",
+        "name": "Shock Trooper",
+        "description": "The Shock Trooper is a powerful unit that costs 2x a tank to produce and is the game's premier shock unit. Armed with a devastating short-range weapon, the Shock Trooper excels at close-quarters combat.",
+        "imageUrl": "/data/images/units/Shocktrooper_icon.webp",
         "category": "Soldier",
-        "unlockLevel": 5,
         "type": "infantry",
+        "unlockLevel": 4,
         "productionTime": 60,
         "cost": [
             {
                 "type": "gold",
-                "amount": 250
+                "amount": 475
             },
             {
                 "type": "iron",
-                "amount": 50
+                "amount": 250
             }
         ],
         "stats": {
-            "health": 150,
-            "attack": 25,
-            "defense": 10,
-            "range": 3
+            "ranks": [
+                {
+                    "level": 1,
+                    "health": 85,
+                    "bravery": 30,
+                    "defense": 65,
+                    "dodge": 15,
+                    "abilitySlots": 1,
+                    "range": 1,
+                    "pvpValue": 8,
+                    "sp": 20,
+                    "gold": 140
+                },
+                {
+                    "level": 2,
+                    "health": 95,
+                    "bravery": 35,
+                    "defense": 70,
+                    "dodge": 20,
+                    "abilitySlots": 1,
+                    "range": 1,
+                    "pvpValue": 10,
+                    "sp": 32,
+                    "gold": 182
+                },
+                {
+                    "level": 3,
+                    "health": 105,
+                    "bravery": 40,
+                    "defense": 75,
+                    "dodge": 25,
+                    "abilitySlots": 1,
+                    "range": 1,
+                    "pvpValue": 13,
+                    "sp": 44,
+                    "gold": 224
+                },
+                {
+                    "level": 4,
+                    "health": 115,
+                    "bravery": 45,
+                    "defense": 80,
+                    "dodge": 30,
+                    "abilitySlots": 2,
+                    "range": 1,
+                    "pvpValue": 16,
+                    "sp": 56,
+                    "gold": 266
+                },
+                {
+                    "level": 5,
+                    "health": 125,
+                    "bravery": 50,
+                    "defense": 85,
+                    "dodge": 35,
+                    "abilitySlots": 2,
+                    "range": 1,
+                    "pvpValue": 19,
+                    "sp": 68,
+                    "gold": 308
+                }
+            ]
         },
         "actions": [
             {
-                "name": "Machine Gun",
-                "description": "Rapid fire attack that hits multiple times",
-                "damage": 8
+                "name": "Submachine Gun",
+                "description": "Short-range burst fire attack",
+                "type": "Direct",
+                "ammo": 3,
+                "ammoUsed": 1,
+                "reloadTime": 3,
+                "cooldown": 1,
+                "range": "1",
+                "suppressionMod": 0,
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 1,
+                        "damage": "19-23",
+                        "hits": 3,
+                        "offense": 45,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 2,
+                        "damage": "20-24",
+                        "hits": 3,
+                        "offense": 50,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 3,
+                        "damage": "22-26",
+                        "hits": 3,
+                        "offense": 55,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 4,
+                        "damage": "24-28",
+                        "hits": 3,
+                        "offense": 60,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "26-30",
+                        "hits": 3,
+                        "offense": 65,
+                        "criticalChance": 5
+                    }
+                ]
             },
             {
-                "name": "Suppressing Fire",
-                "description": "Area attack that reduces enemy movement",
-                "damage": 15,
-                "cooldown": 3,
-                "areaEffect": true
+                "name": "Double Shot",
+                "description": "Fire two shots in quick succession with reduced accuracy",
+                "type": "Direct",
+                "unlockRank": 4,
+                "ammo": 2,
+                "ammoUsed": 2,
+                "reloadTime": 3,
+                "cooldown": 1,
+                "range": "1-2",
+                "suppressionMod": 0,
+                "unlockCost": {
+                    "time": "1h 12m",
+                    "nanos": 10
+                },
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 4,
+                        "damage": "28-33",
+                        "hits": 2,
+                        "offense": 49,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "30-36",
+                        "hits": 2,
+                        "offense": 54,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 6,
+                        "damage": "33-39",
+                        "hits": 2,
+                        "offense": 59,
+                        "criticalChance": 5
+                    }
+                ]
             }
         ],
-        "specialAbilities": ["Increased damage against vehicles"]
+        "specialAbilities": [
+            "Triple shot burst fire",
+            "Excellent against infantry",
+            "High health and defense",
+            "Close combat specialist"
+        ],
+        "ranks": {
+            "total": 5,
+            "promotionCosts": [
+                null,
+                {
+                    "gold": 432,
+                    "time": "12h",
+                    "sp": 240
+                },
+                {
+                    "gold": 1648,
+                    "iron": 600,
+                    "bars": 2,
+                    "time": "1d",
+                    "sp": 650
+                },
+                {
+                    "gold": 4832,
+                    "iron": 1175,
+                    "bars": 6,
+                    "time": "2d",
+                    "sp": 1275
+                },
+                {
+                    "gold": 41860,
+                    "iron": 5100,
+                    "laurels": 2,
+                    "time": "2d",
+                    "sp": 15000
+                }
+            ]
+        }
     },
     {
         "id": 3,
-        "name": "Light Tank",
-        "description": "Fast-moving armored vehicle with medium firepower. The backbone of the Imperial Army's mechanized forces.",
-        "imageUrl": "/images/units/light_tank.png",
-        "category": "Vehicles",
-        "unlockLevel": 10,
-        "type": "vehicle",
-        "productionTime": 120,
-        "cost": [
-            {
-                "type": "gold",
-                "amount": 500
-            },
-            {
-                "type": "iron",
-                "amount": 200
-            },
-            {
-                "type": "oil",
-                "amount": 100
-            }
-        ],
-        "stats": {
-            "health": 300,
-            "attack": 40,
-            "defense": 30,
-            "range": 4,
-            "movementSpeed": 3
-        },
-        "actions": [
-            {
-                "name": "Cannon Shot",
-                "description": "Powerful cannon attack",
-                "damage": 40
-            },
-            {
-                "name": "Machine Gun Burst",
-                "description": "Attack that's effective against infantry",
-                "damage": 25,
-                "cooldown": 1
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Sniper",
-        "description": "Specialized marksman with extreme range and precision. Snipers excel at taking out high-value targets from a distance.",
-        "imageUrl": "/images/units/sniper.png",
+        "name": "Grenadier",
+        "description": "A specialist unit armed with grenades and other explosives. Excels at area damage and crowd control.",
+        "imageUrl": "/data/images/units/Grenadier_icon.webp",
         "category": "Soldier",
-        "unlockLevel": 15,
         "type": "infantry",
-        "productionTime": 90,
+        "unlockLevel": 6,
+        "productionTime": 45,
         "cost": [
             {
                 "type": "gold",
-                "amount": 300
+                "amount": 350
             },
             {
                 "type": "iron",
@@ -229,25 +519,351 @@
             }
         ],
         "stats": {
-            "health": 75,
-            "attack": 65,
-            "defense": 5,
-            "range": 5
+            "ranks": [
+                {
+                    "level": 1,
+                    "health": 65,
+                    "bravery": 25,
+                    "defense": 55,
+                    "dodge": 15,
+                    "abilitySlots": 1,
+                    "range": 2,
+                    "pvpValue": 6,
+                    "sp": 18,
+                    "gold": 120
+                },
+                {
+                    "level": 2,
+                    "health": 70,
+                    "bravery": 30,
+                    "defense": 60,
+                    "dodge": 20,
+                    "abilitySlots": 1,
+                    "range": 2,
+                    "pvpValue": 8,
+                    "sp": 24,
+                    "gold": 160
+                },
+                {
+                    "level": 3,
+                    "health": 75,
+                    "bravery": 35,
+                    "defense": 65,
+                    "dodge": 25,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 10,
+                    "sp": 32,
+                    "gold": 200
+                },
+                {
+                    "level": 4,
+                    "health": 80,
+                    "bravery": 40,
+                    "defense": 70,
+                    "dodge": 30,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 12,
+                    "sp": 42,
+                    "gold": 240
+                },
+                {
+                    "level": 5,
+                    "health": 85,
+                    "bravery": 45,
+                    "defense": 75,
+                    "dodge": 35,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 14,
+                    "sp": 52,
+                    "gold": 280
+                },
+                {
+                    "level": 6,
+                    "health": 90,
+                    "bravery": 50,
+                    "defense": 80,
+                    "dodge": 40,
+                    "abilitySlots": 2,
+                    "range": 2,
+                    "pvpValue": 16,
+                    "sp": 62,
+                    "gold": 320
+                }
+            ]
         },
         "actions": [
             {
-                "name": "Precision Shot",
-                "description": "High-damage shot with excellent accuracy",
-                "damage": 65,
-                "cooldown": 1
+                "name": "Small Grenade",
+                "description": "Throws a grenade that deals area damage",
+                "type": "Direct",
+                "ammo": 3,
+                "ammoUsed": 1,
+                "reloadTime": 3,
+                "cooldown": 1,
+                "range": "1-2",
+                "suppressionMod": 0,
+                "areaEffect": true,
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 1,
+                        "damage": "24-28",
+                        "offense": 45,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 2,
+                        "damage": "26-30",
+                        "offense": 50,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 3,
+                        "damage": "28-32",
+                        "offense": 55,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 4,
+                        "damage": "30-34",
+                        "offense": 60,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "32-36",
+                        "offense": 65,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 6,
+                        "damage": "34-38",
+                        "offense": 70,
+                        "criticalChance": 5
+                    }
+                ]
             },
             {
-                "name": "Headshot",
-                "description": "Critical hit with chance of instant defeat",
-                "damage": 100,
-                "cooldown": 3
+                "name": "Flashbang",
+                "description": "Throws a flashbang that stuns enemies",
+                "type": "Direct",
+                "unlockRank": 2,
+                "ammo": 2,
+                "ammoUsed": 1,
+                "reloadTime": 3,
+                "cooldown": 2,
+                "range": "1-2",
+                "suppressionMod": 0,
+                "areaEffect": true,
+                "unlockCost": {
+                    "time": "45m",
+                    "nanos": 5
+                },
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 2,
+                        "damage": "16-20",
+                        "offense": 45,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 3,
+                        "damage": "18-22",
+                        "offense": 50,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 4,
+                        "damage": "20-24",
+                        "offense": 55,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "22-26",
+                        "offense": 60,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 6,
+                        "damage": "24-28",
+                        "offense": 65,
+                        "criticalChance": 5
+                    }
+                ]
+            },
+            {
+                "name": "Incendiary Grenade",
+                "description": "Throws an incendiary grenade that creates a burning area effect",
+                "type": "Direct",
+                "unlockRank": 4,
+                "ammo": 1,
+                "ammoUsed": 1,
+                "reloadTime": 3,
+                "cooldown": 3,
+                "range": "1-2",
+                "suppressionMod": 0,
+                "areaEffect": true,
+                "unlockCost": {
+                    "time": "1h 30m",
+                    "nanos": 12
+                },
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 4,
+                        "damage": "22-26",
+                        "offense": 50,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 5,
+                        "damage": "24-28",
+                        "offense": 55,
+                        "criticalChance": 5
+                    },
+                    {
+                        "level": 6,
+                        "damage": "26-30",
+                        "offense": 60,
+                        "criticalChance": 5
+                    }
+                ]
+            },
+            {
+                "name": "Handful of Grenades",
+                "description": "Throws multiple grenades in quick succession",
+                "type": "Direct",
+                "unlockRank": 3,
+                "ammo": 1,
+                "ammoUsed": 1,
+                "reloadTime": 3,
+                "cooldown": 3,
+                "range": "1-2",
+                "suppressionMod": 0,
+                "areaEffect": true,
+                "unlockCost": {
+                    "time": "1h",
+                    "nanos": 8
+                },
+                "targetableTypes": {
+                    "Soldier": true,
+                    "Sniper": true,
+                    "Vehicle": true,
+                    "Tank": true,
+                    "Metal": true,
+                    "Critter": true,
+                    "Civilian": true,
+                    "Air": false,
+                    "LTA": false,
+                    "Sea": false,
+                    "Ship": false
+                },
+                "ranks": [
+                    {
+                        "level": 3,
+                        "damage": "0",
+                        "offense": 50,
+                        "criticalChance": 0
+                    },
+                    {
+                        "level": 4,
+                        "damage": "0",
+                        "offense": 55,
+                        "criticalChance": 0
+                    },
+                    {
+                        "level": 5,
+                        "damage": "0",
+                        "offense": 60,
+                        "criticalChance": 0
+                    },
+                    {
+                        "level": 6,
+                        "damage": "0",
+                        "offense": 65,
+                        "criticalChance": 0
+                    }
+                ]
             }
         ],
-        "specialAbilities": ["Ignores partial cover", "Critical hit chance"]
+        "specialAbilities": [
+            "Area damage specialist",
+            "Multiple grenade types",
+            "Effective against groups",
+            "Can attack over obstacles"
+        ],
+        "ranks": {
+            "total": 6,
+            "promotionCosts": [
+                null,
+                {
+                    "gold": 432,
+                    "time": "12h",
+                    "sp": 240
+                },
+                {
+                    "gold": 1648,
+                    "iron": 600,
+                    "bars": 2,
+                    "time": "1d",
+                    "sp": 650
+                },
+                {
+                    "gold": 4832,
+                    "iron": 1175,
+                    "bars": 6,
+                    "time": "2d",
+                    "sp": 1275
+                },
+                {
+                    "gold": 41860,
+                    "iron": 5100,
+                    "laurels": 2,
+                    "time": "2d",
+                    "sp": 15000
+                }
+            ]
+        }
     }
 ]
