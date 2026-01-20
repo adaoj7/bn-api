@@ -21,6 +21,9 @@ const UnitsPage = () => {
         undefined
     );
 
+    const [sortBy, setSortBy] = useState<"unlockLevel" | "name">("unlockLevel");
+    const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
+
     // Fetch and filter units
     const {
         data: units,
@@ -31,8 +34,8 @@ const UnitsPage = () => {
         filterByCategory: selectedCategory,
         filterByType: selectedType,
         filterByLevel: selectedLevel,
-        sortBy: "name",
-        sortDirection: "asc",
+        sortBy,
+        sortDirection,
     });
 
     // Unit categories and types for filters
@@ -58,7 +61,7 @@ const UnitsPage = () => {
                 {unit.stats.ranks[0].health}
             </div>
             <div>
-                <span className="font-medium">Type:</span> {unit.type}
+                <span className="font-medium">Type:</span> {unit.unitType}
             </div>
         </div>
     );
@@ -88,6 +91,10 @@ const UnitsPage = () => {
                 selectedCategory={selectedCategory}
                 selectedType={selectedType}
                 selectedLevel={selectedLevel}
+                sortBy={sortBy}
+                sortDirection={sortDirection}
+                onSortByChange={setSortBy}
+                onSortDirectionChange={setSortDirection}
             />
 
             <div className="mb-4">
@@ -100,6 +107,8 @@ const UnitsPage = () => {
                 isLoading={isLoading}
                 error={error}
                 renderAdditionalInfo={renderUnitInfo}
+                sortBy={sortBy}   
+                sortDirection={sortDirection}
             />
         </div>
     );

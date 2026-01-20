@@ -7,6 +7,8 @@ interface ItemListProps<T extends Unit> {
     isLoading: boolean;
     error: Error | null;
     renderAdditionalInfo?: (item: T) => React.ReactNode;
+    sortBy: "unlockLevel" | "name";
+    sortDirection: "asc" | "desc";
 }
 
 /**
@@ -18,6 +20,8 @@ const ItemList = <T extends Unit>({
     isLoading,
     error,
     renderAdditionalInfo,
+    sortBy,
+    sortDirection,
 }: ItemListProps<T>) => {
     if (isLoading) {
         return (
@@ -47,7 +51,13 @@ const ItemList = <T extends Unit>({
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((item) => (
+            {items.sort((a, b) => {
+                if (sortBy === "unlockLevel") {
+                    return sortDirection === "asc" ? a.unlockLevel - b.unlockLevel : b.unlockLevel - a.unlockLevel;
+                } else {
+                    return sortDirection === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+                }
+            }).map((item) => (
                 <Link
                     key={item.id}
                     to={`${basePath}/${item.id}`}

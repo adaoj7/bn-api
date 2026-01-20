@@ -14,6 +14,10 @@ interface FilterPanelProps {
     selectedCategory?: string;
     selectedType?: string;
     selectedLevel?: number;
+    sortBy: "unlockLevel" | "name";
+    sortDirection: "asc" | "desc";
+    onSortByChange: (sortBy: "unlockLevel" | "name") => void;
+    onSortDirectionChange: (direction: "asc" | "desc") => void;
 }
 
 /**
@@ -28,6 +32,10 @@ const FilterPanel = ({
     selectedCategory,
     selectedType,
     selectedLevel,
+    sortBy,
+    sortDirection,
+    onSortByChange,
+    onSortDirectionChange,
 }: FilterPanelProps) => {
     // Handle category filter change
     const handleCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -47,11 +55,13 @@ const FilterPanel = ({
         onLevelChange(value === "" ? undefined : parseInt(value, 10));
     };
 
+
+
     return (
         <div className="p-4 rounded-lg mb-6 bg-gray-300">
             <h3 className="text-lg font-semibold mb-4">Filters</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {/* Category filter */}
                 <div>
                     <label
@@ -110,12 +120,50 @@ const FilterPanel = ({
                         id="level-filter"
                         type="range"
                         min="1"
-                        max="20"
+                        max="75"
                         step="1"
                         className="w-full bg-white"
-                        value={selectedLevel || 20}
+                        value={selectedLevel || 75}
                         onChange={handleLevelChange}
                     />
+                </div>
+
+                {/* Sort by */}
+                <div>
+                    <label
+                        htmlFor="sort-by"
+                        className="block mb-2 text-sm font-medium"
+                    >
+                        Sort By
+                    </label>
+                    <select
+                        id="sort-by"
+                        className="w-full p-2 border rounded-md"
+                        value={sortBy}
+                        onChange={(e) => onSortByChange(e.target.value as "unlockLevel" | "name")}
+                    >
+                        <option value="unlockLevel">Unlock Level</option>
+                        <option value="name">Name</option>
+                    </select>
+                </div>
+
+                {/* Sort direction */}
+                <div>
+                    <label
+                        htmlFor="sort-direction"
+                        className="block mb-2 text-sm font-medium"
+                    >
+                        Direction
+                    </label>
+                    <select
+                        id="sort-direction"
+                        className="w-full p-2 border rounded-md"
+                        value={sortDirection}
+                        onChange={(e) => onSortDirectionChange(e.target.value as "asc" | "desc")}
+                    >
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
                 </div>
             </div>
         </div>

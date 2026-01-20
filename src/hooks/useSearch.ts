@@ -8,7 +8,7 @@ interface SearchFilterOptions {
     filterByCategory?: string;
     filterByType?: string;
     filterByLevel?: number;
-    sortBy?: string;
+    sortBy?: "unlockLevel" | "name";
     sortDirection?: "asc" | "desc";
 }
 

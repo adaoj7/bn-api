@@ -1,6 +1,28 @@
 import { useParams, Link } from "react-router-dom";
 import { useUnit } from "../../hooks/useGameData";
-import { Resource, Unit, UnitAction } from "../../types/gameTypes";
+import { Resource, Unit, UnitAction, NumericRange } from "../../types/gameTypes";
+
+// Helper to format NumericRange as string
+const formatRange = (range: NumericRange): string => {
+    if (range.min === range.max) {
+        return String(range.min);
+    }
+    return `${range.min}-${range.max}`;
+};
+
+// Helper to format seconds as human-readable time
+const formatTime = (seconds: number): string => {
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+
+    const parts: string[] = [];
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    if (minutes > 0) parts.push(`${minutes}m`);
+
+    return parts.length > 0 ? parts.join(" ") : "0m";
+};
 
 /**
  * Component for displaying detailed information about a unit
@@ -98,7 +120,7 @@ const UnitDetail = () => {
                     {baseRank.damage && (
                         <div>
                             <span className="font-medium">Damage:</span>{" "}
-                            {baseRank.damage}
+                            {formatRange(baseRank.damage)}
                             {baseRank.hits && baseRank.hits > 1 && (
                                 <span className="text-gray-500">
                                     {" "}
@@ -140,7 +162,7 @@ const UnitDetail = () => {
                     {action.range && (
                         <div>
                             <span className="font-medium">Range:</span>{" "}
-                            {action.range}
+                            {formatRange(action.range)}
                         </div>
                     )}
                     {action.areaEffect && (
@@ -154,7 +176,7 @@ const UnitDetail = () => {
                     <div className="mt-2 text-sm text-gray-500">
                         <span className="font-medium">Unlock Cost:</span>{" "}
                         {action.unlockCost.nanos} nanos,{" "}
-                        {action.unlockCost.time}
+                        {formatTime(action.unlockCost.time)}
                     </div>
                 )}
             </div>
@@ -221,13 +243,13 @@ const UnitDetail = () => {
                                     <span className="font-medium w-32">
                                         Type:
                                     </span>
-                                    <span>{unit.type}</span>
+                                    <span>{unit.unitType}</span>
                                 </div>
                                 <div className="flex">
                                     <span className="font-medium w-32">
                                         Production Time:
                                     </span>
-                                    <span>{unit.productionTime} seconds</span>
+                                    <span>{formatTime(unit.productionTime)}</span>
                                 </div>
                             </div>
                         </div>
