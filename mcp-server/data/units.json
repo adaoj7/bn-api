@@ -26903,7 +26903,21 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 32040
+              },
+              {
+                "type": "steel",
+                "amount": 4200
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -26916,7 +26930,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 86304
+              },
+              {
+                "type": "steel",
+                "amount": 5475
+              },
+              {
+                "type": "gears",
+                "amount": 8
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -26929,7 +26961,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 208976
+              },
+              {
+                "type": "steel",
+                "amount": 6875
+              },
+              {
+                "type": "gears",
+                "amount": 23
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -26942,7 +26992,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 392928
+              },
+              {
+                "type": "steel",
+                "amount": 8450
+              },
+              {
+                "type": "widgets",
+                "amount": 6
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -27211,7 +27279,21 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 35536
+              },
+              {
+                "type": "steel",
+                "amount": 5475
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -27224,7 +27306,25 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 90936
+              },
+              {
+                "type": "steel",
+                "amount": 6875
+              },
+              {
+                "type": "gears",
+                "amount": 9
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -27237,7 +27337,25 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 221240
+              },
+              {
+                "type": "steel",
+                "amount": 8450
+              },
+              {
+                "type": "gears",
+                "amount": 26
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -27250,7 +27368,25 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 522045
+              },
+              {
+                "type": "steel",
+                "amount": 10200
+              },
+              {
+                "type": "widgets",
+                "amount": 6
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -27432,7 +27568,21 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 65936
+              },
+              {
+                "type": "steel",
+                "amount": 7605
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -27445,7 +27595,25 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 168368
+              },
+              {
+                "type": "steel",
+                "amount": 9180
+              },
+              {
+                "type": "gears",
+                "amount": 11
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -27458,7 +27626,25 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 408976
+              },
+              {
+                "type": "steel",
+                "amount": 10890
+              },
+              {
+                "type": "gears",
+                "amount": 31
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -27471,7 +27657,25 @@
           "range": 2,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 770972
+              },
+              {
+                "type": "steel",
+                "amount": 12735
+              },
+              {
+                "type": "widgets",
+                "amount": 8
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -27656,7 +27860,21 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 65424
+              },
+              {
+                "type": "steel",
+                "amount": 9832
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -27669,7 +27887,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 169312
+              },
+              {
+                "type": "steel",
+                "amount": 11610
+              },
+              {
+                "type": "gears",
+                "amount": 13
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -27682,7 +27918,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 415712
+              },
+              {
+                "type": "steel",
+                "amount": 13522
+              },
+              {
+                "type": "gears",
+                "amount": 34
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -27695,7 +27949,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 790620
+              },
+              {
+                "type": "steel",
+                "amount": 15592
+              },
+              {
+                "type": "widgets",
+                "amount": 8
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -27876,7 +28148,21 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 74848
+              },
+              {
+                "type": "steel",
+                "amount": 10192
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -27889,7 +28175,25 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 191128
+              },
+              {
+                "type": "steel",
+                "amount": 11970
+              },
+              {
+                "type": "gears",
+                "amount": 13
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -27902,7 +28206,25 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 464240
+              },
+              {
+                "type": "steel",
+                "amount": 13927
+              },
+              {
+                "type": "gears",
+                "amount": 35
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -27915,7 +28237,25 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 875156
+              },
+              {
+                "type": "steel",
+                "amount": 16020
+              },
+              {
+                "type": "widgets",
+                "amount": 8
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -28102,7 +28442,21 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 114048
+              },
+              {
+                "type": "steel",
+                "amount": 18275
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -28115,7 +28469,25 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 285592
+              },
+              {
+                "type": "steel",
+                "amount": 20800
+              },
+              {
+                "type": "gears",
+                "amount": 16
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -28128,7 +28500,25 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 700512
+              },
+              {
+                "type": "steel",
+                "amount": 23475
+              },
+              {
+                "type": "gears",
+                "amount": 43
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -28141,7 +28531,25 @@
           "range": 5,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 1331192
+              },
+              {
+                "type": "steel",
+                "amount": 26325
+              },
+              {
+                "type": "widgets",
+                "amount": 9
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -28338,7 +28746,21 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 68608
+              },
+              {
+                "type": "steel",
+                "amount": 13725
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -28351,7 +28773,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 171352
+              },
+              {
+                "type": "steel",
+                "amount": 15925
+              },
+              {
+                "type": "gears",
+                "amount": 14
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -28364,7 +28804,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 424344
+              },
+              {
+                "type": "steel",
+                "amount": 18275
+              },
+              {
+                "type": "gears",
+                "amount": 38
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -28377,7 +28835,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 981950
+              },
+              {
+                "type": "steel",
+                "amount": 20800
+              },
+              {
+                "type": "widgets",
+                "amount": 7
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -28636,7 +29112,21 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 77960
+              },
+              {
+                "type": "steel",
+                "amount": 13725
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -28649,7 +29139,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 207048
+              },
+              {
+                "type": "steel",
+                "amount": 15925
+              },
+              {
+                "type": "gears",
+                "amount": 14
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -28662,7 +29170,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 502928
+              },
+              {
+                "type": "steel",
+                "amount": 18275
+              },
+              {
+                "type": "gears",
+                "amount": 38
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -28675,7 +29201,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 948088
+              },
+              {
+                "type": "steel",
+                "amount": 20800
+              },
+              {
+                "type": "widgets",
+                "amount": 6
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -28942,7 +29486,21 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 96232
+              },
+              {
+                "type": "steel",
+                "amount": 8527
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -28955,7 +29513,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 250912
+              },
+              {
+                "type": "steel",
+                "amount": 10192
+              },
+              {
+                "type": "gears",
+                "amount": 12
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -28968,7 +29544,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 606208
+              },
+              {
+                "type": "steel",
+                "amount": 11970
+              },
+              {
+                "type": "gears",
+                "amount": 32
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -28981,7 +29575,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 1137704
+              },
+              {
+                "type": "steel",
+                "amount": 13927
+              },
+              {
+                "type": "widgets",
+                "amount": 8
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -29254,7 +29866,21 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 119120
+              },
+              {
+                "type": "steel",
+                "amount": 8842
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -29267,7 +29893,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 297512
+              },
+              {
+                "type": "steel",
+                "amount": 10530
+              },
+              {
+                "type": "gears",
+                "amount": 12
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -29280,7 +29924,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 723136
+              },
+              {
+                "type": "steel",
+                "amount": 12352
+              },
+              {
+                "type": "gears",
+                "amount": 33
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -29293,7 +29955,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 1340420
+              },
+              {
+                "type": "steel",
+                "amount": 14332
+              },
+              {
+                "type": "widgets",
+                "amount": 8
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -29545,7 +30225,21 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 14400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 19856
+              },
+              {
+                "type": "steel",
+                "amount": 6575
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 3,
@@ -29558,7 +30252,21 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 57536
+              },
+              {
+                "type": "steel",
+                "amount": 8125
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -29571,7 +30279,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 148912
+              },
+              {
+                "type": "steel",
+                "amount": 9825
+              },
+              {
+                "type": "gears",
+                "amount": 11
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -29584,7 +30310,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 365624
+              },
+              {
+                "type": "steel",
+                "amount": 11700
+              },
+              {
+                "type": "gears",
+                "amount": 30
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -29597,7 +30341,25 @@
           "range": 4,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 695364
+              },
+              {
+                "type": "steel",
+                "amount": 13725
+              },
+              {
+                "type": "widgets",
+                "amount": 6
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
@@ -30600,7 +31362,21 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 14400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 20648
+              },
+              {
+                "type": "steel",
+                "amount": 5200
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 3,
@@ -30613,7 +31389,21 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 43200,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 61072
+              },
+              {
+                "type": "steel",
+                "amount": 6575
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 4,
@@ -30626,7 +31416,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 86400,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 155344
+              },
+              {
+                "type": "steel",
+                "amount": 8125
+              },
+              {
+                "type": "gears",
+                "amount": 10
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 5,
@@ -30639,7 +31447,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 376160
+              },
+              {
+                "type": "steel",
+                "amount": 9825
+              },
+              {
+                "type": "gears",
+                "amount": 28
+              }
+            ],
+            "sp": 0
+          }
         },
         {
           "level": 6,
@@ -30652,7 +31478,25 @@
           "range": 3,
           "pvpValue": 0,
           "spReward": 0,
-          "goldReward": 0
+          "goldReward": 0,
+          "promotionCost": {
+            "time": 172800,
+            "resources": [
+              {
+                "type": "gold",
+                "amount": 707272
+              },
+              {
+                "type": "steel",
+                "amount": 11700
+              },
+              {
+                "type": "widgets",
+                "amount": 7
+              }
+            ],
+            "sp": 0
+          }
         }
       ]
     },
