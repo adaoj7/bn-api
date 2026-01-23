@@ -1,0 +1,45 @@
+{
+  "name": "battle-nations-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Battle Nations unit database - query units, compare stats, find counters",
+  "main": "dist/index.js",
+  "bin": {
+    "battle-nations-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "keywords": [
+    "mcp",
+    "battle-nations",
+    "game-data",
+    "claude",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "uuid": "^11.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.0.0",
+    "tsup": "^8.0.0"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "NODE_ENV=development node dist/index.js",
+    "build": "npm run copy-data && tsup src/index.ts --format cjs --dts",
+    "build:dev": "tsup src/index.ts --format cjs",
+    "copy-data": "cp ../public/data/units.json ./data/units.json",
+    "prepublishOnly": "npm run build"
+  }
+}
