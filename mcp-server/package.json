@@ -37,7 +37,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "NODE_ENV=development node dist/index.js",
-    "build": "npm run copy-data && tsup src/index.ts --format cjs --dts",
+    "build": "npm run copy-data && tsup src/index.ts --format cjs",
     "build:dev": "tsup src/index.ts --format cjs",
     "copy-data": "cp ../public/data/units.json ./data/units.json",
     "prepublishOnly": "npm run build"

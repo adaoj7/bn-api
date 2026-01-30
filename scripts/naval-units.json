@@ -1,0 +1,746 @@
+[
+  {
+    "id": 110,
+    "name": "Gunboat",
+    "description": "The foundational navy unit for players entering naval warfare. Features anti-air capabilities and depth charges.",
+    "imageUrl": "/images/units/gunboat.png",
+    "category": "Naval",
+    "unitType": "gunboat-ship",
+    "affiliation": "Imperial",
+    "building": "Dry Dock",
+    "buildingLevel": 1,
+    "unlockLevel": 25,
+    "productionTime": 17280,
+    "cost": [
+      { "type": "Gold", "amount": 8000 },
+      { "type": "Lumber", "amount": 1000 },
+      { "type": "Steel", "amount": 500 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 8,
+    "immunities": ["Breach"],
+    "resistances": {
+      "hp": {
+        "depthCharge": 80,
+        "torpedo": 80
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 200, "defense": 60, "dodge": 30, "bravery": 20, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 230, "defense": 62, "dodge": 32, "bravery": 25, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 10528 }, { "type": "Steel", "amount": 2925 }], "time": 14400, "sp": 3500 } },
+        { "level": 3, "health": 265, "defense": 64, "dodge": 34, "bravery": 30, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 33160 }, { "type": "Steel", "amount": 3975 }], "time": 21600, "sp": 8000 } },
+        { "level": 4, "health": 300, "defense": 66, "dodge": 36, "bravery": 35, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 85000 }, { "type": "Steel", "amount": 5200 }, { "type": "Bars", "amount": 6 }], "time": 43200, "sp": 18000 } },
+        { "level": 5, "health": 340, "defense": 68, "dodge": 38, "bravery": 40, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 180000 }, { "type": "Steel", "amount": 6500 }, { "type": "Bars", "amount": 12 }], "time": 86400, "sp": 40000 } },
+        { "level": 6, "health": 385, "defense": 70, "dodge": 40, "bravery": 45, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 320000 }, { "type": "Steel", "amount": 7500 }, { "type": "Laurels", "amount": 2 }], "time": 172800, "sp": 85000 } },
+        { "level": 7, "health": 440, "defense": 72, "dodge": 42, "bravery": 50, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 480000 }, { "type": "Steel", "amount": 8500 }, { "type": "Widgets", "amount": 4 }], "time": 172800, "sp": 180000 } },
+        { "level": 8, "health": 500, "defense": 74, "dodge": 44, "bravery": 55, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 700000 }, { "type": "Steel", "amount": 10000 }, { "type": "Widgets", "amount": 6 }], "time": 172800, "sp": 350000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Incendiary Grenade",
+        "damageType": "Fire",
+        "lineOfFire": "Indirect",
+        "ammo": 2,
+        "ammoUsed": 1,
+        "reloadTime": 5,
+        "cooldown": 3,
+        "range": { "min": 1, "max": 5 },
+        "bonusCrit": { "Air": 60, "Sub": -20 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 49, "max": 67 }, "offense": 54, "criticalChance": 5, "hits": 3 },
+          { "level": 2, "damage": { "min": 60, "max": 82 }, "offense": 56, "criticalChance": 5, "hits": 3 },
+          { "level": 3, "damage": { "min": 72, "max": 98 }, "offense": 58, "criticalChance": 5, "hits": 3 },
+          { "level": 4, "damage": { "min": 83, "max": 113 }, "offense": 60, "criticalChance": 5, "hits": 3 },
+          { "level": 5, "damage": { "min": 94, "max": 129 }, "offense": 62, "criticalChance": 10, "hits": 3 },
+          { "level": 6, "damage": { "min": 106, "max": 144 }, "offense": 64, "criticalChance": 10, "hits": 3 },
+          { "level": 7, "damage": { "min": 117, "max": 160 }, "offense": 66, "criticalChance": 10, "hits": 3 },
+          { "level": 8, "damage": { "min": 128, "max": 175 }, "offense": 68, "criticalChance": 10, "hits": 3 }
+        ]
+      },
+      {
+        "name": "Rapid Fire",
+        "damageType": "Piercing",
+        "lineOfFire": "Direct",
+        "ammo": 3,
+        "ammoUsed": 1,
+        "reloadTime": 4,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 3 },
+        "bonusCrit": { "Air": 75 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": false, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 20, "max": 24 }, "offense": 54, "criticalChance": 5, "hits": 3 },
+          { "level": 2, "damage": { "min": 25, "max": 29 }, "offense": 56, "criticalChance": 5, "hits": 3 },
+          { "level": 3, "damage": { "min": 29, "max": 35 }, "offense": 58, "criticalChance": 5, "hits": 3 },
+          { "level": 4, "damage": { "min": 34, "max": 40 }, "offense": 60, "criticalChance": 5, "hits": 3 },
+          { "level": 5, "damage": { "min": 38, "max": 46 }, "offense": 62, "criticalChance": 10, "hits": 3 },
+          { "level": 6, "damage": { "min": 43, "max": 51 }, "offense": 64, "criticalChance": 10, "hits": 3 },
+          { "level": 7, "damage": { "min": 47, "max": 57 }, "offense": 66, "criticalChance": 10, "hits": 3 },
+          { "level": 8, "damage": { "min": 52, "max": 62 }, "offense": 68, "criticalChance": 10, "hits": 3 }
+        ]
+      },
+      {
+        "name": "Depth Charge",
+        "damageType": "DepthCharge",
+        "lineOfFire": "Indirect",
+        "unlockRank": 2,
+        "ammo": 1,
+        "ammoUsed": 1,
+        "reloadTime": 5,
+        "cooldown": 0,
+        "prepTime": 1,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 40,
+        "bonusCrit": { "Sub": 20 },
+        "unlockCost": { "time": 2880, "nanos": 25 },
+        "targetableTypes": { "Soldier": false, "Sniper": false, "Vehicle": false, "Tank": false, "Metal": false, "Critter": false, "Civilian": false, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 2, "damage": { "min": 89, "max": 109 }, "offense": 56, "criticalChance": 0 },
+          { "level": 3, "damage": { "min": 105, "max": 128 }, "offense": 58, "criticalChance": 0 },
+          { "level": 4, "damage": { "min": 121, "max": 148 }, "offense": 60, "criticalChance": 0 },
+          { "level": 5, "damage": { "min": 137, "max": 168 }, "offense": 62, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 153, "max": 187 }, "offense": 64, "criticalChance": 5 },
+          { "level": 7, "damage": { "min": 169, "max": 207 }, "offense": 66, "criticalChance": 5 },
+          { "level": 8, "damage": { "min": 201, "max": 246 }, "offense": 68, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Destroyer",
+    "description": "A naval warship featuring a gun turret and depth charge launcher. Versatile combat vessel that can target both surface and aerial threats.",
+    "imageUrl": "/images/units/destroyer.png",
+    "category": "Naval",
+    "unitType": "ship",
+    "affiliation": "Imperial",
+    "building": "Dry Dock",
+    "buildingLevel": 1,
+    "unlockLevel": 25,
+    "productionTime": 43200,
+    "cost": [
+      { "type": "Gold", "amount": 16000 },
+      { "type": "Steel", "amount": 1200 },
+      { "type": "Oil", "amount": 500 },
+      { "type": "Bars", "amount": 3 }
+    ],
+    "blocking": "Full",
+    "maxRank": 8,
+    "immunities": ["Poison"],
+    "resistances": {
+      "hp": {
+        "crushing": 100,
+        "depthCharge": 85,
+        "explosive": 80,
+        "piercing": 80,
+        "torpedo": 100
+      },
+      "armor": {
+        "crushing": 80,
+        "depthCharge": 85,
+        "explosive": 80,
+        "piercing": 75,
+        "torpedo": 105
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 260, "armor": 80, "defense": 45, "dodge": 25, "bravery": 20, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 290, "armor": 105, "defense": 47, "dodge": 27, "bravery": 25, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 15000 }, { "type": "Steel", "amount": 3500 }], "time": 14400, "sp": 4500 } },
+        { "level": 3, "health": 325, "armor": 130, "defense": 49, "dodge": 29, "bravery": 30, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 45000 }, { "type": "Steel", "amount": 4800 }], "time": 21600, "sp": 10000 } },
+        { "level": 4, "health": 360, "armor": 160, "defense": 51, "dodge": 31, "bravery": 35, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 110000 }, { "type": "Steel", "amount": 6200 }, { "type": "Bars", "amount": 8 }], "time": 43200, "sp": 22000 } },
+        { "level": 5, "health": 395, "armor": 195, "defense": 53, "dodge": 33, "bravery": 40, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 230000 }, { "type": "Steel", "amount": 7800 }, { "type": "Laurels", "amount": 2 }], "time": 86400, "sp": 48000 } },
+        { "level": 6, "health": 430, "armor": 225, "defense": 55, "dodge": 35, "bravery": 45, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 400000 }, { "type": "Steel", "amount": 9000 }, { "type": "Widgets", "amount": 3 }], "time": 172800, "sp": 100000 } },
+        { "level": 7, "health": 460, "armor": 255, "defense": 57, "dodge": 37, "bravery": 50, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 600000 }, { "type": "Steel", "amount": 10500 }, { "type": "Widgets", "amount": 5 }], "time": 172800, "sp": 210000 } },
+        { "level": 8, "health": 495, "armor": 285, "defense": 59, "dodge": 39, "bravery": 55, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 850000 }, { "type": "Steel", "amount": 12000 }, { "type": "Widgets", "amount": 7 }], "time": 172800, "sp": 420000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Targeted Shell",
+        "damageType": "Explosive",
+        "lineOfFire": "Direct",
+        "ammo": 4,
+        "ammoUsed": 1,
+        "reloadTime": 5,
+        "cooldown": 1,
+        "range": { "min": 1, "max": 3 },
+        "armorPiercing": 75,
+        "bonusCrit": { "Air": 60 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 64, "max": 96 }, "offense": 40, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 79, "max": 118 }, "offense": 42, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 93, "max": 140 }, "offense": 44, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 108, "max": 162 }, "offense": 46, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 123, "max": 184 }, "offense": 48, "criticalChance": 10 },
+          { "level": 6, "damage": { "min": 138, "max": 206 }, "offense": 50, "criticalChance": 10 },
+          { "level": 7, "damage": { "min": 152, "max": 229 }, "offense": 52, "criticalChance": 10 },
+          { "level": 8, "damage": { "min": 167, "max": 251 }, "offense": 54, "criticalChance": 10 }
+        ]
+      },
+      {
+        "name": "Dual Shell",
+        "damageType": "Explosive",
+        "lineOfFire": "Direct",
+        "ammo": 2,
+        "ammoUsed": 1,
+        "reloadTime": 5,
+        "cooldown": 0,
+        "range": { "min": 1, "max": 3 },
+        "armorPiercing": 75,
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 50, "max": 61 }, "offense": 40, "criticalChance": 5, "hits": 2 },
+          { "level": 2, "damage": { "min": 61, "max": 75 }, "offense": 42, "criticalChance": 5, "hits": 2 },
+          { "level": 3, "damage": { "min": 73, "max": 89 }, "offense": 44, "criticalChance": 5, "hits": 2 },
+          { "level": 4, "damage": { "min": 84, "max": 103 }, "offense": 46, "criticalChance": 5, "hits": 2 },
+          { "level": 5, "damage": { "min": 96, "max": 117 }, "offense": 48, "criticalChance": 10, "hits": 2 },
+          { "level": 6, "damage": { "min": 107, "max": 131 }, "offense": 50, "criticalChance": 10, "hits": 2 },
+          { "level": 7, "damage": { "min": 119, "max": 145 }, "offense": 52, "criticalChance": 10, "hits": 2 },
+          { "level": 8, "damage": { "min": 131, "max": 159 }, "offense": 54, "criticalChance": 10, "hits": 2 }
+        ]
+      },
+      {
+        "name": "Depth Charge",
+        "damageType": "DepthCharge",
+        "lineOfFire": "Indirect",
+        "ammo": 1,
+        "ammoUsed": 1,
+        "reloadTime": 6,
+        "cooldown": 0,
+        "prepTime": 1,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 40,
+        "bonusCrit": { "Sub": 20 },
+        "targetableTypes": { "Soldier": false, "Sniper": false, "Vehicle": false, "Tank": false, "Metal": false, "Critter": false, "Civilian": false, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 78, "max": 112 }, "offense": 56, "criticalChance": 0 },
+          { "level": 2, "damage": { "min": 96, "max": 138 }, "offense": 58, "criticalChance": 0 },
+          { "level": 3, "damage": { "min": 114, "max": 164 }, "offense": 60, "criticalChance": 0 },
+          { "level": 4, "damage": { "min": 132, "max": 190 }, "offense": 62, "criticalChance": 0 },
+          { "level": 5, "damage": { "min": 150, "max": 215 }, "offense": 64, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 168, "max": 241 }, "offense": 66, "criticalChance": 5 },
+          { "level": 7, "damage": { "min": 186, "max": 267 }, "offense": 68, "criticalChance": 5 },
+          { "level": 8, "damage": { "min": 204, "max": 293 }, "offense": 70, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Submarine",
+    "description": "A stealthy underwater vessel with torpedo tubes and a deck gun. Immune to fire and poison.",
+    "imageUrl": "/images/units/submarine.png",
+    "category": "Naval",
+    "unitType": "sub-sea",
+    "affiliation": "Imperial",
+    "building": "Dry Dock",
+    "buildingLevel": 2,
+    "unlockLevel": 25,
+    "productionTime": 23760,
+    "cost": [
+      { "type": "Nanopods", "amount": 55 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 8,
+    "immunities": ["Fire", "Poison"],
+    "resistances": {
+      "hp": {
+        "crushing": 100,
+        "depthCharge": 130,
+        "explosive": 70,
+        "fire": 100,
+        "piercing": 50,
+        "torpedo": 95
+      },
+      "armor": {
+        "crushing": 120,
+        "depthCharge": 130,
+        "explosive": 45,
+        "fire": 10,
+        "piercing": 20,
+        "torpedo": 80
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 200, "armor": 30, "defense": 55, "dodge": 30, "bravery": 30, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 225, "armor": 55, "defense": 57, "dodge": 32, "bravery": 35, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 10528 }, { "type": "Steel", "amount": 2925 }], "time": 14400, "sp": 4000 } },
+        { "level": 3, "health": 255, "armor": 80, "defense": 59, "dodge": 34, "bravery": 40, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 32000 }, { "type": "Steel", "amount": 4000 }], "time": 21600, "sp": 9500 } },
+        { "level": 4, "health": 285, "armor": 110, "defense": 61, "dodge": 36, "bravery": 45, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 82000 }, { "type": "Steel", "amount": 5200 }, { "type": "Bars", "amount": 6 }], "time": 43200, "sp": 21000 } },
+        { "level": 5, "health": 315, "armor": 140, "defense": 63, "dodge": 38, "bravery": 50, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 509995 }, { "type": "Steel", "amount": 8125 }, { "type": "Laurels", "amount": 2 }, { "type": "Widgets", "amount": 1 }], "time": 86400, "sp": 46000 } },
+        { "level": 6, "health": 345, "armor": 155, "defense": 65, "dodge": 40, "bravery": 55, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 380000 }, { "type": "Steel", "amount": 9000 }, { "type": "Widgets", "amount": 3 }], "time": 172800, "sp": 95000 } },
+        { "level": 7, "health": 375, "armor": 175, "defense": 67, "dodge": 42, "bravery": 60, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 560000 }, { "type": "Steel", "amount": 10500 }, { "type": "Widgets", "amount": 5 }], "time": 172800, "sp": 195000 } },
+        { "level": 8, "health": 405, "armor": 200, "defense": 69, "dodge": 44, "bravery": 65, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 800000 }, { "type": "Steel", "amount": 12000 }, { "type": "Widgets", "amount": 7 }], "time": 172800, "sp": 390000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Deck Gun",
+        "damageType": "Piercing",
+        "lineOfFire": "Direct",
+        "ammo": 3,
+        "ammoUsed": 1,
+        "reloadTime": 3,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 3 },
+        "bonusCrit": { "Air": 75 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": false, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 18, "max": 24 }, "offense": 61, "criticalChance": 5, "hits": 3 },
+          { "level": 2, "damage": { "min": 22, "max": 29 }, "offense": 63, "criticalChance": 5, "hits": 3 },
+          { "level": 3, "damage": { "min": 26, "max": 35 }, "offense": 65, "criticalChance": 5, "hits": 3 },
+          { "level": 4, "damage": { "min": 30, "max": 40 }, "offense": 67, "criticalChance": 5, "hits": 3 },
+          { "level": 5, "damage": { "min": 35, "max": 46 }, "offense": 69, "criticalChance": 10, "hits": 3 },
+          { "level": 6, "damage": { "min": 39, "max": 51 }, "offense": 71, "criticalChance": 10, "hits": 3 },
+          { "level": 7, "damage": { "min": 43, "max": 57 }, "offense": 73, "criticalChance": 10, "hits": 3 },
+          { "level": 8, "damage": { "min": 47, "max": 62 }, "offense": 75, "criticalChance": 10, "hits": 3 }
+        ]
+      },
+      {
+        "name": "Torpedo Tube",
+        "damageType": "Torpedo",
+        "lineOfFire": "Indirect",
+        "ammo": 2,
+        "ammoUsed": 1,
+        "reloadTime": 6,
+        "cooldown": 2,
+        "prepTime": 1,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 40,
+        "statusEffects": [{ "type": "Breach", "chance": 25, "duration": 3 }],
+        "bonusCrit": { "Sub": 20 },
+        "targetableTypes": { "Soldier": false, "Sniper": false, "Vehicle": false, "Tank": false, "Metal": false, "Critter": false, "Civilian": false, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 90, "max": 134 }, "offense": 61, "criticalChance": 0 },
+          { "level": 2, "damage": { "min": 111, "max": 165 }, "offense": 63, "criticalChance": 0 },
+          { "level": 3, "damage": { "min": 131, "max": 196 }, "offense": 65, "criticalChance": 0 },
+          { "level": 4, "damage": { "min": 152, "max": 227 }, "offense": 67, "criticalChance": 0 },
+          { "level": 5, "damage": { "min": 173, "max": 258 }, "offense": 69, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 193, "max": 289 }, "offense": 71, "criticalChance": 5 },
+          { "level": 7, "damage": { "min": 214, "max": 320 }, "offense": 73, "criticalChance": 5 },
+          { "level": 8, "damage": { "min": 235, "max": 351 }, "offense": 75, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Buoy",
+    "description": "A yellow steel pillar buoy with a red beacon light. The only sea-ignorable defense unit accessible to the player. Serves primarily as a decoy in naval combat.",
+    "imageUrl": "/images/units/buoy.png",
+    "category": "Naval",
+    "unitType": "structure-sea",
+    "affiliation": "Imperial",
+    "building": "Dry Dock",
+    "buildingLevel": 1,
+    "unlockLevel": 26,
+    "productionTime": 34560,
+    "cost": [
+      { "type": "Gold", "amount": 7500 },
+      { "type": "Steel", "amount": 500 },
+      { "type": "Gears", "amount": 3 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Acid", "Breach", "Cold", "Explosive", "Fire", "Freeze", "Poison", "Shatter", "Stun"],
+    "resistances": {
+      "hp": {
+        "crushing": 25,
+        "piercing": 25,
+        "explosive": 50,
+        "fire": 5,
+        "depthCharge": 25,
+        "torpedo": 50
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 300, "defense": 20, "dodge": 0, "bravery": 1000, "abilitySlots": 0, "range": 0 },
+        { "level": 2, "health": 385, "defense": 20, "dodge": 0, "bravery": 1000, "abilitySlots": 0, "range": 0, "promotionCost": { "resources": [{ "type": "Gold", "amount": 3888 }, { "type": "Steel", "amount": 2925 }], "time": 14400, "sp": 2000 } },
+        { "level": 3, "health": 470, "defense": 20, "dodge": 0, "bravery": 1000, "abilitySlots": 0, "range": 0, "promotionCost": { "resources": [{ "type": "Gold", "amount": 12000 }, { "type": "Steel", "amount": 4000 }], "time": 43200, "sp": 5000 } },
+        { "level": 4, "health": 555, "defense": 20, "dodge": 0, "bravery": 1000, "abilitySlots": 0, "range": 0, "promotionCost": { "resources": [{ "type": "Gold", "amount": 35000 }, { "type": "Steel", "amount": 5200 }, { "type": "Widgets", "amount": 2 }], "time": 86400, "sp": 12000 } },
+        { "level": 5, "health": 640, "defense": 20, "dodge": 0, "bravery": 1000, "abilitySlots": 0, "range": 0, "promotionCost": { "resources": [{ "type": "Gold", "amount": 85000 }, { "type": "Steel", "amount": 6500 }, { "type": "Widgets", "amount": 4 }], "time": 172800, "sp": 28000 } },
+        { "level": 6, "health": 725, "defense": 20, "dodge": 0, "bravery": 1000, "abilitySlots": 0, "range": 0, "promotionCost": { "resources": [{ "type": "Gold", "amount": 163720 }, { "type": "Steel", "amount": 7312 }, { "type": "Widgets", "amount": 7 }], "time": 172800, "sp": 90000 } }
+      ]
+    },
+    "actions": []
+  },
+  {
+    "id": 114,
+    "name": "SC-2 Pelican",
+    "description": "The first mass-producible flying unit. A trainable aircraft built at the Dry Dock with torpedo and bombing capabilities.",
+    "imageUrl": "/images/units/sc2_pelican.png",
+    "category": "Naval",
+    "unitType": "aircraft-sea",
+    "affiliation": "Imperial",
+    "building": "Dry Dock",
+    "buildingLevel": 1,
+    "unlockLevel": 31,
+    "productionTime": 43200,
+    "cost": [
+      { "type": "Gold", "amount": 20000 },
+      { "type": "Steel", "amount": 1000 },
+      { "type": "Oil", "amount": 1000 },
+      { "type": "Gears", "amount": 10 }
+    ],
+    "blocking": "None",
+    "maxRank": 8,
+    "immunities": ["Plague", "Quake"],
+    "resistances": {
+      "hp": {
+        "explosive": 80,
+        "fire": 75,
+        "piercing": 80
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 220, "defense": 50, "dodge": 30, "bravery": 20, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 260, "defense": 55, "dodge": 35, "bravery": 25, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 18000 }, { "type": "Steel", "amount": 3800 }], "time": 14400, "sp": 5500 } },
+        { "level": 3, "health": 305, "defense": 60, "dodge": 40, "bravery": 30, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 55000 }, { "type": "Steel", "amount": 5200 }], "time": 21600, "sp": 13000 } },
+        { "level": 4, "health": 350, "defense": 65, "dodge": 45, "bravery": 35, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 140000 }, { "type": "Steel", "amount": 6800 }, { "type": "Bars", "amount": 8 }], "time": 43200, "sp": 28000 } },
+        { "level": 5, "health": 390, "defense": 70, "dodge": 50, "bravery": 40, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 290000 }, { "type": "Steel", "amount": 8500 }, { "type": "Laurels", "amount": 3 }], "time": 86400, "sp": 60000 } },
+        { "level": 6, "health": 435, "defense": 75, "dodge": 55, "bravery": 45, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 500000 }, { "type": "Steel", "amount": 10000 }, { "type": "Widgets", "amount": 4 }], "time": 172800, "sp": 125000 } },
+        { "level": 7, "health": 480, "defense": 80, "dodge": 60, "bravery": 50, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 720000 }, { "type": "Steel", "amount": 11500 }, { "type": "Widgets", "amount": 6 }], "time": 172800, "sp": 260000 } },
+        { "level": 8, "health": 520, "defense": 85, "dodge": 65, "bravery": 55, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 1000000 }, { "type": "Steel", "amount": 13000 }, { "type": "Widgets", "amount": 8 }], "time": 172800, "sp": 787975 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Scissors",
+        "damageType": "Piercing",
+        "lineOfFire": "Indirect",
+        "ammo": 2,
+        "ammoUsed": 1,
+        "reloadTime": 4,
+        "cooldown": 3,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 10,
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 21, "max": 29 }, "offense": 56, "criticalChance": 15, "hits": 3 },
+          { "level": 2, "damage": { "min": 26, "max": 35 }, "offense": 58, "criticalChance": 18, "hits": 3 },
+          { "level": 3, "damage": { "min": 31, "max": 42 }, "offense": 60, "criticalChance": 21, "hits": 3 },
+          { "level": 4, "damage": { "min": 36, "max": 49 }, "offense": 62, "criticalChance": 24, "hits": 3 },
+          { "level": 5, "damage": { "min": 41, "max": 56 }, "offense": 64, "criticalChance": 27, "hits": 3 },
+          { "level": 6, "damage": { "min": 46, "max": 63 }, "offense": 66, "criticalChance": 33, "hits": 3 },
+          { "level": 7, "damage": { "min": 51, "max": 69 }, "offense": 68, "criticalChance": 36, "hits": 3 },
+          { "level": 8, "damage": { "min": 55, "max": 75 }, "offense": 68, "criticalChance": 39, "hits": 3 }
+        ]
+      },
+      {
+        "name": "Unguided Torpedo",
+        "damageType": "Torpedo",
+        "lineOfFire": "Indirect",
+        "ammo": 1,
+        "ammoUsed": 1,
+        "reloadTime": 7,
+        "cooldown": 0,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 30,
+        "statusEffects": [{ "type": "Breach", "chance": 25, "duration": 3 }],
+        "bonusCrit": { "Ship": 20, "Sub": 20 },
+        "targetableTypes": { "Soldier": false, "Sniper": false, "Vehicle": false, "Tank": false, "Metal": false, "Critter": false, "Civilian": false, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 89, "max": 121 }, "offense": 56, "criticalChance": 15 },
+          { "level": 2, "damage": { "min": 109, "max": 149 }, "offense": 58, "criticalChance": 18 },
+          { "level": 3, "damage": { "min": 130, "max": 177 }, "offense": 60, "criticalChance": 21 },
+          { "level": 4, "damage": { "min": 151, "max": 205 }, "offense": 62, "criticalChance": 24 },
+          { "level": 5, "damage": { "min": 171, "max": 233 }, "offense": 64, "criticalChance": 27 },
+          { "level": 6, "damage": { "min": 192, "max": 261 }, "offense": 66, "criticalChance": 33 },
+          { "level": 7, "damage": { "min": 213, "max": 289 }, "offense": 68, "criticalChance": 36 },
+          { "level": 8, "damage": { "min": 233, "max": 317 }, "offense": 68, "criticalChance": 44 }
+        ]
+      },
+      {
+        "name": "Shrapnel Bomb",
+        "damageType": "Explosive",
+        "lineOfFire": "Indirect",
+        "ammo": 1,
+        "ammoUsed": 1,
+        "reloadTime": 7,
+        "cooldown": 0,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 15,
+        "statusEffects": [{ "type": "Fire", "chance": 100, "duration": 3 }],
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 89, "max": 121 }, "offense": 56, "criticalChance": 15 },
+          { "level": 2, "damage": { "min": 109, "max": 149 }, "offense": 58, "criticalChance": 18 },
+          { "level": 3, "damage": { "min": 130, "max": 177 }, "offense": 60, "criticalChance": 21 },
+          { "level": 4, "damage": { "min": 151, "max": 205 }, "offense": 62, "criticalChance": 24 },
+          { "level": 5, "damage": { "min": 171, "max": 233 }, "offense": 64, "criticalChance": 27 },
+          { "level": 6, "damage": { "min": 192, "max": 261 }, "offense": 66, "criticalChance": 33 },
+          { "level": 7, "damage": { "min": 213, "max": 289 }, "offense": 68, "criticalChance": 36 },
+          { "level": 8, "damage": { "min": 233, "max": 317 }, "offense": 68, "criticalChance": 39 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Jet Ski",
+    "description": "An extremely straightforward unit, possessing only a single attack. Fires incendiary rockets with fire damage-over-time effects.",
+    "imageUrl": "/images/units/jet_ski.png",
+    "category": "Naval",
+    "unitType": "gunboat-ship",
+    "affiliation": "Raider",
+    "building": "Dry Dock",
+    "buildingLevel": 1,
+    "unlockLevel": 32,
+    "productionTime": 25920,
+    "cost": [
+      { "type": "Gold", "amount": 20000 },
+      { "type": "Steel", "amount": 1000 },
+      { "type": "Oil", "amount": 800 },
+      { "type": "Teeth", "amount": 5 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 8,
+    "immunities": ["Breach"],
+    "resistances": {
+      "hp": {
+        "depthCharge": 80,
+        "torpedo": 80
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 260, "defense": 55, "dodge": 20, "bravery": 15, "abilitySlots": 1, "range": 5 },
+        { "level": 2, "health": 300, "defense": 57, "dodge": 22, "bravery": 17, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 14000 }, { "type": "Steel", "amount": 3200 }, { "type": "Teeth", "amount": 3 }], "time": 14400, "sp": 4000 } },
+        { "level": 3, "health": 345, "defense": 59, "dodge": 24, "bravery": 19, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 42000 }, { "type": "Steel", "amount": 4500 }, { "type": "Teeth", "amount": 5 }], "time": 21600, "sp": 9500 } },
+        { "level": 4, "health": 385, "defense": 61, "dodge": 26, "bravery": 21, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 105000 }, { "type": "Steel", "amount": 6000 }, { "type": "Teeth", "amount": 10 }], "time": 43200, "sp": 21000 } },
+        { "level": 5, "health": 430, "defense": 63, "dodge": 28, "bravery": 23, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 220000 }, { "type": "Steel", "amount": 7500 }, { "type": "Necklaces", "amount": 3 }], "time": 86400, "sp": 45000 } },
+        { "level": 6, "health": 475, "defense": 65, "dodge": 30, "bravery": 25, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 380000 }, { "type": "Steel", "amount": 9000 }, { "type": "Necklaces", "amount": 5 }], "time": 172800, "sp": 95000 } },
+        { "level": 7, "health": 520, "defense": 67, "dodge": 32, "bravery": 28, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 560000 }, { "type": "Steel", "amount": 10500 }, { "type": "Necklaces", "amount": 7 }], "time": 172800, "sp": 195000 } },
+        { "level": 8, "health": 560, "defense": 69, "dodge": 34, "bravery": 30, "abilitySlots": 1, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 780000 }, { "type": "Steel", "amount": 12000 }, { "type": "Necklaces", "amount": 10 }], "time": 172800, "sp": 380000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Incendiary Rocket",
+        "damageType": "Explosive",
+        "lineOfFire": "Indirect",
+        "ammo": 8,
+        "ammoUsed": 1,
+        "reloadTime": 5,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 5 },
+        "statusEffects": [{ "type": "Fire", "chance": 50, "duration": 2 }],
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 80, "max": 120 }, "offense": 43, "criticalChance": 10, "dot": { "initial": 50, "final": 25 } },
+          { "level": 2, "damage": { "min": 98, "max": 147 }, "offense": 45, "criticalChance": 13, "dot": { "initial": 61, "final": 31 } },
+          { "level": 3, "damage": { "min": 117, "max": 175 }, "offense": 47, "criticalChance": 15, "dot": { "initial": 73, "final": 36 } },
+          { "level": 4, "damage": { "min": 135, "max": 202 }, "offense": 49, "criticalChance": 18, "dot": { "initial": 84, "final": 42 } },
+          { "level": 5, "damage": { "min": 153, "max": 230 }, "offense": 51, "criticalChance": 21, "dot": { "initial": 96, "final": 48 } },
+          { "level": 6, "damage": { "min": 172, "max": 258 }, "offense": 53, "criticalChance": 24, "dot": { "initial": 107, "final": 54 } },
+          { "level": 7, "damage": { "min": 190, "max": 286 }, "offense": 57, "criticalChance": 27, "dot": { "initial": 119, "final": 59 } },
+          { "level": 8, "damage": { "min": 209, "max": 314 }, "offense": 59, "criticalChance": 30, "dot": { "initial": 131, "final": 65 } }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Power Boat",
+    "description": "A gunboat-ship unit with mounted machine gun and torpedo capabilities. Requires the Reef Bandit Armory.",
+    "imageUrl": "/images/units/power_boat.png",
+    "category": "Naval",
+    "unitType": "gunboat-ship",
+    "affiliation": "Raider",
+    "building": "Dry Dock",
+    "buildingLevel": 1,
+    "unlockLevel": 32,
+    "productionTime": 43200,
+    "cost": [
+      { "type": "Gold", "amount": 32000 },
+      { "type": "Lumber", "amount": 1000 },
+      { "type": "Steel", "amount": 1000 },
+      { "type": "Skulls", "amount": 20 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 8,
+    "immunities": ["Breach"],
+    "resistances": {
+      "hp": {
+        "depthCharge": 70,
+        "torpedo": 80
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 340, "defense": 50, "dodge": 20, "bravery": 15, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 390, "defense": 52, "dodge": 22, "bravery": 17, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 22000 }, { "type": "Steel", "amount": 4000 }, { "type": "Skulls", "amount": 8 }], "time": 14400, "sp": 5500 } },
+        { "level": 3, "health": 445, "defense": 54, "dodge": 24, "bravery": 19, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 65000 }, { "type": "Steel", "amount": 5500 }, { "type": "Skulls", "amount": 14 }], "time": 21600, "sp": 13000 } },
+        { "level": 4, "health": 500, "defense": 56, "dodge": 26, "bravery": 21, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 160000 }, { "type": "Steel", "amount": 7200 }, { "type": "Skulls", "amount": 22 }], "time": 43200, "sp": 28000 } },
+        { "level": 5, "health": 555, "defense": 58, "dodge": 28, "bravery": 23, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 330000 }, { "type": "Steel", "amount": 9000 }, { "type": "Skulls", "amount": 35 }], "time": 86400, "sp": 60000 } },
+        { "level": 6, "health": 610, "defense": 60, "dodge": 30, "bravery": 25, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 550000 }, { "type": "Steel", "amount": 10500 }, { "type": "Necklaces", "amount": 5 }], "time": 172800, "sp": 125000 } },
+        { "level": 7, "health": 660, "defense": 62, "dodge": 32, "bravery": 28, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 800000 }, { "type": "Steel", "amount": 12000 }, { "type": "Necklaces", "amount": 8 }], "time": 172800, "sp": 260000 } },
+        { "level": 8, "health": 705, "defense": 64, "dodge": 34, "bravery": 30, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 1100000 }, { "type": "Steel", "amount": 14000 }, { "type": "Necklaces", "amount": 12 }], "time": 172800, "sp": 500000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Mounted Machine Gun",
+        "damageType": "Piercing",
+        "lineOfFire": "Direct",
+        "ammo": 5,
+        "ammoUsed": 1,
+        "reloadTime": 6,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 3 },
+        "bonusCrit": { "Air": 75 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": false, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 12, "max": 24 }, "offense": 50, "criticalChance": 5, "hits": 3 },
+          { "level": 2, "damage": { "min": 14, "max": 29 }, "offense": 52, "criticalChance": 8, "hits": 3 },
+          { "level": 3, "damage": { "min": 17, "max": 34 }, "offense": 54, "criticalChance": 10, "hits": 3 },
+          { "level": 4, "damage": { "min": 20, "max": 39 }, "offense": 56, "criticalChance": 13, "hits": 3 },
+          { "level": 5, "damage": { "min": 22, "max": 44 }, "offense": 58, "criticalChance": 16, "hits": 3 },
+          { "level": 6, "damage": { "min": 25, "max": 49 }, "offense": 60, "criticalChance": 19, "hits": 3 },
+          { "level": 7, "damage": { "min": 27, "max": 54 }, "offense": 62, "criticalChance": 22, "hits": 3 },
+          { "level": 8, "damage": { "min": 29, "max": 58 }, "offense": 64, "criticalChance": 25, "hits": 3 }
+        ]
+      },
+      {
+        "name": "Unguided Torpedo",
+        "damageType": "Torpedo",
+        "lineOfFire": "Indirect",
+        "ammo": 2,
+        "ammoUsed": 1,
+        "reloadTime": 6,
+        "cooldown": 3,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 40,
+        "statusEffects": [{ "type": "Breach", "chance": 25, "duration": 3 }],
+        "targetableTypes": { "Soldier": false, "Sniper": false, "Vehicle": false, "Tank": false, "Metal": false, "Critter": false, "Civilian": false, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 78, "max": 106 }, "offense": 50, "criticalChance": 5, "hits": 2 },
+          { "level": 2, "damage": { "min": 94, "max": 127 }, "offense": 52, "criticalChance": 8, "hits": 2 },
+          { "level": 3, "damage": { "min": 109, "max": 149 }, "offense": 54, "criticalChance": 10, "hits": 2 },
+          { "level": 4, "damage": { "min": 125, "max": 170 }, "offense": 56, "criticalChance": 13, "hits": 2 },
+          { "level": 5, "damage": { "min": 141, "max": 191 }, "offense": 58, "criticalChance": 16, "hits": 2 },
+          { "level": 6, "damage": { "min": 156, "max": 213 }, "offense": 60, "criticalChance": 19, "hits": 2 },
+          { "level": 7, "damage": { "min": 172, "max": 234 }, "offense": 62, "criticalChance": 22, "hits": 2 },
+          { "level": 8, "damage": { "min": 188, "max": 256 }, "offense": 64, "criticalChance": 25, "hits": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Tactical Submarine",
+    "description": "A premium naval unit with multiple hatches for releasing missiles. Features torpedoes, ICBM, and mini rockets.",
+    "imageUrl": "/images/units/tactical_submarine.png",
+    "category": "Naval",
+    "unitType": "sub-sea",
+    "affiliation": "Imperial",
+    "building": "Dry Dock",
+    "buildingLevel": 4,
+    "unlockLevel": 32,
+    "productionTime": 19440,
+    "cost": [
+      { "type": "Nanopods", "amount": 60 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 8,
+    "immunities": ["Fire", "Poison"],
+    "resistances": {
+      "hp": {
+        "depthCharge": 130,
+        "explosive": 70,
+        "piercing": 50
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 250, "armor": 50, "defense": 50, "dodge": 30, "bravery": 30, "abilitySlots": 3, "range": 5 },
+        { "level": 2, "health": 280, "armor": 70, "defense": 52, "dodge": 32, "bravery": 35, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 12000 }, { "type": "Steel", "amount": 1800 }, { "type": "Oil", "amount": 2250 }, { "type": "Bars", "amount": 6 }], "time": 14400, "sp": 5000 } },
+        { "level": 3, "health": 310, "armor": 90, "defense": 54, "dodge": 34, "bravery": 40, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 38000 }, { "type": "Steel", "amount": 5000 }, { "type": "Oil", "amount": 3500 }], "time": 21600, "sp": 12000 } },
+        { "level": 4, "health": 340, "armor": 115, "defense": 56, "dodge": 36, "bravery": 45, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 95000 }, { "type": "Steel", "amount": 6500 }, { "type": "Bars", "amount": 10 }], "time": 43200, "sp": 26000 } },
+        { "level": 5, "health": 365, "armor": 140, "defense": 58, "dodge": 38, "bravery": 50, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 200000 }, { "type": "Steel", "amount": 8000 }, { "type": "Laurels", "amount": 2 }, { "type": "Widgets", "amount": 2 }], "time": 86400, "sp": 55000 } },
+        { "level": 6, "health": 395, "armor": 155, "defense": 60, "dodge": 40, "bravery": 55, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 420000 }, { "type": "Steel", "amount": 9500 }, { "type": "Widgets", "amount": 4 }], "time": 172800, "sp": 115000 } },
+        { "level": 7, "health": 425, "armor": 175, "defense": 62, "dodge": 42, "bravery": 60, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 620000 }, { "type": "Steel", "amount": 11000 }, { "type": "Widgets", "amount": 6 }], "time": 172800, "sp": 235000 } },
+        { "level": 8, "health": 455, "armor": 190, "defense": 64, "dodge": 44, "bravery": 65, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 880000 }, { "type": "Steel", "amount": 13000 }, { "type": "Widgets", "amount": 8 }], "time": 172800, "sp": 460000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Torpedo Tube",
+        "damageType": "Torpedo",
+        "lineOfFire": "Indirect",
+        "ammo": 2,
+        "ammoUsed": 1,
+        "reloadTime": 4,
+        "cooldown": 2,
+        "prepTime": 1,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 40,
+        "statusEffects": [{ "type": "Breach", "chance": 25, "duration": 3 }],
+        "targetableTypes": { "Soldier": false, "Sniper": false, "Vehicle": false, "Tank": false, "Metal": false, "Critter": false, "Civilian": false, "Air": false, "LTA": false, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 102, "max": 138 }, "offense": 61, "criticalChance": 0 },
+          { "level": 2, "damage": { "min": 126, "max": 170 }, "offense": 63, "criticalChance": 0 },
+          { "level": 3, "damage": { "min": 149, "max": 202 }, "offense": 65, "criticalChance": 0 },
+          { "level": 4, "damage": { "min": 173, "max": 234 }, "offense": 67, "criticalChance": 0 },
+          { "level": 5, "damage": { "min": 196, "max": 266 }, "offense": 69, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 220, "max": 298 }, "offense": 71, "criticalChance": 5 },
+          { "level": 7, "damage": { "min": 243, "max": 330 }, "offense": 73, "criticalChance": 5 },
+          { "level": 8, "damage": { "min": 267, "max": 361 }, "offense": 75, "criticalChance": 5 }
+        ]
+      },
+      {
+        "name": "ICBM",
+        "damageType": "Explosive",
+        "lineOfFire": "Indirect",
+        "ammo": 1,
+        "ammoUsed": 1,
+        "reloadTime": 7,
+        "cooldown": 0,
+        "prepTime": 2,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 15,
+        "areaEffect": 9,
+        "statusEffects": [{ "type": "Fire", "chance": 25, "duration": 2 }],
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 123, "max": 167 }, "offense": 56, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 151, "max": 206 }, "offense": 58, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 180, "max": 244 }, "offense": 60, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 208, "max": 283 }, "offense": 62, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 237, "max": 321 }, "offense": 64, "criticalChance": 10 },
+          { "level": 6, "damage": { "min": 265, "max": 360 }, "offense": 66, "criticalChance": 10 },
+          { "level": 7, "damage": { "min": 294, "max": 398 }, "offense": 68, "criticalChance": 10 },
+          { "level": 8, "damage": { "min": 322, "max": 437 }, "offense": 70, "criticalChance": 10 }
+        ]
+      },
+      {
+        "name": "Mini Rockets",
+        "damageType": "Explosive",
+        "lineOfFire": "Indirect",
+        "ammo": 1,
+        "ammoUsed": 1,
+        "reloadTime": 6,
+        "cooldown": 0,
+        "range": { "min": 1, "max": 5 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 95, "max": 116 }, "offense": 56, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 117, "max": 143 }, "offense": 58, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 139, "max": 170 }, "offense": 60, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 161, "max": 196 }, "offense": 62, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 183, "max": 223 }, "offense": 64, "criticalChance": 10 },
+          { "level": 6, "damage": { "min": 205, "max": 250 }, "offense": 66, "criticalChance": 10 },
+          { "level": 7, "damage": { "min": 227, "max": 277 }, "offense": 68, "criticalChance": 10 },
+          { "level": 8, "damage": { "min": 248, "max": 303 }, "offense": 70, "criticalChance": 10 }
+        ]
+      }
+    ]
+  }
+]

@@ -6,7 +6,7 @@ Build a comprehensive Battle Nations database that can simulate battles using th
 ## Current State
 - React 19 + TypeScript + Vite app
 - Basic unit browsing with search/filter
-- **49 units** in database (44 Barracks soldiers + 5 TF2 units) with resistances/immunities
+- **192 units** in database (49 soldiers + 15 light vehicles + 22 tanks + 9 artillery + 8 animals + 7 raiders + 10 naval + 33 infected + 8 frontier + 3 laser + 4 plasma + 7 mercenaries + 2 bigfoot + 6 other vehicles + 3 aircraft + 6 boss drops) with full stats, actions, resistances/immunities
 - Clean data model with rank progression, actions, and costs
 - Data sourced from Battle Nations Miraheze wiki
 
@@ -20,11 +20,14 @@ Pull in all Battle Nations units with complete data.
 ### Unit Categories to Add
 - [x] Soldiers - Barracks (44/44 standard units complete)
 - [x] Soldiers - TF2 units (5/5 complete: Scout, Heavy, Demoman, Soldier, Pyro)
-- [ ] Vehicles (Vehicle Factory)
-- [ ] Tanks (Tank Factory)
-- [ ] Artillery
-- [ ] Air units (Airfield)
-- [ ] Naval units (Shipyard)
+- [x] Light Vehicles & Support (15/15 complete: Scout Bike, Humvee, Recon, etc.)
+- [x] Tanks (22/22 complete: Light through Gold Tank)
+- [x] Artillery (8/8 complete: Light/Heavy Artillery, Hailstorm, Rocket Truck, Brimstone, Earthshaker, Mammoth Artillery, Zoey's Trebuchet)
+- [x] Animals (8/8 complete: Young/Battle Raptor, Young/Imperial Boar, Young/War Mammoth, Young Worm, Tamed Sandworm)
+- [x] Raiders (7/7 complete: Warrior, Cannoneer, Firebreather, Dustwalker, Boom Boom, Champion, Skirmisher)
+- [x] Infected (Infection Test Facility - 33/33 complete)
+- [x] Naval units (8/8 complete: Gunboat, Destroyer, Submarine, Buoy, SC-2 Pelican, Jet Ski, Power Boat, Tactical Submarine)
+- [ ] Air units (Boss Strike Aircraft)
 - [ ] Bosses/Special units
 
 ### Not Including

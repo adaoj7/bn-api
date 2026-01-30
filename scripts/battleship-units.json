@@ -1,0 +1,209 @@
+[
+  {
+    "id": 191,
+    "name": "Battleship Raptor-Class",
+    "description": "A powerful battleship with broadside and bombard attacks. Strong anti-air capabilities but vulnerable to torpedoes.",
+    "imageUrl": "/images/units/battleship_raptor.png",
+    "category": "Naval",
+    "unitType": "ship",
+    "affiliation": "Empire",
+    "building": "Dry Dock",
+    "buildingLevel": 2,
+    "unlockLevel": 26,
+    "productionTime": 1188,
+    "cost": [
+      { "resource": "Gold", "amount": 20000 },
+      { "resource": "Steel", "amount": 2200 },
+      { "resource": "Oil", "amount": 1000 },
+      { "resource": "Bars", "amount": 5 }
+    ],
+    "blocking": "Full",
+    "maxRank": 8,
+    "immunities": ["Poison"],
+    "resistances": {
+      "crushing": 70,
+      "depthCharge": 85,
+      "explosive": 70,
+      "fire": 80,
+      "piercing": 60
+    },
+    "vulnerabilities": {
+      "torpedo": 120
+    },
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 325, "armor": 100, "defense": 35, "dodge": 25, "bravery": 20 },
+        { "rank": 2, "health": 367, "armor": 143, "defense": 37, "dodge": 27, "bravery": 25 },
+        { "rank": 3, "health": 409, "armor": 186, "defense": 39, "dodge": 29, "bravery": 30 },
+        { "rank": 4, "health": 451, "armor": 229, "defense": 41, "dodge": 31, "bravery": 35 },
+        { "rank": 5, "health": 493, "armor": 272, "defense": 43, "dodge": 33, "bravery": 40 },
+        { "rank": 6, "health": 535, "armor": 315, "defense": 45, "dodge": 35, "bravery": 45 },
+        { "rank": 7, "health": 577, "armor": 358, "defense": 47, "dodge": 37, "bravery": 50 },
+        { "rank": 8, "health": 620, "armor": 400, "defense": 49, "dodge": 39, "bravery": 55 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Broadside",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 3,
+        "ammo": 3,
+        "reload": 5,
+        "cooldown": 3,
+        "armorPiercing": 15,
+        "lineOfFire": "Direct",
+        "targetType": ["Soldiers", "Snipers", "Vehicles", "Tanks", "Critters", "Sea", "Ships"],
+        "critBonus": { "type": "Air", "bonus": 50 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 96, "maxDamage": 144, "offense": 52, "crit": 5 },
+          { "rank": 2, "minDamage": 118, "maxDamage": 177, "offense": 57, "crit": 6 },
+          { "rank": 3, "minDamage": 140, "maxDamage": 210, "offense": 62, "crit": 6 },
+          { "rank": 4, "minDamage": 162, "maxDamage": 244, "offense": 67, "crit": 7 },
+          { "rank": 5, "minDamage": 185, "maxDamage": 277, "offense": 72, "crit": 8 },
+          { "rank": 6, "minDamage": 207, "maxDamage": 310, "offense": 77, "crit": 8 },
+          { "rank": 7, "minDamage": 229, "maxDamage": 344, "offense": 82, "crit": 9 },
+          { "rank": 8, "minDamage": 251, "maxDamage": 377, "offense": 87, "crit": 10 }
+        ]
+      },
+      {
+        "name": "Bombard",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 5,
+        "ammo": 3,
+        "reload": 5,
+        "cooldown": 3,
+        "armorPiercing": 10,
+        "lineOfFire": "Indirect",
+        "targetType": ["Air", "LTA", "Soldiers", "Snipers", "Vehicles", "Tanks", "Critters", "Sea", "Ships"],
+        "hits": 2,
+        "critBonus": { "type": "Air", "bonus": 60 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 70, "maxDamage": 94, "offense": 37, "crit": 5 },
+          { "rank": 2, "minDamage": 86, "maxDamage": 116, "offense": 42, "crit": 6 },
+          { "rank": 3, "minDamage": 102, "maxDamage": 138, "offense": 47, "crit": 6 },
+          { "rank": 4, "minDamage": 118, "maxDamage": 159, "offense": 52, "crit": 7 },
+          { "rank": 5, "minDamage": 134, "maxDamage": 181, "offense": 57, "crit": 8 },
+          { "rank": 6, "minDamage": 151, "maxDamage": 203, "offense": 62, "crit": 8 },
+          { "rank": 7, "minDamage": 167, "maxDamage": 224, "offense": 67, "crit": 9 },
+          { "rank": 8, "minDamage": 183, "maxDamage": 246, "offense": 72, "crit": 10 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "name": "Battleship Mammoth-Class",
+    "description": "The most durable player-trainable ship with the highest combined HP and armor at max rank. Excels at destroying smaller vessels with strong anti-air capabilities.",
+    "imageUrl": "/images/units/battleship_mammoth.png",
+    "category": "Naval",
+    "unitType": "ship",
+    "affiliation": "Empire",
+    "building": "Dry Dock",
+    "buildingLevel": 2,
+    "unlockLevel": 26,
+    "productionTime": null,
+    "cost": [
+      { "resource": "Nanopods", "amount": 55 }
+    ],
+    "blocking": "Full",
+    "maxRank": 8,
+    "immunities": ["Poison"],
+    "resistances": {
+      "crushing": 100,
+      "depthCharge": 80,
+      "explosive": 75,
+      "fire": 75,
+      "piercing": 60
+    },
+    "vulnerabilities": {
+      "torpedo": 120
+    },
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 380, "armor": 125, "defense": 35, "dodge": 25, "bravery": 20 },
+        { "rank": 2, "health": 415, "armor": 170, "defense": 37, "dodge": 27, "bravery": 25 },
+        { "rank": 3, "health": 465, "armor": 220, "defense": 39, "dodge": 29, "bravery": 30 },
+        { "rank": 4, "health": 520, "armor": 270, "defense": 41, "dodge": 31, "bravery": 35 },
+        { "rank": 5, "health": 575, "armor": 320, "defense": 43, "dodge": 33, "bravery": 40 },
+        { "rank": 6, "health": 630, "armor": 370, "defense": 45, "dodge": 35, "bravery": 45 },
+        { "rank": 7, "health": 685, "armor": 420, "defense": 47, "dodge": 37, "bravery": 50 },
+        { "rank": 8, "health": 740, "armor": 465, "defense": 49, "dodge": 39, "bravery": 55 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Turret: Broadside",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 3,
+        "ammo": 2,
+        "reload": 5,
+        "cooldown": 3,
+        "armorPiercing": 25,
+        "lineOfFire": "Direct",
+        "targetType": ["Soldiers", "Snipers", "Vehicles", "Tanks", "Critters", "Sea", "Ships"],
+        "critBonus": { "type": "Air", "bonus": 55 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 107, "maxDamage": 161, "offense": 52, "crit": 5 },
+          { "rank": 2, "minDamage": 132, "maxDamage": 197, "offense": 57, "crit": 6 },
+          { "rank": 3, "minDamage": 156, "maxDamage": 234, "offense": 62, "crit": 7 },
+          { "rank": 4, "minDamage": 181, "maxDamage": 271, "offense": 67, "crit": 9 },
+          { "rank": 5, "minDamage": 205, "maxDamage": 308, "offense": 72, "crit": 10 },
+          { "rank": 6, "minDamage": 230, "maxDamage": 344, "offense": 77, "crit": 11 },
+          { "rank": 7, "minDamage": 254, "maxDamage": 381, "offense": 82, "crit": 13 },
+          { "rank": 8, "minDamage": 279, "maxDamage": 417, "offense": 87, "crit": 15 }
+        ]
+      },
+      {
+        "name": "Turret: Bombard",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 4,
+        "ammo": 2,
+        "reload": 5,
+        "cooldown": 3,
+        "armorPiercing": 10,
+        "lineOfFire": "Indirect",
+        "targetType": ["Air", "LTA", "Soldiers", "Snipers", "Vehicles", "Tanks", "Critters", "Sea", "Ships"],
+        "hits": 2,
+        "critBonus": { "type": "Air", "bonus": 55 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 78, "maxDamage": 106, "offense": 37, "crit": 5 },
+          { "rank": 2, "minDamage": 96, "maxDamage": 130, "offense": 42, "crit": 6 },
+          { "rank": 3, "minDamage": 114, "maxDamage": 154, "offense": 47, "crit": 6 },
+          { "rank": 4, "minDamage": 132, "maxDamage": 178, "offense": 52, "crit": 7 },
+          { "rank": 5, "minDamage": 149, "maxDamage": 202, "offense": 57, "crit": 8 },
+          { "rank": 6, "minDamage": 167, "maxDamage": 226, "offense": 62, "crit": 8 },
+          { "rank": 7, "minDamage": 185, "maxDamage": 250, "offense": 67, "crit": 9 },
+          { "rank": 8, "minDamage": 203, "maxDamage": 274, "offense": 72, "crit": 10 }
+        ]
+      },
+      {
+        "name": "Mk12 Gun",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 5,
+        "ammo": 3,
+        "reload": 3,
+        "cooldown": 2,
+        "armorPiercing": 10,
+        "lineOfFire": "Indirect",
+        "targetType": ["Air", "LTA", "Sea", "Ships"],
+        "hits": 3,
+        "critBonus": { "type": "Air", "bonus": 55 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 26, "maxDamage": 45, "offense": 24, "crit": 10 },
+          { "rank": 2, "minDamage": 32, "maxDamage": 55, "offense": 29, "crit": 11 },
+          { "rank": 3, "minDamage": 38, "maxDamage": 65, "offense": 34, "crit": 12 },
+          { "rank": 4, "minDamage": 44, "maxDamage": 75, "offense": 39, "crit": 14 },
+          { "rank": 5, "minDamage": 50, "maxDamage": 85, "offense": 44, "crit": 15 },
+          { "rank": 6, "minDamage": 56, "maxDamage": 96, "offense": 49, "crit": 16 },
+          { "rank": 7, "minDamage": 62, "maxDamage": 106, "offense": 54, "crit": 18 },
+          { "rank": 8, "minDamage": 68, "maxDamage": 116, "offense": 59, "crit": 20 }
+        ]
+      }
+    ]
+  }
+]

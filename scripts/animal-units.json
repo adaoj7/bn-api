@@ -1,0 +1,587 @@
+[
+  {
+    "id": 95,
+    "name": "Young Raptor",
+    "description": "One of the first trainable critter units in the Animal Trainer. Fast and deadly with sharp claws.",
+    "imageUrl": "/images/units/young_raptor.png",
+    "category": "Critter",
+    "unitType": "critter-fast",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 1,
+    "unlockLevel": 10,
+    "productionTime": 38880,
+    "cost": [
+      { "type": "Nanopods", "amount": 15 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "resistances": {
+      "hp": {
+        "fire": 125
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 95, "defense": 70, "dodge": 40, "bravery": 30, "abilitySlots": 1, "range": 2 },
+        { "level": 2, "health": 105, "defense": 70, "dodge": 40, "bravery": 35, "abilitySlots": 1, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 4800 }, { "type": "Iron", "amount": 4500 }, { "type": "Teeth", "amount": 1 }], "time": 14400, "sp": 1500 } },
+        { "level": 3, "health": 115, "defense": 75, "dodge": 45, "bravery": 40, "abilitySlots": 1, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 15000 }, { "type": "Lumber", "amount": 3000 }, { "type": "Teeth", "amount": 2 }], "time": 43200, "sp": 3500 } },
+        { "level": 4, "health": 125, "defense": 75, "dodge": 45, "bravery": 45, "abilitySlots": 1, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 42000 }, { "type": "Lumber", "amount": 4500 }, { "type": "Teeth", "amount": 4 }], "time": 86400, "sp": 8000 } },
+        { "level": 5, "health": 135, "defense": 80, "dodge": 50, "bravery": 50, "abilitySlots": 2, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 98000 }, { "type": "Lumber", "amount": 5500 }, { "type": "Teeth", "amount": 8 }], "time": 172800, "sp": 18000 } },
+        { "level": 6, "health": 145, "defense": 85, "dodge": 55, "bravery": 55, "abilitySlots": 2, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 192000 }, { "type": "Lumber", "amount": 7000 }, { "type": "Necklaces", "amount": 2 }], "time": 172800, "sp": 60000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Claw",
+        "damageType": "Piercing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 1,
+        "range": { "min": 1, "max": 2 },
+        "armorPiercing": 20,
+        "suppressionMod": { "multiplier": 0.5 },
+        "bonusCrit": { "Critter": 20 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 47, "max": 78 }, "offense": 60, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 51, "max": 85 }, "offense": 65, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 56, "max": 93 }, "offense": 70, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 61, "max": 101 }, "offense": 75, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 65, "max": 109 }, "offense": 80, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 70, "max": 117 }, "offense": 85, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Battle Raptor",
+    "description": "Arguably the best animal to train. Features a 1-turn cooldown attack, extended reach, high suppression chance, and exceptional dodging ability against tank fire.",
+    "imageUrl": "/images/units/battle_raptor.png",
+    "category": "Critter",
+    "unitType": "critter-fast",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 1,
+    "unlockLevel": 10,
+    "productionTime": 43200,
+    "cost": [
+      { "type": "Gold", "amount": 8000 },
+      { "type": "Teeth", "amount": 5 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "resistances": {
+      "hp": {
+        "fire": 125
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 125, "defense": 70, "dodge": 40, "bravery": 40, "abilitySlots": 1, "range": 2 },
+        { "level": 2, "health": 140, "defense": 70, "dodge": 40, "bravery": 45, "abilitySlots": 1, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 5768 }, { "type": "Iron", "amount": 5875 }, { "type": "Teeth", "amount": 1 }], "time": 14400, "sp": 1800 } },
+        { "level": 3, "health": 150, "defense": 75, "dodge": 45, "bravery": 50, "abilitySlots": 1, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 18160 }, { "type": "Lumber", "amount": 3750 }, { "type": "Teeth", "amount": 2 }], "time": 43200, "sp": 4200 } },
+        { "level": 4, "health": 165, "defense": 75, "dodge": 45, "bravery": 55, "abilitySlots": 1, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 50000 }, { "type": "Lumber", "amount": 5500 }, { "type": "Teeth", "amount": 4 }], "time": 86400, "sp": 9500 } },
+        { "level": 5, "health": 175, "defense": 80, "dodge": 50, "bravery": 60, "abilitySlots": 2, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 120000 }, { "type": "Lumber", "amount": 7000 }, { "type": "Necklaces", "amount": 2 }], "time": 172800, "sp": 22000 } },
+        { "level": 6, "health": 190, "defense": 85, "dodge": 55, "bravery": 60, "abilitySlots": 2, "range": 2, "promotionCost": { "resources": [{ "type": "Gold", "amount": 236648 }, { "type": "Lumber", "amount": 9980 }, { "type": "Necklaces", "amount": 4 }], "time": 172800, "sp": 75000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Claw",
+        "damageType": "Piercing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 1,
+        "range": { "min": 1, "max": 2 },
+        "armorPiercing": 20,
+        "suppressionMod": { "multiplier": 0.5 },
+        "bonusCrit": { "Critter": 20, "Soldier": 10 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 64, "max": 106 }, "offense": 60, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 70, "max": 116 }, "offense": 65, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 76, "max": 127 }, "offense": 70, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 83, "max": 138 }, "offense": 75, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 89, "max": 149 }, "offense": 80, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 96, "max": 159 }, "offense": 85, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Young Boar",
+    "description": "They have the sweetest way of stabbing you in the side! A critter unit with crushing bite attacks.",
+    "imageUrl": "/images/units/young_boar.png",
+    "category": "Critter",
+    "unitType": "critter",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 1,
+    "unlockLevel": 12,
+    "productionTime": 38880,
+    "cost": [
+      { "type": "Nanopods", "amount": 15 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "resistances": {
+      "hp": {
+        "fire": 125
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 110, "defense": 65, "dodge": 35, "bravery": 25, "abilitySlots": 1, "range": 1 },
+        { "level": 2, "health": 120, "defense": 65, "dodge": 35, "bravery": 30, "abilitySlots": 1, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 5000 }, { "type": "Iron", "amount": 4000 }, { "type": "Teeth", "amount": 1 }], "time": 14400, "sp": 1105 } },
+        { "level": 3, "health": 130, "defense": 70, "dodge": 40, "bravery": 35, "abilitySlots": 1, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 14000 }, { "type": "Lumber", "amount": 2800 }, { "type": "Teeth", "amount": 2 }], "time": 43200, "sp": 2940 } },
+        { "level": 4, "health": 145, "defense": 70, "dodge": 40, "bravery": 40, "abilitySlots": 1, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 38000 }, { "type": "Lumber", "amount": 4000 }, { "type": "Teeth", "amount": 4 }], "time": 86400, "sp": 6625 } },
+        { "level": 5, "health": 155, "defense": 75, "dodge": 45, "bravery": 45, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 90000 }, { "type": "Lumber", "amount": 5200 }, { "type": "Teeth", "amount": 8 }], "time": 172800, "sp": 16200 } },
+        { "level": 6, "health": 165, "defense": 80, "dodge": 50, "bravery": 50, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 180000 }, { "type": "Lumber", "amount": 6500 }, { "type": "Necklaces", "amount": 2 }], "time": 172800, "sp": 56525 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 1 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 53, "max": 88 }, "offense": 46, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 58, "max": 96 }, "offense": 51, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 63, "max": 105 }, "offense": 56, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 68, "max": 114 }, "offense": 61, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 74, "max": 123 }, "offense": 66, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 79, "max": 132 }, "offense": 71, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Imperial Boar",
+    "description": "The Imperial Boar offers a powerful melee attack with a lot of HP to back it up at an early level.",
+    "imageUrl": "/images/units/imperial_boar.png",
+    "category": "Critter",
+    "unitType": "critter",
+    "affiliation": "Imperial",
+    "building": "Animal Trainer",
+    "buildingLevel": 2,
+    "unlockLevel": 15,
+    "productionTime": 43560,
+    "cost": [
+      { "type": "Gold", "amount": 9500 },
+      { "type": "Teeth", "amount": 7 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "resistances": {
+      "hp": {
+        "fire": 125
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 175, "defense": 65, "dodge": 35, "bravery": 35, "abilitySlots": 1, "range": 1 },
+        { "level": 2, "health": 195, "defense": 65, "dodge": 35, "bravery": 40, "abilitySlots": 1, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 6500 }, { "type": "Iron", "amount": 5200 }, { "type": "Teeth", "amount": 2 }], "time": 14400, "sp": 2240 } },
+        { "level": 3, "health": 210, "defense": 70, "dodge": 40, "bravery": 45, "abilitySlots": 1, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 20000 }, { "type": "Lumber", "amount": 3500 }, { "type": "Teeth", "amount": 3 }], "time": 43200, "sp": 5380 } },
+        { "level": 4, "health": 230, "defense": 70, "dodge": 40, "bravery": 50, "abilitySlots": 1, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 55000 }, { "type": "Lumber", "amount": 5000 }, { "type": "Teeth", "amount": 5 }], "time": 86400, "sp": 12550 } },
+        { "level": 5, "health": 245, "defense": 75, "dodge": 45, "bravery": 55, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 130000 }, { "type": "Lumber", "amount": 6500 }, { "type": "Necklaces", "amount": 2 }], "time": 172800, "sp": 28675 } },
+        { "level": 6, "health": 265, "defense": 80, "dodge": 50, "bravery": 60, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 260000 }, { "type": "Lumber", "amount": 8500 }, { "type": "Necklaces", "amount": 4 }], "time": 172800, "sp": 103225 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 1 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 75, "max": 125 }, "offense": 46, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 82, "max": 137 }, "offense": 51, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 90, "max": 150 }, "offense": 56, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 97, "max": 162 }, "offense": 61, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 105, "max": 175 }, "offense": 66, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 112, "max": 187 }, "offense": 71, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Young Mammoth",
+    "description": "Look at the happy babies trampling everyone to death! A tanky critter with high HP and armor-piercing stomp attacks.",
+    "imageUrl": "/images/units/young_mammoth.png",
+    "category": "Critter",
+    "unitType": "critter",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 1,
+    "unlockLevel": 21,
+    "productionTime": 38880,
+    "cost": [
+      { "type": "Nanopods", "amount": 15 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Cold"],
+    "resistances": {
+      "hp": {
+        "explosive": 75,
+        "fire": 125,
+        "piercing": 85
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 225, "defense": 25, "dodge": 10, "bravery": 30, "abilitySlots": 2, "range": 1 },
+        { "level": 2, "health": 250, "defense": 30, "dodge": 15, "bravery": 35, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 8000 }, { "type": "Lumber", "amount": 4000 }, { "type": "Teeth", "amount": 2 }], "time": 14400, "sp": 2500 } },
+        { "level": 3, "health": 270, "defense": 35, "dodge": 20, "bravery": 40, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 24000 }, { "type": "Lumber", "amount": 5500 }, { "type": "Teeth", "amount": 4 }], "time": 43200, "sp": 6000 } },
+        { "level": 4, "health": 295, "defense": 40, "dodge": 25, "bravery": 45, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 65000 }, { "type": "Lumber", "amount": 7000 }, { "type": "Teeth", "amount": 7 }], "time": 86400, "sp": 14000 } },
+        { "level": 5, "health": 315, "defense": 45, "dodge": 30, "bravery": 50, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 155000 }, { "type": "Lumber", "amount": 9000 }, { "type": "Necklaces", "amount": 3 }], "time": 172800, "sp": 32000 } },
+        { "level": 6, "health": 340, "defense": 50, "dodge": 35, "bravery": 55, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 310000 }, { "type": "Lumber", "amount": 11000 }, { "type": "Necklaces", "amount": 5 }], "time": 172800, "sp": 110000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Stomp",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 1,
+        "range": { "min": 1, "max": 1 },
+        "armorPiercing": 40,
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 68, "max": 102 }, "offense": 36, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 74, "max": 112 }, "offense": 41, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 81, "max": 122 }, "offense": 46, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 88, "max": 132 }, "offense": 51, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 95, "max": 142 }, "offense": 56, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 102, "max": 153 }, "offense": 61, "criticalChance": 5 }
+        ]
+      },
+      {
+        "name": "Thorough Stomping",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 5,
+        "prepTime": 2,
+        "range": { "min": 1, "max": 1 },
+        "armorPiercing": 40,
+        "suppressionMod": { "multiplier": 1.5, "flat": 10 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 27, "max": 40 }, "offense": 54, "criticalChance": 0, "hits": 2 },
+          { "level": 2, "damage": { "min": 29, "max": 44 }, "offense": 59, "criticalChance": 0, "hits": 2 },
+          { "level": 3, "damage": { "min": 32, "max": 48 }, "offense": 64, "criticalChance": 0, "hits": 2 },
+          { "level": 4, "damage": { "min": 35, "max": 52 }, "offense": 69, "criticalChance": 0, "hits": 2 },
+          { "level": 5, "damage": { "min": 37, "max": 56 }, "offense": 74, "criticalChance": 0, "hits": 2 },
+          { "level": 6, "damage": { "min": 40, "max": 60 }, "offense": 79, "criticalChance": 0, "hits": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "name": "War Mammoth",
+    "description": "A critter featuring a large pool of HP, as well as high-damage attacks with a low cooldown and 40% armor piercing.",
+    "imageUrl": "/images/units/war_mammoth.png",
+    "category": "Critter",
+    "unitType": "critter",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 3,
+    "unlockLevel": 29,
+    "productionTime": 43200,
+    "cost": [
+      { "type": "Gold", "amount": 12000 },
+      { "type": "Teeth", "amount": 10 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Cold"],
+    "resistances": {
+      "hp": {
+        "explosive": 75,
+        "fire": 125,
+        "piercing": 85
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 300, "defense": 25, "dodge": 10, "bravery": 40, "abilitySlots": 2, "range": 1 },
+        { "level": 2, "health": 330, "defense": 30, "dodge": 15, "bravery": 45, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 14688 }, { "type": "Lumber", "amount": 5500 }, { "type": "Teeth", "amount": 3 }], "time": 14400, "sp": 4000 } },
+        { "level": 3, "health": 360, "defense": 35, "dodge": 20, "bravery": 50, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 45000 }, { "type": "Lumber", "amount": 7500 }, { "type": "Teeth", "amount": 5 }], "time": 43200, "sp": 9500 } },
+        { "level": 4, "health": 390, "defense": 40, "dodge": 25, "bravery": 55, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 120000 }, { "type": "Lumber", "amount": 10000 }, { "type": "Teeth", "amount": 10 }], "time": 86400, "sp": 22000 } },
+        { "level": 5, "health": 420, "defense": 45, "dodge": 30, "bravery": 60, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 290000 }, { "type": "Lumber", "amount": 13000 }, { "type": "Necklaces", "amount": 4 }], "time": 172800, "sp": 50000 } },
+        { "level": 6, "health": 450, "defense": 50, "dodge": 35, "bravery": 60, "abilitySlots": 2, "range": 1, "promotionCost": { "resources": [{ "type": "Gold", "amount": 517952 }, { "type": "Lumber", "amount": 16000 }, { "type": "Necklaces", "amount": 6 }], "time": 172800, "sp": 175000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Stomp",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 1,
+        "range": { "min": 1, "max": 1 },
+        "armorPiercing": 40,
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 92, "max": 138 }, "offense": 36, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 101, "max": 151 }, "offense": 41, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 110, "max": 165 }, "offense": 46, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 119, "max": 179 }, "offense": 51, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 128, "max": 193 }, "offense": 56, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 138, "max": 207 }, "offense": 61, "criticalChance": 5 }
+        ]
+      },
+      {
+        "name": "Thorough Stomping",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 5,
+        "prepTime": 2,
+        "range": { "min": 1, "max": 1 },
+        "armorPiercing": 40,
+        "suppressionMod": { "multiplier": 1.5, "flat": 10 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 36, "max": 55 }, "offense": 54, "criticalChance": 0, "hits": 2 },
+          { "level": 2, "damage": { "min": 39, "max": 60 }, "offense": 59, "criticalChance": 0, "hits": 2 },
+          { "level": 3, "damage": { "min": 43, "max": 66 }, "offense": 64, "criticalChance": 0, "hits": 2 },
+          { "level": 4, "damage": { "min": 46, "max": 71 }, "offense": 69, "criticalChance": 0, "hits": 2 },
+          { "level": 5, "damage": { "min": 50, "max": 77 }, "offense": 74, "criticalChance": 0, "hits": 2 },
+          { "level": 6, "damage": { "min": 54, "max": 82 }, "offense": 79, "criticalChance": 0, "hits": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Young Worm",
+    "description": "These are the cutest acidic saliva spraying Sandworms you'll ever encounter! Features ranged poison spit, melee slam, and tunneling attacks.",
+    "imageUrl": "/images/units/young_worm.png",
+    "category": "Critter",
+    "unitType": "critter",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 1,
+    "unlockLevel": 22,
+    "productionTime": 38880,
+    "cost": [
+      { "type": "Nanopods", "amount": 20 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "resistances": {
+      "hp": {
+        "crushing": 50,
+        "fire": 100,
+        "piercing": 75
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 130, "armor": 60, "defense": 25, "dodge": 10, "bravery": 50, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 145, "armor": 65, "defense": 30, "dodge": 15, "bravery": 50, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 13168 }, { "type": "Iron", "amount": 3400 }, { "type": "Teeth", "amount": 1 }], "time": 14400, "sp": 3000 } },
+        { "level": 3, "health": 155, "armor": 70, "defense": 35, "dodge": 20, "bravery": 50, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 37696 }, { "type": "Iron", "amount": 5100 }, { "type": "Teeth", "amount": 2 }], "time": 43200, "sp": 7000 } },
+        { "level": 4, "health": 170, "armor": 80, "defense": 40, "dodge": 25, "bravery": 50, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 100112 }, { "type": "Lumber", "amount": 3325 }, { "type": "Teeth", "amount": 5 }], "time": 86400, "sp": 16000 } },
+        { "level": 5, "health": 180, "armor": 85, "defense": 45, "dodge": 30, "bravery": 50, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 243176 }, { "type": "Lumber", "amount": 4450 }, { "type": "Teeth", "amount": 10 }], "time": 172800, "sp": 36000 } },
+        { "level": 6, "health": 195, "armor": 90, "defense": 50, "dodge": 35, "bravery": 50, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 458416 }, { "type": "Lumber", "amount": 7340 }, { "type": "Necklaces", "amount": 3 }], "time": 172800, "sp": 125000 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Spit",
+        "damageType": "Fire",
+        "lineOfFire": "Indirect",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 3,
+        "range": { "min": 1, "max": 3 },
+        "armorPiercing": 25,
+        "statusEffects": [{ "type": "Poison", "chance": 100, "duration": 4 }],
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 27, "max": 45 }, "offense": 46, "criticalChance": 0, "dot": { "initial": 36, "final": 9 } },
+          { "level": 2, "damage": { "min": 29, "max": 49 }, "offense": 51, "criticalChance": 0, "dot": { "initial": 39, "final": 10 } },
+          { "level": 3, "damage": { "min": 32, "max": 53 }, "offense": 56, "criticalChance": 0, "dot": { "initial": 43, "final": 11 } },
+          { "level": 4, "damage": { "min": 34, "max": 57 }, "offense": 61, "criticalChance": 0, "dot": { "initial": 46, "final": 12 } },
+          { "level": 5, "damage": { "min": 37, "max": 62 }, "offense": 66, "criticalChance": 0, "dot": { "initial": 50, "final": 13 } },
+          { "level": 6, "damage": { "min": 40, "max": 67 }, "offense": 71, "criticalChance": 0, "dot": { "initial": 54, "final": 13 } }
+        ]
+      },
+      {
+        "name": "Slam",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 2 },
+        "armorPiercing": 40,
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 53, "max": 88 }, "offense": 40, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 58, "max": 96 }, "offense": 45, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 63, "max": 105 }, "offense": 50, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 68, "max": 114 }, "offense": 55, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 74, "max": 123 }, "offense": 60, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 79, "max": 132 }, "offense": 65, "criticalChance": 5 }
+        ]
+      },
+      {
+        "name": "Tunnel",
+        "damageType": "Piercing",
+        "lineOfFire": "Indirect",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 3,
+        "prepTime": 1,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 25,
+        "bonusCrit": { "Soldier": 10, "Critter": 10 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 41, "max": 68 }, "offense": 46, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 45, "max": 74 }, "offense": 51, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 49, "max": 81 }, "offense": 56, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 52, "max": 88 }, "offense": 61, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 57, "max": 95 }, "offense": 66, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 61, "max": 102 }, "offense": 71, "criticalChance": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Tamed Sandworm",
+    "description": "A premium critter unit featuring ranged acidic spit, crushing slam, and long-range tunneling attacks. The apex predator of the desert.",
+    "imageUrl": "/images/units/tamed_sandworm.png",
+    "category": "Critter",
+    "unitType": "critter",
+    "affiliation": "Wild",
+    "building": "Animal Trainer",
+    "buildingLevel": 3,
+    "unlockLevel": 25,
+    "productionTime": 10800,
+    "cost": [
+      { "type": "Nanopods", "amount": 65 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "resistances": {
+      "hp": {
+        "crushing": 50,
+        "fire": 100,
+        "piercing": 75
+      }
+    },
+    "stats": {
+      "ranks": [
+        { "level": 1, "health": 200, "armor": 100, "defense": 25, "dodge": 10, "bravery": 60, "abilitySlots": 2, "range": 5 },
+        { "level": 2, "health": 220, "armor": 110, "defense": 30, "dodge": 15, "bravery": 60, "abilitySlots": 2, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 16160 }, { "type": "Iron", "amount": 4500 }, { "type": "Teeth", "amount": 2 }], "time": 14400, "sp": 4750 } },
+        { "level": 3, "health": 240, "armor": 120, "defense": 35, "dodge": 20, "bravery": 60, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 48000 }, { "type": "Iron", "amount": 6500 }, { "type": "Teeth", "amount": 4 }], "time": 43200, "sp": 11000 } },
+        { "level": 4, "health": 260, "armor": 130, "defense": 40, "dodge": 25, "bravery": 60, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 125000 }, { "type": "Lumber", "amount": 5000 }, { "type": "Teeth", "amount": 8 }], "time": 86400, "sp": 25000 } },
+        { "level": 5, "health": 280, "armor": 140, "defense": 45, "dodge": 30, "bravery": 60, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 305000 }, { "type": "Lumber", "amount": 7000 }, { "type": "Necklaces", "amount": 3 }], "time": 172800, "sp": 57000 } },
+        { "level": 6, "health": 300, "armor": 150, "defense": 50, "dodge": 35, "bravery": 60, "abilitySlots": 3, "range": 5, "promotionCost": { "resources": [{ "type": "Gold", "amount": 562600 }, { "type": "Lumber", "amount": 10000 }, { "type": "Necklaces", "amount": 5 }], "time": 172800, "sp": 193525 } }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Spit",
+        "damageType": "Fire",
+        "lineOfFire": "Indirect",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 3,
+        "range": { "min": 1, "max": 3 },
+        "armorPiercing": 25,
+        "statusEffects": [{ "type": "Poison", "chance": 100, "duration": 4 }],
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": true, "LTA": true, "Sea": true, "Ship": true },
+        "ranks": [
+          { "level": 1, "damage": { "min": 41, "max": 69 }, "offense": 46, "criticalChance": 0, "dot": { "initial": 54, "final": 13 } },
+          { "level": 2, "damage": { "min": 45, "max": 75 }, "offense": 51, "criticalChance": 0, "dot": { "initial": 59, "final": 15 } },
+          { "level": 3, "damage": { "min": 49, "max": 82 }, "offense": 56, "criticalChance": 0, "dot": { "initial": 64, "final": 16 } },
+          { "level": 4, "damage": { "min": 53, "max": 89 }, "offense": 61, "criticalChance": 0, "dot": { "initial": 70, "final": 18 } },
+          { "level": 5, "damage": { "min": 57, "max": 96 }, "offense": 66, "criticalChance": 0, "dot": { "initial": 75, "final": 19 } },
+          { "level": 6, "damage": { "min": 62, "max": 103 }, "offense": 71, "criticalChance": 0, "dot": { "initial": 81, "final": 20 } }
+        ]
+      },
+      {
+        "name": "Slam",
+        "damageType": "Crushing",
+        "lineOfFire": "Contact",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 2,
+        "range": { "min": 1, "max": 2 },
+        "armorPiercing": 40,
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 75, "max": 125 }, "offense": 40, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 82, "max": 137 }, "offense": 45, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 90, "max": 150 }, "offense": 50, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 97, "max": 162 }, "offense": 55, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 105, "max": 175 }, "offense": 60, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 112, "max": 187 }, "offense": 65, "criticalChance": 5 }
+        ]
+      },
+      {
+        "name": "Tunnel",
+        "damageType": "Piercing",
+        "lineOfFire": "Indirect",
+        "ammo": -1,
+        "ammoUsed": 0,
+        "reloadTime": 0,
+        "cooldown": 3,
+        "prepTime": 1,
+        "range": { "min": 1, "max": 5 },
+        "armorPiercing": 25,
+        "bonusCrit": { "Soldier": 10, "Critter": 10 },
+        "targetableTypes": { "Soldier": true, "Sniper": true, "Vehicle": true, "Tank": true, "Metal": true, "Critter": true, "Civilian": true, "Air": false, "LTA": false, "Sea": false, "Ship": false },
+        "ranks": [
+          { "level": 1, "damage": { "min": 56, "max": 94 }, "offense": 46, "criticalChance": 5 },
+          { "level": 2, "damage": { "min": 62, "max": 103 }, "offense": 51, "criticalChance": 5 },
+          { "level": 3, "damage": { "min": 67, "max": 112 }, "offense": 56, "criticalChance": 5 },
+          { "level": 4, "damage": { "min": 73, "max": 122 }, "offense": 61, "criticalChance": 5 },
+          { "level": 5, "damage": { "min": 79, "max": 131 }, "offense": 66, "criticalChance": 5 },
+          { "level": 6, "damage": { "min": 84, "max": 141 }, "offense": 71, "criticalChance": 5 }
+        ]
+      }
+    ]
+  }
+]

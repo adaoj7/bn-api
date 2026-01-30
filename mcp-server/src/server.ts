@@ -3,7 +3,7 @@ import cors from 'cors';
 import { randomUUID } from 'crypto';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
-import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js';
+import { isInitializeRequest, CallToolResult, TextContent } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
 
 import { CONFIG, getServerUrl, getLocalIp } from './config';
@@ -12,6 +12,7 @@ import { searchUnits } from './tools/searchUnits';
 import { listCategories } from './tools/listCategories';
 import { getUnitsBatch } from './tools/getUnitsBatch';
 import { randomUnit } from './tools/randomUnit';
+import { getGameMechanics } from './tools/getGameMechanics';
 
 // =============================================================================
 // LOGGING UTILITIES
@@ -53,11 +54,42 @@ function logError(category: string, message: string, error?: unknown, data?: Rec
 // SESSION MANAGEMENT
 // =============================================================================
 
-// Store active transports by session ID
-const transports: Map<string, StreamableHTTPServerTransport> = new Map();
+interface Session {
+  transport: StreamableHTTPServerTransport;
+  server: McpServer;
+  lastUsed: number;
+}
+
+// Store active sessions by session ID
+const sessions: Map<string, Session> = new Map();
+
+// Session timeout: 5 minutes of inactivity
+const SESSION_TIMEOUT_MS = 5 * 60 * 1000;
+
+// Clean up expired sessions every minute
+setInterval(() => {
+  const now = Date.now();
+  let cleaned = 0;
+
+  for (const [sessionId, session] of sessions) {
+    if (now - session.lastUsed > SESSION_TIMEOUT_MS) {
+      logDebug('SESSION', `Cleaning up expired session`, { sessionId });
+      session.transport.close?.();
+      sessions.delete(sessionId);
+      cleaned++;
+    }
+  }
+
+  if (cleaned > 0 || sessions.size > 0) {
+    logDebug('SESSION', `Session cleanup complete`, { 
+      activeSessions: sessions.size, 
+      cleaned 
+    });
+  }
+}, 60000);
 
 function getSessionCount(): number {
-  return transports.size;
+  return sessions.size;
 }
 
 function logSessionStats(): void {
@@ -65,15 +97,31 @@ function logSessionStats(): void {
 }
 
 // =============================================================================
+// CUSTOM TYPES
+// =============================================================================
+
+/** Extended Request with requestId for correlation */
+interface RequestWithId extends Request {
+  requestId?: string;
+  rawBody?: string;
+}
+
+/** OAuth introspection response */
+interface OAuthIntrospectionResponse {
+  active: boolean;
+  [key: string]: unknown;
+}
+
+// =============================================================================
 // REQUEST LOGGING MIDDLEWARE
 // =============================================================================
 
-function requestLoggingMiddleware(req: Request, res: Response, next: NextFunction): void {
+function requestLoggingMiddleware(req: RequestWithId, res: Response, next: NextFunction): void {
   const requestId = randomUUID().slice(0, 8);
   const startTime = Date.now();
   
   // Attach request ID for correlation
-  (req as any).requestId = requestId;
+  req.requestId = requestId;
   
   logInfo('REQUEST', `--> ${req.method} ${req.path}`, {
     requestId,
@@ -95,7 +143,7 @@ function requestLoggingMiddleware(req: Request, res: Response, next: NextFunctio
 
   // Capture response
   const originalSend = res.send.bind(res);
-  res.send = function(body: any) {
+  res.send = function(body: unknown) {
     const duration = Date.now() - startTime;
     logInfo('RESPONSE', `<-- ${req.method} ${req.path} ${res.statusCode} (${duration}ms)`, {
       requestId,
@@ -125,8 +173,8 @@ function requestLoggingMiddleware(req: Request, res: Response, next: NextFunctio
  * Simple bearer token authentication middleware
  * Supports both simple static token and OAuth 2 bearer tokens
  */
-function authMiddleware(req: Request, res: Response, next: NextFunction): void {
-  const requestId = (req as any).requestId || 'unknown';
+function authMiddleware(req: RequestWithId, res: Response, next: NextFunction): void {
+  const requestId = req.requestId || 'unknown';
   const authHeader = req.headers.authorization;
 
   logDebug('AUTH', `Checking authentication`, {
@@ -270,7 +318,7 @@ async function validateOAuthToken(token: string): Promise<boolean> {
       return false;
     }
 
-    const data = await response.json();
+    const data = await response.json() as OAuthIntrospectionResponse;
     logDebug('OAUTH', `Introspection result`, { active: data.active });
     
     return data.active === true;
@@ -286,27 +334,54 @@ async function validateOAuthToken(token: string): Promise<boolean> {
 
 /**
  * Wrapper to add logging to tool handlers
+ * Returns CallToolResult with properly typed TextContent
  */
 function withToolLogging<T extends Record<string, unknown>>(
   toolName: string,
   handler: (params: T) => unknown
-): (params: T) => Promise<{ content: Array<{ type: string; text: string }> }> {
-  return async (params: T) => {
+): (params: T) => Promise<CallToolResult> {
+  return async (params: T): Promise<CallToolResult> => {
     const startTime = Date.now();
     logInfo('TOOL', `Executing tool: ${toolName}`, { params });
     
     try {
       const result = handler(params);
+      // Handle both sync and async results
+      const resolvedResult = result instanceof Promise ? await result : result;
       const duration = Date.now() - startTime;
       
       logInfo('TOOL', `Tool completed: ${toolName} (${duration}ms)`, {
         duration,
-        resultType: typeof result,
-        resultKeys: result && typeof result === 'object' ? Object.keys(result) : undefined,
+        resultType: typeof resolvedResult,
+        resultKeys: resolvedResult && typeof resolvedResult === 'object' ? Object.keys(resolvedResult) : undefined,
       });
       
+      // Serialize result, handling potential circular references
+      let serializedResult: string;
+      try {
+        serializedResult = JSON.stringify(resolvedResult, null, 2);
+      } catch (serializeError) {
+        logError('TOOL', `Failed to serialize result for ${toolName}`, serializeError, { params });
+        // Fallback: try with a replacer function to handle circular refs
+        const seen = new WeakSet();
+        serializedResult = JSON.stringify(resolvedResult, (key, value) => {
+          if (typeof value === 'object' && value !== null) {
+            if (seen.has(value)) {
+              return '[Circular]';
+            }
+            seen.add(value);
+          }
+          return value;
+        }, 2);
+      }
+      
+      const textContent: TextContent = {
+        type: 'text',
+        text: serializedResult,
+      };
+      
       return {
-        content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
+        content: [textContent],
       };
     } catch (error) {
       const duration = Date.now() - startTime;
@@ -328,58 +403,82 @@ function createMcpServer(sessionId?: string): McpServer {
   });
 
   // Register get_unit tool
-  server.tool(
+  server.registerTool(
     'get_unit',
-    'Get detailed information about a Battle Nations unit including all ranks, stats, and actions. Supports fuzzy name matching.',
     {
-      identifier: z.string().describe('Unit name or ID (supports fuzzy matching for names)'),
+      description: 'Get detailed information about a Battle Nations unit including all ranks, stats, and actions. Supports fuzzy name matching.',
+      inputSchema: {
+        identifier: z.string().describe('Unit name or ID (supports fuzzy matching for names)'),
+      },
     },
     withToolLogging('get_unit', ({ identifier }) => getUnit({ identifier }))
   );
 
   // Register search_units tool
-  server.tool(
+  server.registerTool(
     'search_units',
-    'Search for Battle Nations units by name, description, or filters. Returns summary data for matching units.',
     {
-      query: z.string().optional().describe('Free text search on name/description'),
-      category: z.string().optional().describe('Filter by category (e.g., "Soldier", "Tank")'),
-      building: z.string().optional().describe('Filter by production building'),
-      affiliation: z.string().optional().describe('Filter by affiliation (e.g., "Imperial", "Raiders")'),
-      limit: z.number().optional().describe('Maximum results to return (default: 20, max: 50)'),
+      description: 'Search for Battle Nations units by name, description, or filters. Returns summary data for matching units.',
+      inputSchema: {
+        query: z.string().optional().describe('Free text search on name/description'),
+        category: z.string().optional().describe('Filter by category (e.g., "Soldier", "Tank")'),
+        building: z.string().optional().describe('Filter by production building'),
+        affiliation: z.string().optional().describe('Filter by affiliation (e.g., "Imperial", "Raiders")'),
+        limit: z.number().optional().describe('Maximum results to return (default: 20, max: 50)'),
+      },
     },
     withToolLogging('search_units', (params) => searchUnits(params))
   );
 
   // Register list_categories tool
-  server.tool(
+  server.registerTool(
     'list_categories',
-    'List all available filter values (categories, buildings, affiliations) with unit counts.',
-    {},
+    {
+      description: 'List all available filter values (categories, buildings, affiliations) with unit counts.',
+      inputSchema: {},
+    },
     withToolLogging('list_categories', () => listCategories())
   );
 
   // Register get_units_batch tool
-  server.tool(
+  server.registerTool(
     'get_units_batch',
-    'Get full data for multiple units at once. Useful for comparing units. Maximum 20 units per request.',
     {
-      identifiers: z.array(z.string()).describe('Array of unit names or IDs to fetch'),
+      description: 'Get full data for multiple units at once. Useful for comparing units. Maximum 20 units per request.',
+      inputSchema: {
+        identifiers: z.array(z.string()).describe('Array of unit names or IDs to fetch'),
+      },
     },
     withToolLogging('get_units_batch', ({ identifiers }) => getUnitsBatch({ identifiers }))
   );
 
   // Register random_unit tool
-  server.tool(
+  server.registerTool(
     'random_unit',
-    'Get a random Battle Nations unit for discovery or fun. Optionally filter by category.',
     {
-      category: z.string().optional().describe('Optional category to limit the random selection'),
+      description: 'Get a random Battle Nations unit for discovery or fun. Optionally filter by category.',
+      inputSchema: {
+        category: z.string().optional().describe('Optional category to limit the random selection'),
+      },
     },
     withToolLogging('random_unit', (params) => randomUnit(params))
   );
 
-  logInfo('MCP', `MCP server configured with 5 tools`, { sessionId });
+  // Register get_game_mechanics tool
+  server.registerTool(
+    'get_game_mechanics',
+    {
+      description: 'Get an explanation of Battle Nations game mechanics including combat, stats, damage types, and status effects.',
+      inputSchema: {
+        topic: z.enum(['overview', 'unit_stats', 'weapon_stats', 'damage_types', 'status_effects', 'all'])
+          .optional()
+          .describe('Specific topic to get info about. Defaults to "overview" for a summary.'),
+      },
+    },
+    withToolLogging('get_game_mechanics', ({ topic = 'overview' }) => getGameMechanics(topic))
+  );
+
+  logInfo('MCP', `MCP server configured with 6 tools`, { sessionId });
   return server;
 }
 
@@ -390,8 +489,8 @@ function createMcpServer(sessionId?: string): McpServer {
 /**
  * Handle MCP POST requests (main protocol communication)
  */
-async function handleMcpPost(req: Request, res: Response): Promise<void> {
-  const requestId = (req as any).requestId || 'unknown';
+async function handleMcpPost(req: RequestWithId, res: Response): Promise<void> {
+  const requestId = req.requestId || 'unknown';
   const sessionId = req.headers['mcp-session-id'] as string | undefined;
   let transport: StreamableHTTPServerTransport;
 
@@ -403,54 +502,71 @@ async function handleMcpPost(req: Request, res: Response): Promise<void> {
     bodyId: req.body?.id,
   });
 
-  if (sessionId && transports.has(sessionId)) {
-    // Existing session
+  // Check if this is an initialize request - if so, force a new session
+  // This handles reconnection attempts that would otherwise fail with "Server already initialized"
+  const isInit = isInitializeRequest(req.body);
+  const forceNew = isInit && sessionId && sessions.has(sessionId);
+
+  if (sessionId && sessions.has(sessionId) && !forceNew) {
+    // Existing session - reuse it and update lastUsed
+    const session = sessions.get(sessionId)!;
+    session.lastUsed = Date.now();
+    transport = session.transport;
     logDebug('MCP_POST', `Using existing session`, { requestId, sessionId });
-    transport = transports.get(sessionId)!;
-  } else if (isInitializeRequest(req.body)) {
-    // New session - create transport and server
-    // Client may or may not provide their own session ID
-    const clientProvidedSessionId = sessionId;
-    logInfo('MCP_POST', `Creating new session (initialize request)`, { 
+  } else if (sessionId || isInit) {
+    // Create new session if:
+    // - Client provided a session ID (whether we know it or not - handles server restart)
+    // - This is an initialize request
+    
+    // If forcing new and session exists, close the old one first
+    if (forceNew && sessionId) {
+      const oldSession = sessions.get(sessionId)!;
+      logInfo('MCP_POST', `Closing existing session for re-initialization`, { requestId, sessionId });
+      sessions.delete(sessionId);
+      // Don't await close - just let it clean up
+      oldSession.transport.close?.();
+    }
+    
+    const newSessionId = sessionId || randomUUID();
+    const isReconnect = sessionId && !isInit;
+    
+    logInfo('MCP_POST', isReconnect 
+      ? `Creating session for reconnecting client (server may have restarted)` 
+      : `Creating new session`, { 
       requestId,
-      clientProvidedSessionId: clientProvidedSessionId || '(none - will generate)',
+      sessionId: newSessionId,
+      isReconnect,
+      requestMethod: req.body?.method,
     });
     
     transport = new StreamableHTTPServerTransport({
-      sessionIdGenerator: () => {
-        // Use client-provided session ID if available, otherwise generate one
-        const newId = clientProvidedSessionId || randomUUID();
-        logInfo('SESSION', `Session ID assigned`, { 
-          requestId, 
-          sessionId: newId,
-          source: clientProvidedSessionId ? 'client-provided' : 'server-generated',
-        });
-        return newId;
-      },
-      onsessioninitialized: (newSessionId) => {
-        transports.set(newSessionId, transport);
-        logInfo('SESSION', `Session initialized and stored`, { 
-          requestId, 
-          sessionId: newSessionId,
-          totalSessions: transports.size,
-        });
-        logSessionStats();
-      },
+      sessionIdGenerator: () => newSessionId,
+    });
+
+    const server = createMcpServer(newSessionId);
+    await server.connect(transport);
+
+    // Store session with server and timestamp
+    sessions.set(newSessionId, { 
+      transport, 
+      server, 
+      lastUsed: Date.now() 
+    });
+    logInfo('SESSION', `Session created and stored`, { 
+      requestId, 
+      sessionId: newSessionId,
+      totalSessions: sessions.size,
     });
 
     transport.onclose = () => {
-      if (transport.sessionId) {
-        logInfo('SESSION', `Session closed`, { 
-          sessionId: transport.sessionId,
-          remainingSessions: transports.size - 1,
-        });
-        transports.delete(transport.sessionId);
-        logSessionStats();
-      }
+      logInfo('SESSION', `Session closed`, { 
+        sessionId: newSessionId,
+        remainingSessions: sessions.size - 1,
+      });
+      sessions.delete(newSessionId);
+      logSessionStats();
     };
 
-    const server = createMcpServer(transport.sessionId);
-    await server.connect(transport);
     logDebug('MCP_POST', `MCP server connected to transport`, { requestId });
   } else if (!sessionId && (!req.body || Object.keys(req.body).length === 0 || req.body?.method === 'ping')) {
     // Pre-session connection check - client is verifying auth before initializing
@@ -476,10 +592,10 @@ async function handleMcpPost(req: Request, res: Response): Promise<void> {
     logWarn('MCP_POST', `Invalid request: unrecognized request type`, {
       requestId,
       sessionId,
-      sessionExists: sessionId ? transports.has(sessionId) : false,
+      sessionExists: sessionId ? sessions.has(sessionId) : false,
       hasBody: !!req.body,
       bodyMethod: req.body?.method,
-      knownSessions: Array.from(transports.keys()),
+      knownSessions: Array.from(sessions.keys()),
     });
     
     res.status(400).json({
@@ -508,17 +624,17 @@ async function handleMcpPost(req: Request, res: Response): Promise<void> {
 /**
  * Handle GET requests (SSE stream for server-to-client messages)
  */
-async function handleMcpGet(req: Request, res: Response): Promise<void> {
-  const requestId = (req as any).requestId || 'unknown';
+async function handleMcpGet(req: RequestWithId, res: Response): Promise<void> {
+  const requestId = req.requestId || 'unknown';
   const sessionId = req.headers['mcp-session-id'] as string | undefined;
 
   logDebug('MCP_GET', `Processing GET request (SSE)`, { requestId, sessionId });
 
-  if (!sessionId || !transports.has(sessionId)) {
+  if (!sessionId || !sessions.has(sessionId)) {
     logWarn('MCP_GET', `Invalid or missing session ID`, { 
       requestId, 
       sessionId,
-      knownSessions: Array.from(transports.keys()),
+      knownSessions: Array.from(sessions.keys()),
     });
     
     res.status(400).json({
@@ -529,11 +645,12 @@ async function handleMcpGet(req: Request, res: Response): Promise<void> {
     return;
   }
 
-  const transport = transports.get(sessionId)!;
+  const session = sessions.get(sessionId)!;
+  session.lastUsed = Date.now();
   logDebug('MCP_GET', `Establishing SSE stream`, { requestId, sessionId });
   
   try {
-    await transport.handleRequest(req, res);
+    await session.transport.handleRequest(req, res);
     logDebug('MCP_GET', `SSE stream ended`, { requestId, sessionId });
   } catch (error) {
     logError('MCP_GET', `SSE stream error`, error, { requestId, sessionId });
@@ -544,17 +661,17 @@ async function handleMcpGet(req: Request, res: Response): Promise<void> {
 /**
  * Handle DELETE requests (close session)
  */
-async function handleMcpDelete(req: Request, res: Response): Promise<void> {
-  const requestId = (req as any).requestId || 'unknown';
+async function handleMcpDelete(req: RequestWithId, res: Response): Promise<void> {
+  const requestId = req.requestId || 'unknown';
   const sessionId = req.headers['mcp-session-id'] as string | undefined;
 
   logInfo('MCP_DELETE', `Processing DELETE request (close session)`, { requestId, sessionId });
 
-  if (!sessionId || !transports.has(sessionId)) {
+  if (!sessionId || !sessions.has(sessionId)) {
     logWarn('MCP_DELETE', `Cannot delete: invalid or missing session ID`, { 
       requestId, 
       sessionId,
-      knownSessions: Array.from(transports.keys()),
+      knownSessions: Array.from(sessions.keys()),
     });
     
     res.status(400).json({
@@ -565,10 +682,10 @@ async function handleMcpDelete(req: Request, res: Response): Promise<void> {
     return;
   }
 
-  const transport = transports.get(sessionId)!;
+  const session = sessions.get(sessionId)!;
   
   try {
-    await transport.handleRequest(req, res);
+    await session.transport.handleRequest(req, res);
     logInfo('MCP_DELETE', `Session deletion handled`, { requestId, sessionId });
   } catch (error) {
     logError('MCP_DELETE', `Error closing session`, error, { requestId, sessionId });
@@ -582,9 +699,11 @@ async function handleMcpDelete(req: Request, res: Response): Promise<void> {
 
 /**
  * Global error handler middleware
+ * Note: Express error handlers require 4 parameters even if not all are used
  */
-function errorHandler(err: Error, req: Request, res: Response, _next: NextFunction): void {
-  const requestId = (req as any).requestId || 'unknown';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function errorHandler(err: Error, req: RequestWithId, res: Response, _next: NextFunction): void {
+  const requestId = req.requestId || 'unknown';
   logError('SERVER', `Unhandled error in request`, err, { 
     requestId,
     method: req.method,
@@ -614,8 +733,8 @@ export async function startServer(): Promise<void> {
   // Parse JSON with raw body preservation
   app.use(
     express.json({
-      verify: (req: any, _res, buf) => {
-        req.rawBody = buf?.toString() ?? '';
+      verify: (req, _res, buf) => {
+        (req as RequestWithId).rawBody = buf?.toString() ?? '';
       },
     })
   );
@@ -656,7 +775,7 @@ export async function startServer(): Promise<void> {
     res.json({ 
       status: 'ok', 
       name: 'battle-nations-mcp',
-      activeSessions: transports.size,
+      activeSessions: sessions.size,
       uptime: process.uptime(),
     });
   });
@@ -718,13 +837,25 @@ export async function startServer(): Promise<void> {
   // Handle process signals
   process.on('SIGINT', () => {
     logInfo('SHUTDOWN', 'Received SIGINT, shutting down...');
-    logInfo('SHUTDOWN', `Closing ${transports.size} active sessions`);
+    logInfo('SHUTDOWN', `Closing ${sessions.size} active sessions`);
+    // Close all sessions gracefully
+    for (const [sessionId, session] of sessions) {
+      logDebug('SHUTDOWN', `Closing session`, { sessionId });
+      session.transport.close?.();
+    }
+    sessions.clear();
     process.exit(0);
   });
 
   process.on('SIGTERM', () => {
     logInfo('SHUTDOWN', 'Received SIGTERM, shutting down...');
-    logInfo('SHUTDOWN', `Closing ${transports.size} active sessions`);
+    logInfo('SHUTDOWN', `Closing ${sessions.size} active sessions`);
+    // Close all sessions gracefully
+    for (const [sessionId, session] of sessions) {
+      logDebug('SHUTDOWN', `Closing session`, { sessionId });
+      session.transport.close?.();
+    }
+    sessions.clear();
     process.exit(0);
   });
 

@@ -1,9 +1,28 @@
 # Unit Data Entry Tracker
 
 ## Progress
-- **Total Units Added:** 28
+- **Total Units Added:** 192
 - **Total Units Identified:** ~250+
-- **Last Updated:** 2026-01-18
+- **Last Updated:** 2026-01-22
+
+### Breakdown
+- Barracks Soldiers: 44/44 ✓
+- TF2 Units: 5/5 ✓
+- Vehicle Factory (Light/Support): 15/15 ✓
+- Tanks: 22/22 ✓
+- Artillery: 9/9 ✓
+- Animals: 8/8 ✓
+- Raiders: 7/7 ✓
+- Naval: 10/10 ✓
+- Infected: 33/33 ✓
+- Frontier: 8/8 ✓
+- Optics Facility: 3/3 ✓
+- Plasma Weapons Factory: 4/4 ✓
+- Mercenary Vault: 7/7 ✓
+- Bigfoot Training Camp: 2/2 ✓
+- Other Vehicles: 7/7 ✓
+- Boss Strike Aircraft: 3/8+ (Maverick, Snake, Dirigible)
+- Boss/Reward Drops: 6/11+ (Frags, Kraken, Ironclad)
 
 ---
 
@@ -21,7 +40,7 @@
 - [x] Imperial Dragoon
 - [x] Junior Officer
 - [x] Riot Trooper
-- [ ] The Wimp
+- [x] The Wimp
 - [x] Sharpshooter
 - [x] Heavy Gunner
 - [x] Saboteur
@@ -30,37 +49,37 @@
 - [x] Hornet
 - [x] Sniper
 - [x] Bazooka Squad
-- [ ] Armadillo
+- [x] Armadillo
 - [x] Marksman
 - [x] Commando
 - [x] RPG Trooper
 - [x] Demolitionist
-- [ ] Field Agent
-- [ ] Turtlesheller
+- [x] Field Agent
+- [x] Turtlesheller
 - [x] Juggernaut
 - [x] Ninja Trooper
-- [ ] Peace Keeper
-- [ ] Hitman
-- [ ] Salamander
-- [ ] Big Game Hunter
+- [x] Peace Keeper
+- [x] Hitman
+- [x] Salamander
+- [x] Big Game Hunter
 - [x] Chem Trooper
-- [ ] Imperial Peacemonger
-- [ ] Bio Grenadier
+- [x] Imperial Peacemonger
+- [x] Bio Grenadier
 - [x] Lightning Trooper
-- [ ] Lightning Dragoon
-- [ ] Veteran
+- [x] Lightning Dragoon
+- [x] Veteran
 - [x] Cryo Trooper
-- [ ] Guerrilla
-- [ ] Arctic Trooper
-- [ ] Elemental Trooper
-- [ ] Railgun Sniper
+- [x] Guerrilla
+- [x] Arctic Trooper
+- [x] Elemental Trooper
+- [x] Railgun Sniper
 
 ### Team Fortress 2 Units
-- [ ] Scout
-- [ ] Heavy
-- [ ] Demoman
-- [ ] Soldier
-- [ ] Pyro
+- [x] Scout
+- [x] Heavy
+- [x] Demoman
+- [x] Soldier
+- [x] Pyro
 
 ### Promotional Soldiers
 - [ ] Special Agent
@@ -84,15 +103,15 @@
 
 ## Animal Trainer (Critters)
 
-### Standard Animals
-- [ ] Young Raptor
-- [ ] Battle Raptor
-- [ ] Young Boar
-- [ ] Imperial Boar
-- [ ] Young Mammoth
-- [ ] War Mammoth
-- [ ] Young Worm
-- [ ] Tamed Sandworm
+### Standard Animals (8/8 Complete)
+- [x] Young Raptor
+- [x] Battle Raptor
+- [x] Young Boar
+- [x] Imperial Boar
+- [x] Young Mammoth
+- [x] War Mammoth
+- [x] Young Worm
+- [x] Tamed Sandworm
 
 ### Promotional Animals
 - [ ] Tamed Adult Sandworm
@@ -110,123 +129,136 @@
 
 ## Raider Training Camp
 
-### Standard Raiders
-- [ ] Allied Raider Warrior
-- [ ] Allied Raider Cannoneer
-- [ ] Allied Raider Firebreather
-- [ ] Allied Raider Dustwalker
-- [ ] Allied Raider Boom Boom
-- [ ] Allied Raider Champion
-- [ ] Allied Skirmisher
+### Standard Raiders (7/7 Complete)
+- [x] Allied Raider Warrior
+- [x] Allied Raider Cannoneer
+- [x] Allied Raider Firebreather
+- [x] Allied Raider Dustwalker
+- [x] Allied Raider Boom Boom
+- [x] Allied Raider Champion
+- [x] Allied Skirmisher
 
-### Promotional Raiders
+### Promotional Raiders (Not Including)
 - [ ] Allied Brawler
 
 ---
 
 ## Infection Test Facility
 
-### Bullfrogs
-- [ ] Proto-Bullfrog
-- [ ] Bullfrog
-- [ ] Advanced Bullfrog
-- [ ] Archetype Bullfrog
+### Bullfrogs (4/4 Complete) ✓
+- [x] Proto-Bullfrog
+- [x] Bullfrog
+- [x] Advanced Bullfrog
+- [x] Archetype Bullfrog
 
-### Creepers
-- [ ] Proto-Creeper
-- [ ] Creeper
-- [ ] Advanced Creeper
-- [ ] Archetype Creeper
+### Creepers (4/4 Complete) ✓
+- [x] Proto-Creeper
+- [x] Creeper
+- [x] Advanced Creeper
+- [x] Archetype Creeper
 
-### Cannoneers
-- [ ] Proto-Cannoneer
-- [ ] Cannoneer
-- [ ] Advanced Cannoneer
-- [ ] Archetype Cannoneer
+### Cannoneers (4/4 Complete) ✓
+- [x] Proto-Cannoneer
+- [x] Cannoneer
+- [x] Advanced Cannoneer
+- [x] Archetype Cannoneer
 
-### Stalkers
-- [ ] Proto-Stalker
-- [ ] Stalker
-- [ ] Advanced Stalker
-- [ ] Archetype Stalker
+### Stalkers (5/5 Complete) ✓
+- [x] Proto-Stalker
+- [x] Stalker
+- [x] Advanced Stalker
+- [x] Archetype Stalker
+- [x] Apex Stalker
 
-### Colossi
-- [ ] Colossus
+### Colossi (2/2 Complete) ✓
+- [x] Colossus
+- [x] Apex Colossus
 
-### Hunters
-- [ ] Proto-Hunter
-- [ ] Hunter (Infected)
-- [ ] Advanced Hunter
-- [ ] Archetype Hunter
+### Hunters (4/4 Complete) ✓
+- [x] Proto-Hunter
+- [x] Hunter (Infected)
+- [x] Advanced Hunter
+- [x] Archetype Hunter
 
-### Shredders
-- [ ] Proto-Shredder
-- [ ] Shredder
-- [ ] Advanced Shredder
-- [ ] Archetype Shredder
+### Shredders (4/4 Complete) ✓
+- [x] Proto-Shredder
+- [x] Shredder
+- [x] Advanced Shredder
+- [x] Archetype Shredder
 
-### Crawlers
-- [ ] Proto-Crawler
-- [ ] Crawler
-- [ ] Advanced Crawler
-- [ ] Archetype Crawler
+### Crawlers (4/4 Complete) ✓
+- [x] Proto-Crawler
+- [x] Crawler
+- [x] Advanced Crawler
+- [x] Archetype Crawler
 
-### Maulers
-- [ ] Mauler
+### Maulers (2/2 Complete) ✓
+- [x] Mauler
+- [x] Apex Mauler
 
 ---
 
 ## Vehicle Factory
 
-### Standard Vehicles
-- [ ] Scout Bike
-- [ ] Anti-Aircraft Turret
-- [ ] Humvee
-- [ ] Dune Rider
-- [ ] Aries
-- [ ] Sandbag Pile
-- [ ] Mini Tank
-- [ ] Recon Vehicle
-- [ ] Light Artillery
-- [ ] Hailstorm
-- [ ] Heavy Recon Vehicle
-- [ ] Gun Truck
-- [ ] Mortar Truck
-- [ ] Puma
-- [ ] Tank Killer
-- [ ] Heavy Artillery
-- [ ] Light Tank
-- [ ] Firedrake
-- [ ] Medium Tank
-- [ ] Rocket Truck
-- [ ] Tempest
-- [ ] Super Tank
-- [ ] Meerkat
-- [ ] Aces 650cc
-- [ ] Heavy Tank
-- [ ] Portable Wall
-- [ ] Brimstone
-- [ ] Riot Truck
-- [ ] Earthshaker
-- [ ] Basilisk
-- [ ] Dragon
-- [ ] Unmanned Machine Gun Turret
-- [ ] Light Chemical Tank
-- [ ] Heavy Chemical Tank
-- [ ] Unmanned Flame Turret
-- [ ] Heavier Tank
-- [ ] Brutalizer
-- [ ] Frostbite
-- [ ] Lightning Tank
-- [ ] Mega Tank
-- [ ] Arctic Tank
-- [ ] Heavy Arctic Tank
-- [ ] Mammoth Artillery
-- [ ] Zoey's Trebuchet
-- [ ] L7 Sandworm Drill
-- [ ] Railgun Buggy
-- [ ] Railgun Tank
-- [ ] Portable Electric Fence
+### Light Vehicles & Support (15/15 Complete)
+- [x] Scout Bike
+- [x] Anti-Aircraft Turret
+- [x] Humvee
+- [x] Dune Rider
+- [x] Sandbag Pile
+- [x] Mini Tank
+- [x] Recon Vehicle
+- [x] Heavy Recon Vehicle
+- [x] Gun Truck
+- [x] Mortar Truck
+- [x] Meerkat
+- [x] Aces 650cc
+- [x] Portable Wall
+- [x] Riot Truck
+- [x] Portable Electric Fence
+
+### Tanks (22/22 Complete)
+- [x] Light Tank
+- [x] Medium Tank
+- [x] Heavy Tank
+- [x] Super Tank
+- [x] Mega Tank
+- [x] Heavier Tank
+- [x] Puma
+- [x] Dragon
+- [x] Firedrake
+- [x] Tempest
+- [x] Basilisk
+- [x] Frostbite
+- [x] Lightning Tank
+- [x] Railgun Tank
+- [x] Arctic Tank
+- [x] Heavy Arctic Tank
+- [x] Light Chemical Tank
+- [x] Heavy Chemical Tank
+- [x] Heavy Flame Tank
+- [x] Laser Tank
+- [x] Plasma Tank
+- [x] Gold Tank
+
+### Artillery (8/8 Complete)
+- [x] Light Artillery
+- [x] Heavy Artillery
+- [x] Hailstorm
+- [x] Rocket Truck
+- [x] Brimstone
+- [x] Earthshaker
+- [x] Mammoth Artillery
+- [x] Zoey's Trebuchet
+
+### Other Vehicles (7/7 Complete) ✓
+- [x] Aries
+- [x] Tank Killer
+- [x] Unmanned Machine Gun Turret
+- [x] Unmanned Flame Turret
+- [x] Brutalizer
+- [x] L7 Sandworm Drill
+- [x] Railgun Buggy
 
 ### Promotional Vehicles
 - [ ] Death From Above
@@ -251,19 +283,19 @@
 
 ## Dry Dock (Naval)
 
-### Standard Naval
-- [ ] Gunboat
-- [ ] Destroyer
-- [ ] Submarine
-- [ ] Buoy
-- [ ] Battleship-R1
-- [ ] Battleship-M10
-- [ ] SC-2 Pelican
-- [ ] Jet Ski
-- [ ] Power Boat
-- [ ] Tactical Submarine
+### Standard Naval (10/10 Complete) ✓
+- [x] Gunboat
+- [x] Destroyer
+- [x] Submarine
+- [x] Buoy
+- [x] SC-2 Pelican
+- [x] Jet Ski
+- [x] Power Boat
+- [x] Tactical Submarine
+- [x] Battleship Raptor-Class (Battleship-R1)
+- [x] Battleship Mammoth-Class (Battleship-M10)
 
-### Promotional Naval
+### Promotional Naval (Not Including)
 - [ ] Atmospheric Diving Trooper
 - [ ] Atmospheric Armor Trooper
 
@@ -275,26 +307,26 @@
 
 ---
 
-## Frontier Recruitment HQ
-- [ ] Frontier Pyro
-- [ ] Fireworks Truck
-- [ ] Frontier Lumberjack
-- [ ] Frontier Hunter
-- [ ] Frontier Minuteman
-- [ ] Frontier Engineer
-- [ ] Frontier Tractor
-- [ ] Frontier Chucker
+## Frontier Recruitment HQ (8/8 Complete) ✓
+- [x] Frontier Pyro
+- [x] Fireworks Truck
+- [x] Frontier Lumberjack
+- [x] Frontier Hunter
+- [x] Frontier Minuteman
+- [x] Frontier Engineer
+- [x] Frontier Tractor
+- [x] Frontier Chucker
 
 ---
 
-## Mercenary Vault
-- [ ] Wolf Scrapper
-- [ ] Wolf Thug
-- [ ] Wolf Pickup
-- [ ] Wolf Grenadier
-- [ ] Wolf Devastator
-- [ ] Converted Garbage Truck
-- [ ] Wolf Enforcer
+## Mercenary Vault (7/7 Complete) ✓
+- [x] Wolf Scrapper
+- [x] Wolf Thug
+- [x] Wolf Pickup
+- [x] Wolf Grenadier
+- [x] Wolf Devastator
+- [x] Converted Garbage Truck
+- [x] Wolf Enforcer
 
 ---
 
@@ -314,48 +346,48 @@
 
 ---
 
-## Optics Facility
-- [ ] Laser Trooper
-- [ ] Laser Sniper
-- [ ] Laser Tank
+## Optics Facility (3/3 Complete) ✓
+- [x] Laser Trooper
+- [x] Laser Sniper
+- [x] Laser Tank
 
 ---
 
-## Bigfoot Training Camp
-- [ ] Bigfoot
-- [ ] Young Bigfoot
+## Bigfoot Training Camp (2/2 Complete) ✓
+- [x] Bigfoot
+- [x] Young Bigfoot
 
 ---
 
-## Plasma Weapons Factory
-- [ ] Plasma Trooper
-- [ ] Plasma Turret
-- [ ] Plasma Tank
-- [ ] Artillery Plasma Cannon
+## Plasma Weapons Factory (4/4 Complete) ✓
+- [x] Plasma Trooper
+- [x] Plasma Turret
+- [x] Plasma Tank
+- [x] Artillery Plasma Cannon
 
 ---
 
-## Reward/Drop Units
-- [ ] Dexter Fragment
-- [ ] Sinister Fragment
-- [ ] Melee Sentinel Fragment
-- [ ] Ranged Sentinel Fragment
+## Reward/Drop Units (6/11+)
+- [x] Dexter Fragment
+- [x] Sinister Fragment
+- [x] Melee Sentinel Fragment
+- [x] Ranged Sentinel Fragment
 - [ ] Spiderwasp Egg
 - [ ] Phalanx Tank
-- [ ] Ironclad Battleship
-- [ ] Kraken Tentacle
+- [x] Ironclad Battleship
+- [x] Kraken Tentacle
 - [ ] Unmanned Scram Cannon Turret
 - [ ] Ruddock the Red Nosed Raptor
 - [ ] Flames of Love Archer
 
 ---
 
-## Boss Strike Aircraft
+## Boss Strike Aircraft (3/8+)
 - [ ] Sopwith Spiderwasp
-- [ ] BC-1 Snake
-- [ ] V-14 Maverick
+- [x] BC-1 Snake
+- [x] V-14 Maverick
 - [ ] L-60 Hawker Hurricane
-- [ ] ZRS-6 Dirigible
+- [x] ZRS-6 Dirigible
 - [ ] V47 KittyHawk
 - [ ] Thundercloud F10
 - [ ] Z2-18 Bomber

@@ -1,0 +1,511 @@
+[
+  {
+    "id": 159,
+    "name": "Laser Trooper",
+    "description": "An advanced soldier equipped with a high-powered laser rifle with 90% armor piercing.",
+    "imageUrl": "/images/units/laser_trooper.png",
+    "category": "Soldier",
+    "unitType": "soldier",
+    "affiliation": "Empire",
+    "building": "Optics Facility",
+    "buildingLevel": 1,
+    "unlockLevel": 51,
+    "productionTime": 180,
+    "cost": [
+      { "resource": "Gold", "amount": 15000 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "immunities": [],
+    "resistances": {
+      "piercing": 85
+    },
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 170, "defense": 60, "dodge": 30, "bravery": 40 },
+        { "rank": 2, "health": 185, "defense": 65, "dodge": 35, "bravery": 45 },
+        { "rank": 3, "health": 205, "defense": 70, "dodge": 40, "bravery": 50 },
+        { "rank": 4, "health": 220, "defense": 75, "dodge": 45, "bravery": 55 },
+        { "rank": 5, "health": 240, "defense": 80, "dodge": 50, "bravery": 70 },
+        { "rank": 6, "health": 255, "defense": 85, "dodge": 55, "bravery": 70 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Laser Shot",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 3,
+        "ammo": 2,
+        "reload": 3,
+        "cooldown": 2,
+        "armorPiercing": 90,
+        "lineOfFire": "Direct",
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "critBonus": { "type": "Tanks", "bonus": 5 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 100, "maxDamage": 150, "offense": 36, "crit": 5 },
+          { "rank": 2, "minDamage": 110, "maxDamage": 165, "offense": 41, "crit": 5 },
+          { "rank": 3, "minDamage": 120, "maxDamage": 180, "offense": 46, "crit": 5 },
+          { "rank": 4, "minDamage": 130, "maxDamage": 195, "offense": 51, "crit": 5 },
+          { "rank": 5, "minDamage": 140, "maxDamage": 210, "offense": 56, "crit": 5 },
+          { "rank": 6, "minDamage": 150, "maxDamage": 225, "offense": 61, "crit": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "name": "Laser Sniper",
+    "description": "A long-range specialist with a precision laser scope, delivering devastating armor-piercing shots.",
+    "imageUrl": "/images/units/laser_sniper.png",
+    "category": "Soldier",
+    "unitType": "sniper",
+    "affiliation": "Empire",
+    "building": "Optics Facility",
+    "buildingLevel": 3,
+    "unlockLevel": 52,
+    "productionTime": 210,
+    "cost": [
+      { "resource": "Gold", "amount": 18000 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "immunities": [],
+    "resistances": {},
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 150, "defense": 40, "dodge": 10, "bravery": 50 },
+        { "rank": 2, "health": 165, "defense": 45, "dodge": 15, "bravery": 55 },
+        { "rank": 3, "health": 180, "defense": 50, "dodge": 20, "bravery": 60 },
+        { "rank": 4, "health": 195, "defense": 55, "dodge": 25, "bravery": 65 },
+        { "rank": 5, "health": 210, "defense": 60, "dodge": 30, "bravery": 70 },
+        { "rank": 6, "health": 225, "defense": 65, "dodge": 35, "bravery": 75 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Scope Beam",
+        "damageType": "Explosive",
+        "minRange": 4,
+        "maxRange": 6,
+        "ammo": 2,
+        "reload": 3,
+        "cooldown": 0,
+        "armorPiercing": 70,
+        "lineOfFire": "Indirect",
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 1, "minDamage": 164, "maxDamage": 200, "offense": 68, "crit": 20 },
+          { "rank": 2, "minDamage": 180, "maxDamage": 220, "offense": 73, "crit": 20 },
+          { "rank": 3, "minDamage": 196, "maxDamage": 240, "offense": 78, "crit": 20 },
+          { "rank": 4, "minDamage": 212, "maxDamage": 260, "offense": 83, "crit": 20 },
+          { "rank": 5, "minDamage": 228, "maxDamage": 280, "offense": 88, "crit": 20 },
+          { "rank": 6, "minDamage": 244, "maxDamage": 300, "offense": 93, "crit": 20 }
+        ]
+      },
+      {
+        "name": "Quick Beam",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 2,
+        "ammo": -1,
+        "reload": 0,
+        "cooldown": 0,
+        "armorPiercing": 60,
+        "lineOfFire": "Direct",
+        "unlockRank": 2,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 2, "minDamage": 125, "maxDamage": 154, "offense": 41, "crit": 15 },
+          { "rank": 3, "minDamage": 135, "maxDamage": 166, "offense": 46, "crit": 15 },
+          { "rank": 4, "minDamage": 145, "maxDamage": 178, "offense": 51, "crit": 15 },
+          { "rank": 5, "minDamage": 155, "maxDamage": 190, "offense": 56, "crit": 15 },
+          { "rank": 6, "minDamage": 165, "maxDamage": 202, "offense": 61, "crit": 15 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Laser Tank",
+    "description": "A heavily armored tank equipped with devastating laser weapons capable of penetrating through rows of enemies.",
+    "imageUrl": "/images/units/laser_tank.png",
+    "category": "Tank",
+    "unitType": "tank",
+    "affiliation": "Empire",
+    "building": "Optics Facility",
+    "buildingLevel": 4,
+    "unlockLevel": 53,
+    "productionTime": 300,
+    "cost": [
+      { "resource": "Nanopods", "amount": 70 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Plague"],
+    "resistances": {
+      "fire": 150,
+      "crushing": 50,
+      "piercing": 75
+    },
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 200, "armor": 220, "defense": 20, "dodge": 10, "bravery": 45 },
+        { "rank": 2, "health": 220, "armor": 240, "defense": 25, "dodge": 15, "bravery": 50 },
+        { "rank": 3, "health": 240, "armor": 265, "defense": 30, "dodge": 20, "bravery": 55 },
+        { "rank": 4, "health": 260, "armor": 285, "defense": 35, "dodge": 25, "bravery": 60 },
+        { "rank": 5, "health": 280, "armor": 310, "defense": 40, "dodge": 30, "bravery": 65 },
+        { "rank": 6, "health": 300, "armor": 330, "defense": 45, "dodge": 35, "bravery": 70 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Laser Blast",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 2,
+        "ammo": 4,
+        "reload": 4,
+        "cooldown": 2,
+        "armorPiercing": 90,
+        "lineOfFire": "Direct",
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "critBonus": { "type": "Tanks", "bonus": 70 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 80, "maxDamage": 120, "offense": 28, "crit": 5 },
+          { "rank": 2, "minDamage": 88, "maxDamage": 132, "offense": 33, "crit": 5 },
+          { "rank": 3, "minDamage": 96, "maxDamage": 144, "offense": 38, "crit": 5 },
+          { "rank": 4, "minDamage": 104, "maxDamage": 156, "offense": 43, "crit": 5 },
+          { "rank": 5, "minDamage": 112, "maxDamage": 168, "offense": 48, "crit": 5 },
+          { "rank": 6, "minDamage": 120, "maxDamage": 180, "offense": 53, "crit": 5 }
+        ]
+      },
+      {
+        "name": "Penetrating Beam",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 4,
+        "ammo": 4,
+        "reload": 4,
+        "cooldown": 3,
+        "armorPiercing": 100,
+        "lineOfFire": "Direct",
+        "unlockRank": 2,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "critBonus": { "type": "Tanks", "bonus": 30 },
+        "special": "Penetrates through 3 units if not blocking",
+        "damageByRank": [
+          { "rank": 2, "minDamage": 61, "maxDamage": 92, "offense": 33, "crit": 5 },
+          { "rank": 3, "minDamage": 68, "maxDamage": 102, "offense": 38, "crit": 5 },
+          { "rank": 4, "minDamage": 74, "maxDamage": 112, "offense": 43, "crit": 5 },
+          { "rank": 5, "minDamage": 81, "maxDamage": 122, "offense": 48, "crit": 5 },
+          { "rank": 6, "minDamage": 84, "maxDamage": 126, "offense": 53, "crit": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Plasma Trooper",
+    "description": "An elite soldier equipped with plasma weapons, featuring heavy armor and dual attack modes.",
+    "imageUrl": "/images/units/plasma_trooper.png",
+    "category": "Soldier",
+    "unitType": "soldier",
+    "affiliation": "Empire",
+    "building": "Plasma Weapons Factory",
+    "buildingLevel": 1,
+    "unlockLevel": 67,
+    "productionTime": 240,
+    "cost": [
+      { "resource": "Nanopods", "amount": 50 }
+    ],
+    "blocking": "Partial",
+    "maxRank": 6,
+    "immunities": ["Acid", "Explosive", "Freeze"],
+    "resistances": {
+      "cold": 65,
+      "crushing": 85,
+      "explosive": 85,
+      "fire": 75,
+      "piercing": 50
+    },
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 290, "armor": 60, "defense": 40, "dodge": 10, "bravery": 20 },
+        { "rank": 2, "health": 315, "armor": 70, "defense": 45, "dodge": 15, "bravery": 25 },
+        { "rank": 3, "health": 340, "armor": 80, "defense": 50, "dodge": 20, "bravery": 30 },
+        { "rank": 4, "health": 365, "armor": 90, "defense": 55, "dodge": 25, "bravery": 35 },
+        { "rank": 5, "health": 390, "armor": 100, "defense": 60, "dodge": 30, "bravery": 40 },
+        { "rank": 6, "health": 415, "armor": 110, "defense": 65, "dodge": 35, "bravery": 45 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Plasma Beam",
+        "damageType": "Piercing",
+        "minRange": 1,
+        "maxRange": 2,
+        "ammo": -1,
+        "reload": 0,
+        "cooldown": 3,
+        "armorPiercing": 80,
+        "lineOfFire": "Direct",
+        "prepTime": 2,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 1, "minDamage": 136, "maxDamage": 204, "offense": 63, "crit": 15 },
+          { "rank": 2, "minDamage": 150, "maxDamage": 224, "offense": 68, "crit": 17 },
+          { "rank": 3, "minDamage": 163, "maxDamage": 245, "offense": 73, "crit": 19 },
+          { "rank": 4, "minDamage": 177, "maxDamage": 265, "offense": 78, "crit": 21 },
+          { "rank": 5, "minDamage": 190, "maxDamage": 286, "offense": 83, "crit": 23 },
+          { "rank": 6, "minDamage": 204, "maxDamage": 306, "offense": 88, "crit": 25 }
+        ]
+      },
+      {
+        "name": "Plasma Pulse",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 4,
+        "ammo": 2,
+        "reload": 4,
+        "cooldown": 2,
+        "armorPiercing": 50,
+        "lineOfFire": "Indirect",
+        "prepTime": 1,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 1, "minDamage": 152, "maxDamage": 228, "offense": 53, "crit": 15 },
+          { "rank": 2, "minDamage": 167, "maxDamage": 251, "offense": 58, "crit": 17 },
+          { "rank": 3, "minDamage": 182, "maxDamage": 274, "offense": 63, "crit": 19 },
+          { "rank": 4, "minDamage": 198, "maxDamage": 296, "offense": 68, "crit": 21 },
+          { "rank": 5, "minDamage": 213, "maxDamage": 319, "offense": 73, "crit": 23 },
+          { "rank": 6, "minDamage": 228, "maxDamage": 342, "offense": 78, "crit": 25 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "name": "Plasma Turret",
+    "description": "A stationary defense emplacement with a devastating plasma beam that can melt through armor.",
+    "imageUrl": "/images/units/plasma_turret.png",
+    "category": "Vehicle",
+    "unitType": "turret",
+    "affiliation": "Empire",
+    "building": "Plasma Weapons Factory",
+    "buildingLevel": 1,
+    "unlockLevel": 68,
+    "productionTime": 300,
+    "cost": [
+      { "resource": "Nanopods", "amount": 60 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Cold", "Explosive", "Fire", "Freeze", "Plague", "Poison"],
+    "resistances": {},
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 250, "armor": 105, "defense": 30, "dodge": 10, "bravery": 30 },
+        { "rank": 2, "health": 280, "armor": 120, "defense": 35, "dodge": 15, "bravery": 35 },
+        { "rank": 3, "health": 305, "armor": 135, "defense": 40, "dodge": 20, "bravery": 40 },
+        { "rank": 4, "health": 330, "armor": 150, "defense": 45, "dodge": 25, "bravery": 45 },
+        { "rank": 5, "health": 355, "armor": 165, "defense": 50, "dodge": 30, "bravery": 50 },
+        { "rank": 6, "health": 380, "armor": 180, "defense": 55, "dodge": 35, "bravery": 55 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Plasma Beam",
+        "damageType": "Piercing",
+        "minRange": 1,
+        "maxRange": 2,
+        "ammo": -1,
+        "reload": 0,
+        "cooldown": 3,
+        "armorPiercing": 80,
+        "lineOfFire": "Indirect",
+        "prepTime": 2,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "critBonus": { "type": "Vehicles", "bonus": 10 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 151, "maxDamage": 280, "offense": 58, "crit": 18 },
+          { "rank": 2, "minDamage": 166, "maxDamage": 308, "offense": 63, "crit": 18 },
+          { "rank": 3, "minDamage": 181, "maxDamage": 336, "offense": 68, "crit": 18 },
+          { "rank": 4, "minDamage": 196, "maxDamage": 364, "offense": 73, "crit": 18 },
+          { "rank": 5, "minDamage": 211, "maxDamage": 392, "offense": 78, "crit": 18 },
+          { "rank": 6, "minDamage": 226, "maxDamage": 420, "offense": 83, "crit": 18 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Plasma Tank",
+    "description": "The ultimate frontline unit combining powerful plasma weapons with hardened armor. Features multiple attack modes including a devastating fissure attack.",
+    "imageUrl": "/images/units/plasma_tank.png",
+    "category": "Tank",
+    "unitType": "tank",
+    "affiliation": "Empire",
+    "building": "Plasma Weapons Factory",
+    "buildingLevel": 1,
+    "unlockLevel": 68,
+    "productionTime": 360,
+    "cost": [
+      { "resource": "Nanopods", "amount": 88 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Explosive", "Freeze", "Plague"],
+    "resistances": {},
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 450, "armor": 300, "defense": 30, "dodge": 10, "bravery": 50 },
+        { "rank": 2, "health": 475, "armor": 315, "defense": 35, "dodge": 15, "bravery": 55 },
+        { "rank": 3, "health": 500, "armor": 330, "defense": 40, "dodge": 20, "bravery": 60 },
+        { "rank": 4, "health": 525, "armor": 345, "defense": 45, "dodge": 25, "bravery": 65 },
+        { "rank": 5, "health": 550, "armor": 360, "defense": 50, "dodge": 30, "bravery": 70 },
+        { "rank": 6, "health": 575, "armor": 375, "defense": 55, "dodge": 35, "bravery": 70 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Plasma Shot",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 2,
+        "ammo": 2,
+        "reload": 4,
+        "cooldown": 3,
+        "armorPiercing": 55,
+        "lineOfFire": "Direct",
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 1, "minDamage": 200, "maxDamage": 300, "offense": 56, "crit": 5 },
+          { "rank": 2, "minDamage": 220, "maxDamage": 330, "offense": 60, "crit": 5 },
+          { "rank": 3, "minDamage": 240, "maxDamage": 360, "offense": 64, "crit": 5 },
+          { "rank": 4, "minDamage": 260, "maxDamage": 390, "offense": 68, "crit": 5 },
+          { "rank": 5, "minDamage": 280, "maxDamage": 420, "offense": 72, "crit": 5 },
+          { "rank": 6, "minDamage": 300, "maxDamage": 450, "offense": 76, "crit": 5 }
+        ]
+      },
+      {
+        "name": "Dual Shot",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 4,
+        "ammo": 2,
+        "reload": 4,
+        "cooldown": 6,
+        "armorPiercing": 50,
+        "lineOfFire": "Direct",
+        "hits": 2,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 1, "minDamage": 90, "maxDamage": 150, "offense": 51, "crit": 5 },
+          { "rank": 2, "minDamage": 99, "maxDamage": 165, "offense": 55, "crit": 5 },
+          { "rank": 3, "minDamage": 108, "maxDamage": 180, "offense": 59, "crit": 5 },
+          { "rank": 4, "minDamage": 117, "maxDamage": 195, "offense": 63, "crit": 5 },
+          { "rank": 5, "minDamage": 126, "maxDamage": 210, "offense": 67, "crit": 5 },
+          { "rank": 6, "minDamage": 135, "maxDamage": 225, "offense": 71, "crit": 5 }
+        ]
+      },
+      {
+        "name": "Plasma Fissure",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 5,
+        "ammo": 1,
+        "reload": 0,
+        "cooldown": 0,
+        "armorPiercing": 55,
+        "lineOfFire": "Direct",
+        "prepTime": 3,
+        "hits": 6,
+        "unlockRank": 4,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "damageByRank": [
+          { "rank": 4, "minDamage": 189, "maxDamage": 317, "offense": 61, "crit": 5 },
+          { "rank": 5, "minDamage": 204, "maxDamage": 341, "offense": 66, "crit": 5 },
+          { "rank": 6, "minDamage": 219, "maxDamage": 366, "offense": 71, "crit": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "name": "Artillery Plasma Cannon",
+    "description": "Heavy artillery capable of raining down plasma over a large swath of the battlefield, causing fire damage.",
+    "imageUrl": "/images/units/artillery_plasma_cannon.png",
+    "category": "Artillery",
+    "unitType": "tank",
+    "affiliation": "Empire",
+    "building": "Plasma Weapons Factory",
+    "buildingLevel": 1,
+    "unlockLevel": 69,
+    "productionTime": 360,
+    "cost": [
+      { "resource": "Nanopods", "amount": 75 }
+    ],
+    "blocking": "Full",
+    "maxRank": 6,
+    "immunities": ["Explosive", "Freeze", "Plague"],
+    "resistances": {},
+    "stats": {
+      "ranks": [
+        { "rank": 1, "health": 345, "armor": 100, "defense": 25, "dodge": 5, "bravery": 50 },
+        { "rank": 2, "health": 370, "armor": 110, "defense": 30, "dodge": 10, "bravery": 55 },
+        { "rank": 3, "health": 395, "armor": 120, "defense": 35, "dodge": 15, "bravery": 60 },
+        { "rank": 4, "health": 420, "armor": 130, "defense": 40, "dodge": 20, "bravery": 65 },
+        { "rank": 5, "health": 445, "armor": 140, "defense": 45, "dodge": 25, "bravery": 70 },
+        { "rank": 6, "health": 470, "armor": 150, "defense": 50, "dodge": 30, "bravery": 70 }
+      ]
+    },
+    "actions": [
+      {
+        "name": "Plasma Shot",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 5,
+        "ammo": 2,
+        "reload": 4,
+        "cooldown": 0,
+        "armorPiercing": 60,
+        "lineOfFire": "Indirect",
+        "prepTime": 2,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "statusEffect": { "type": "Fire", "chance": 40, "duration": 2 },
+        "critBonus": { "type": "Vehicles", "bonus": 10 },
+        "damageByRank": [
+          { "rank": 1, "minDamage": 158, "maxDamage": 263, "offense": 41, "crit": 0 },
+          { "rank": 2, "minDamage": 174, "maxDamage": 289, "offense": 46, "crit": 0 },
+          { "rank": 3, "minDamage": 189, "maxDamage": 315, "offense": 51, "crit": 0 },
+          { "rank": 4, "minDamage": 205, "maxDamage": 342, "offense": 56, "crit": 0 },
+          { "rank": 5, "minDamage": 221, "maxDamage": 368, "offense": 61, "crit": 0 },
+          { "rank": 6, "minDamage": 237, "maxDamage": 394, "offense": 66, "crit": 0 }
+        ]
+      },
+      {
+        "name": "Plasma Fissure",
+        "damageType": "Explosive",
+        "minRange": 1,
+        "maxRange": 5,
+        "ammo": 2,
+        "reload": 6,
+        "cooldown": 0,
+        "armorPiercing": 60,
+        "lineOfFire": "Indirect",
+        "prepTime": 3,
+        "unlockRank": 4,
+        "targetType": ["Air", "LTA", "Soldiers", "Vehicles", "Tanks", "Critters"],
+        "statusEffect": { "type": "Fire", "chance": 65, "duration": 2 },
+        "critBonus": { "type": "Vehicles", "bonus": 10 },
+        "damageByRank": [
+          { "rank": 4, "minDamage": 187, "maxDamage": 436, "offense": 56, "crit": 0 },
+          { "rank": 5, "minDamage": 202, "maxDamage": 470, "offense": 61, "crit": 0 },
+          { "rank": 6, "minDamage": 216, "maxDamage": 504, "offense": 66, "crit": 0 }
+        ]
+      }
+    ]
+  }
+]
